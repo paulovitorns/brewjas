@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#754835</color>
+    <color name="colorPrimaryDark">#523325</color>
+    <color name="colorAccent">#F0E7C9</color>
+
+    <color name="colorBg">#EDC889</color>
+    <color name="colorBgLight">#F0E7C9</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="colorBlueFb">#00468C</color>
+    <color name="colorBlueFbPressed">#0062C4</color>
+
+    <color name="colorMarrom">#523325</color>
+
+    <color name="colorBtn">#523325</color>
+    <color name="colorBtnPressed">#754835</color>
+
+    <color name="colorMarromEdt">#F2D8AA</color>
+    <color name="colorMarromEdtPressed">#E4AF56</color>
+
+</resources>

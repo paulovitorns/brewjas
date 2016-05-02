@@ -1,0 +1,33 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_listagem_brejas_3"
+    tools:context="br.com.brewjas.ui.fragment.ListaCervejasFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_transparent_yellow">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingLeft="@dimen/card_horizontal_margin"
+            android:paddingRight="@dimen/card_horizontal_margin"
+            android:paddingBottom="@dimen/card_horizontal_margin">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listaBrejas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

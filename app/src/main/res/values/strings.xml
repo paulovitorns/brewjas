@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Brewjas</string>
+
+    <!-- TODO: Textos dos botões -->
+    <string name="btn_login">Acessar</string>
+    <string name="btn_registro">Criar Conta</string>
+    <string name="btn_recuperar">Recuperar Acesso</string>
+    <string name="btn_login_fb">Entre com o Facebook</string>
+    <string name="btn_registrar">Criar Conta</string>
+    <string name="btn_recuperar_senha">Lembrar Senha</string>
+    <string name="btn_help">Esqueceu ou não tem login?</string>
+
+    <!-- TODO: Textos hint -->
+    <string name="hint_nome">Seu nome e sobrenome</string>
+    <string name="hint_email">Seu e-mail</string>
+    <string name="hint_password">Sua senha</string>
+    <string name="hint_conf_password">Repita a senha</string>
+    <string name="hint_data_nasc">Sua data de nascimento</string>
+
+    <!-- TODO: Textos de textview -->
+    <string name="txt_intro_registro">Por favor, fale um pouco sobre você?</string>
+    <string name="txt_intro_recuperar">Por favor, informe o seu e-mail cadastrado?</string>
+    <string name="txt_title_registro">Criação de conta</string>
+    <string name="txt_title_recuperar">Recuperação de senha</string>
+
+    <string name="txt_title_help">Ainda não tem acesso?</string>
+
+    <string name="txt_register_title">Ainda não tem cadastro?</string>
+    <string name="txt_register_sub">Toque aqui para criar</string>
+
+    <string name="txt_recuperar_title">Esqueceu sua senha?</string>
+    <string name="txt_recuperar_sub">Toque aqui para recuperar</string>
+    <string name="title_activity_dash_board">DashBoardActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

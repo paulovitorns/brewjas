@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="br.com.brewjas.ui.activity.DashBoardActivity">
+
+    <RelativeLayout
+        android:id="@+id/containerHeader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:id="@+id/HeaderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                style="@style/TxtBtn"
+                android:textSize="22sp"
+                />
+
+        </android.support.v7.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@drawable/toolbar_dropshadow"
+            android:layout_below="@+id/toolbar"/>
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/content_dash_board" />
+
+</android.support.design.widget.CoordinatorLayout>
