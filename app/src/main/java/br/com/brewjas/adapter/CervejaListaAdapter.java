@@ -40,7 +40,7 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
 
     @Override
     public CervejaListaAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemLayoutView = LayoutInflater.from(context).inflate(R.layout.item_breja, null);
+        View itemLayoutView = LayoutInflater.from(context).inflate(R.layout.item_breja, parent, false);
         return new ViewHolder(itemLayoutView);
     }
 
@@ -70,12 +70,13 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
                 }
             });
 
+            /*
             if(position % 2 == 0){
                 showOfLeft(holder.container);
             }else{
                 showOfRight(holder.container);
             }
-
+            */
         }
     }
 
