@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="62dp"
+        android:layout_marginTop="57dp"
         android:background="@drawable/bg_transparent_yellow">
 
         <LinearLayout
@@ -74,7 +74,7 @@
     <include
         layout="@layout/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="68dp">
 
     </include>
 
