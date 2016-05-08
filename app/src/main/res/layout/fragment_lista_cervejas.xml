@@ -5,7 +5,8 @@
     android:background="@drawable/bg_listagem_brejas_3"
     tools:context="br.com.brewjas.ui.fragment.ListaCervejasFragment">
 
-    <ScrollView
+    <br.com.brewjas.services.scroll.EndlessScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_transparent_yellow">
@@ -28,6 +29,6 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </br.com.brewjas.services.scroll.EndlessScrollView>
 
 </FrameLayout>

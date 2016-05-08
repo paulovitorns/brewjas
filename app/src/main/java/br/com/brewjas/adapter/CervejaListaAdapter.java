@@ -3,6 +3,7 @@ package br.com.brewjas.adapter;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,29 +71,43 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
                 }
             });
 
-            /*
-            if(position % 2 == 0){
-                showOfLeft(holder.container);
-            }else{
-                showOfRight(holder.container);
-            }
-            */
+            //animate(holder);
         }
-    }
-
-    private void showOfLeft(CardView content){
-        Animation animation = AnimationUtils.loadAnimation(context, R.anim.animacao_left_to_right);
-        content.startAnimation(animation);
-    }
-
-    private void showOfRight(CardView content){
-        Animation animation = AnimationUtils.loadAnimation(context, R.anim.animacao_right_to_left);
-        content.startAnimation(animation);
     }
 
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
+
+    public void updateList(List<BeerResponse> beers) {
+        data = beers;
+        notifyDataSetChanged();
+    }
+
+    public void insert(int position, BeerResponse beer) {
+
+        Log.v("Insert "+beer.getName(), "All positions: "+(data.size()-1)+". New Position: "+position);
+
+        data.add(position, beer);
+        notifyItemInserted(position);
+    }
+
+    // Remove a RecyclerView item containing a specified Data object
+    public void remove(BeerResponse beer) {
+        int position = data.indexOf(beer);
+        data.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void animate(RecyclerView.ViewHolder viewHolder){
+        final Animation animation = AnimationUtils.loadAnimation(context, R.anim.bounce_interpolar);
+        viewHolder.itemView.setAnimation(animation);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

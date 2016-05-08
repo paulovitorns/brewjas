@@ -4,8 +4,10 @@ package br.com.brewjas.ui.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,17 +18,25 @@ import java.util.List;
 import br.com.brewjas.R;
 import br.com.brewjas.adapter.CervejaListaAdapter;
 import br.com.brewjas.api.general.response.BeerResponse;
+import br.com.brewjas.services.scroll.EndlessScrollListener;
+import br.com.brewjas.services.scroll.EndlessScrollView;
+import br.com.brewjas.util.UIDialogsFragments;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListaCervejasFragment extends Fragment {
+public class ListaCervejasFragment extends Fragment implements EndlessScrollListener {
 
     private List<BeerResponse> beers;
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private CervejaListaAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerView.ItemAnimator itemAnimator;
+
+    private EndlessScrollView scrollView;
+
+    private UIDialogsFragments uiDialogs;
 
     public ListaCervejasFragment() {
         // Required empty public constructor
@@ -38,6 +48,9 @@ public class ListaCervejasFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_lista_cervejas, container, false);
 
+        uiDialogs = new UIDialogsFragments();
+        uiDialogs.uiGetActivity(getActivity());
+
         mRecyclerView  = (RecyclerView) view.findViewById(R.id.listaBrejas);
         mRecyclerView.setHasFixedSize(true);
 
@@ -47,6 +60,13 @@ public class ListaCervejasFragment extends Fragment {
 
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+        itemAnimator = new DefaultItemAnimator();
+        itemAnimator.setAddDuration(1000);
+        itemAnimator.setRemoveDuration(1000);
+
+        scrollView = (EndlessScrollView) view.findViewById(R.id.scrollView);
+        scrollView.setScrollViewListener(this);
 
         return view;
     }
@@ -72,6 +92,36 @@ public class ListaCervejasFragment extends Fragment {
 
         mAdapter = new CervejaListaAdapter(getContext(), beers);
         mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setItemAnimator(itemAnimator);
     }
 
+    private void addItem(){
+        BeerResponse beer = new BeerResponse( beers.size()+" Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", beers.size()+"%", beers.size()+"0");
+        beers.add(beer);
+
+        Log.v("Insert "+beer.getName(), beers.size()-1+"");
+
+        //Update adapter.
+        mAdapter.insert(beers.size()-1, beer);
+        mRecyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onScrollChanged(EndlessScrollView scrollView, int x, int y, int oldx, int oldy) {
+        View view = scrollView.getChildAt(scrollView.getChildCount() - 1);
+        int distanceToEnd = (view.getBottom() - (scrollView.getHeight() + scrollView.getScrollY()));
+
+        if ( ( distanceToEnd ) == 0) {
+
+            uiDialogs.showLoading();
+            Log.v("Distance to end", distanceToEnd+"");
+
+            for (int i = 1; i < 2; i++){
+                addItem();
+            }
+
+            uiDialogs.loadingDialog.dismiss();
+
+        }
+    }
 }
