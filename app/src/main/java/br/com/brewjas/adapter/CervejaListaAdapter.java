@@ -1,6 +1,7 @@
 package br.com.brewjas.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,6 +20,8 @@ import java.util.List;
 
 import br.com.brewjas.R;
 import br.com.brewjas.api.general.response.BeerResponse;
+import br.com.brewjas.ui.activity.BrejaActivity;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Paulo Vitor on 01/05/2016.
@@ -26,7 +29,7 @@ import br.com.brewjas.api.general.response.BeerResponse;
 public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapter.ViewHolder> {
 
     private int lastPosition = -1;
-    private Context context;
+    private static Context context;
     private List<BeerResponse> data;
 
 
@@ -67,7 +70,7 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
             holder.btnFav.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.btnFav.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_white_48dp));
+                    holder.btnFav.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_white_36dp));
                 }
             });
 
@@ -110,11 +113,11 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
         viewHolder.itemView.setAnimation(animation);
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private CardView container;
         private LinearLayout containerImage;
-        private ImageView imgBeer;
+        private CircleImageView imgBeer;
         private ImageButton btnFav;
         private TextView nameBeer;
         private TextView nameBrewer;
@@ -128,7 +131,7 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
 
             container       = (CardView) itemView.findViewById(R.id.container);
             containerImage  = (LinearLayout) itemView.findViewById(R.id.containerImage);
-            imgBeer         = (ImageView) itemView.findViewById(R.id.imgBeer);
+            imgBeer         = (CircleImageView) itemView.findViewById(R.id.imgBeer);
             btnFav          = (ImageButton) itemView.findViewById(R.id.btnFav);
             nameBeer        = (TextView) itemView.findViewById(R.id.nameBeer);
             nameBrewer      = (TextView) itemView.findViewById(R.id.nameBrewer);
@@ -137,6 +140,18 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
             varAbv          = (TextView) itemView.findViewById(R.id.varAbv);
             varIbu          = (TextView) itemView.findViewById(R.id.varIbu);
 
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+
+            goToCoupon();
+        }
+
+        public void goToCoupon(){
+            Intent intent = new Intent(context, BrejaActivity.class);
+            context.startActivity(intent);
         }
     }
 

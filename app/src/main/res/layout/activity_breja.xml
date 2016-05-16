@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBg">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:background="@drawable/beer_example"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/colorMarrom"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/varAbv"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="ABV 5,8%"
+                    style="@style/OtherInfosBeer"/>
+
+                <TextView
+                    android:id="@+id/varIbu"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="IBU 50"
+                    style="@style/OtherInfosBeer"/>
+
+                <TextView
+                    android:id="@+id/varIbu2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="IBU 50"
+                    style="@style/OtherInfosBeer"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/beer_vertical_margin"
+                android:layout_marginTop="@dimen/beer_vertical_margin"
+                android:layout_marginLeft="@dimen/beer_horizontal_margin"
+                android:layout_marginRight="@dimen/beer_horizontal_margin"
+                android:padding="@dimen/beer_horizontal_padding"
+                android:background="@color/colorBgLight">
+
+                <TextView
+                    android:id="@+id/nameBrewer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="Brewer: Guinness"
+                    style="@style/NameBrewer"/>
+
+                <TextView
+                    android:id="@+id/nameCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="País: Irlanda"
+                    style="@style/OtherDelaisBeer"/>
+
+                <TextView
+                    android:id="@+id/typeBeer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="Estilo: Classic Irish-Style Dry Stout"
+                    style="@style/OtherDelaisBeer"/>
+
+                <TextView
+                    android:id="@+id/glassBeer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="Servido em um: Pint XYZ"
+                    style="@style/OtherDelaisBeer"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/beer_vertical_margin"
+                android:layout_marginTop="@dimen/beer_vertical_margin"
+                android:layout_marginLeft="@dimen/beer_horizontal_margin"
+                android:layout_marginRight="@dimen/beer_horizontal_margin"
+                android:padding="@dimen/beer_horizontal_padding"
+                android:background="@color/colorBgLight">
+
+                <TextView
+                    android:id="@+id/descBeer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="Sobre a Guinness: Classic Irish-Style Dry Stout Estilo: Classic Irish-Style Dry Stout Estilo: Classic Irish-Style Dry Stout Estilo: Classic Irish-Style Dry Stout Estilo: Classic Irish-Style Dry Stout Estilo: Classic Irish-Style Dry StoutEstilo: Classic Irish-Style Dry Stout Estilo: Classic Irish-Style Dry Stout  Estilo: Classic Irish-Style Dry Stout Estilo: Classic Irish-Style Dry Stout Estilo: Classic Irish-Style Dry Stout"
+                    style="@style/OtherDelaisBeer"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/beer_horizontal_margin"
+                android:padding="@dimen/beer_horizontal_margin"
+                android:background="@color/colorBgLight">
+
+                <include layout="@layout/item_breja_relacionado"></include>
+
+                <include layout="@layout/item_breja_relacionado"></include>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

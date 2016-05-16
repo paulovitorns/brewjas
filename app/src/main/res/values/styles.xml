@@ -29,21 +29,21 @@
     </style>
 
     <style name="NameBeer" parent="android:style/TextAppearance">
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/colorMarrom</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:fontFamily">Arial</item>
-    </style>
-
-    <style name="NameBrewer" parent="android:style/TextAppearance">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/colorMarrom</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">Arial</item>
     </style>
 
-    <style name="OtherInfosBeer" parent="android:style/TextAppearance">
+    <style name="NameBrewer" parent="android:style/TextAppearance">
         <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorMarrom</item>
+        <item name="android:fontFamily">Arial</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="OtherInfosBeer" parent="android:style/TextAppearance">
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:fontFamily">Arial</item>
         <item name="android:gravity">center_vertical|center_horizontal</item>
@@ -52,7 +52,7 @@
 
 
     <style name="OtherDelaisBeer" parent="android:style/TextAppearance">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorMarrom</item>
         <item name="android:fontFamily">Arial</item>
     </style>
