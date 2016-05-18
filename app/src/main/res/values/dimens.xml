@@ -5,6 +5,9 @@
 
     <dimen name="card_horizontal_margin">2dp</dimen>
 
+    <dimen name="login_horizontal_margin">16dp</dimen>
+    <dimen name="login_vertical_margin">8dp</dimen>
+
     <dimen name="beer_horizontal_margin">6dp</dimen>
     <dimen name="beer_vertical_margin">3dp</dimen>
     <dimen name="beer_horizontal_padding">10dp</dimen>

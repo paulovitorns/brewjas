@@ -40,65 +40,84 @@
                 android:id="@+id/contentAcesso"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:gravity="center_horizontal">
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical">
 
                 <LinearLayout
                     android:id="@+id/contentEdt"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center_horizontal">
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="@dimen/login_vertical_margin"
+                    android:layout_marginTop="@dimen/login_vertical_margin"
+                    android:layout_marginLeft="@dimen/login_horizontal_margin"
+                    android:layout_marginRight="@dimen/login_horizontal_margin"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/rounded_edt_padrao_login">
 
                     <EditText
                         android:id="@+id/edtLogin"
-                        android:layout_width="300dp"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
                         style="@style/TxtHint"
                         android:inputType="textEmailAddress"
                         android:hint="@string/hint_email"
-                        android:background="@drawable/rounded_edt_padrao"/>
+                        android:background="@drawable/rounded_edt_padrao_login"/>
 
-                    <EditText
-                        android:id="@+id/edtSenha"
-                        android:layout_width="300dp"
-                        android:layout_height="40dp"
-                        style="@style/TxtHint"
-                        android:inputType="textPassword"
-                        android:hint="@string/hint_password"
-                        android:background="@drawable/rounded_edt_padrao"/>
+                    <ImageButton
+                        android:id="@+id/btnLogin"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_btn_login"
+                        android:src="@drawable/ic_keyboard_arrow_right_white_48dp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/contentLogin"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="@dimen/login_vertical_margin"
+                    android:layout_marginTop="@dimen/login_vertical_margin"
+                    android:layout_marginLeft="@dimen/login_horizontal_margin"
+                    android:layout_marginRight="@dimen/login_horizontal_margin"
+                    android:gravity="center_vertical|center_horizontal"
                     android:layout_below="@id/contentEdt"
-                    android:gravity="center_horizontal">
+                    android:background="@drawable/rounded_btn_facebook">
 
                     <Button
-                        android:layout_width="300dp"
-                        android:layout_height="45dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/btn_login"
-                        style="@style/TxtBtn"
-                        android:id="@+id/btnLogin"
-                        android:background="@drawable/rounded_btn_padrao"/>
-
-                    <Button
-                        android:layout_width="300dp"
-                        android:layout_height="45dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
                         android:text="@string/btn_login_fb"
                         style="@style/TxtBtn"
+                        android:paddingLeft="16dp"
                         android:textColor="@color/colorWhite"
                         android:id="@+id/btnFacebook"
-                        android:background="@drawable/rounded_btn_facebook"/>
+                        android:textAlignment="textStart"
+                        android:background="@android:color/transparent"/>
+
+                    <ImageButton
+                        android:id="@+id/btnLoginFb"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_btn_facebook_transparent"
+                        android:src="@drawable/ic_keyboard_arrow_right_white_48dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contentregister"
+                    android:layout_below="@+id/contentLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/login_vertical_margin"
+                    android:layout_marginTop="@dimen/login_vertical_margin"
+                    android:layout_marginLeft="@dimen/login_horizontal_margin"
+                    android:layout_marginRight="@dimen/login_horizontal_margin"
+                    android:gravity="center_horizontal">
 
                     <Button
                         android:layout_width="300dp"

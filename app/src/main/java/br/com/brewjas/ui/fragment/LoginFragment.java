@@ -11,6 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import br.com.brewjas.R;
@@ -23,13 +24,17 @@ public class LoginFragment extends Fragment {
     private LinearLayout contentPanel;
 
     private EditText edtLogin;
-    private EditText edtSenha;
 
-    private Button btnLogin;
+    private ImageButton btnLogin;
     private Button btnFacebook;
     private Button btnRegistrar;
+    private ImageButton btnLoginFb;
 
     private UIDialogsFragments uiDialogs;
+
+    private LinearLayout contentEdt;
+    private LinearLayout contentLogin;
+    private LinearLayout contentregister;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -52,10 +57,14 @@ public class LoginFragment extends Fragment {
         contentLogo         = (LinearLayout) view.findViewById(R.id.contentLogo);
         contentPanel        = (LinearLayout) view.findViewById(R.id.contentPanel);
         edtLogin            = (EditText) view.findViewById(R.id.edtLogin);
-        edtSenha            = (EditText) view.findViewById(R.id.edtSenha);
-        btnLogin            = (Button) view.findViewById(R.id.btnLogin);
+        btnLogin            = (ImageButton) view.findViewById(R.id.btnLogin);
         btnFacebook         = (Button) view.findViewById(R.id.btnFacebook);
+        btnLoginFb          = (ImageButton) view.findViewById(R.id.btnLoginFb);
         btnRegistrar        = (Button) view.findViewById(R.id.btnRegistrar);
+
+        contentEdt          = (LinearLayout) view.findViewById(R.id.contentEdt);
+        contentLogin        = (LinearLayout) view.findViewById(R.id.contentLogin);
+        contentregister     = (LinearLayout) view.findViewById(R.id.contentregister);
 
         loadElements();
 
@@ -63,6 +72,20 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 showHelp();
+            }
+        });
+
+        btnLoginFb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginButton();
+            }
+        });
+
+        btnFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginButton();
             }
         });
 
@@ -88,19 +111,13 @@ public class LoginFragment extends Fragment {
             @Override
             public void onAnimationStart(Animation animation) {
                 Animation showLogin = AnimationUtils.loadAnimation(getContext(), R.anim.animacao_login);
-                edtLogin.startAnimation(showLogin);
+                contentEdt.startAnimation(showLogin);
 
-                Animation showPass = AnimationUtils.loadAnimation(getContext(), R.anim.animacao_password);
-                edtSenha.startAnimation(showPass);
+                Animation showFacebookBtn = AnimationUtils.loadAnimation(getContext(), R.anim.animacao_password);
+                contentLogin.startAnimation(showFacebookBtn);
 
-                Animation showbtnLogin = AnimationUtils.loadAnimation(getContext(), R.anim.animacao_btn_login);
-                btnLogin.startAnimation(showbtnLogin);
-
-                Animation showbtnFb = AnimationUtils.loadAnimation(getContext(), R.anim.animacao_btn_facebook);
-                btnFacebook.startAnimation(showbtnFb);
-
-                Animation showhelp = AnimationUtils.loadAnimation(getContext(), R.anim.animacao_btn_help);
-                btnRegistrar.startAnimation(showhelp);
+                Animation showHelp = AnimationUtils.loadAnimation(getContext(), R.anim.animacao_btn_help);
+                contentregister.startAnimation(showHelp);
             }
 
             @Override
