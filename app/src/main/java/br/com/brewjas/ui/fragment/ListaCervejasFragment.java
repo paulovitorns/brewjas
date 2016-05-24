@@ -25,17 +25,10 @@ import br.com.brewjas.util.UIDialogsFragments;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListaCervejasFragment extends Fragment implements EndlessScrollListener {
+public class ListaCervejasFragment extends Fragment {
 
     private List<BeerResponse> beers;
-
     private RecyclerView mRecyclerView;
-    private CervejaListaAdapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private RecyclerView.ItemAnimator itemAnimator;
-
-    private EndlessScrollView scrollView;
-
     private UIDialogsFragments uiDialogs;
 
     public ListaCervejasFragment() {
@@ -51,22 +44,44 @@ public class ListaCervejasFragment extends Fragment implements EndlessScrollList
         uiDialogs = new UIDialogsFragments();
         uiDialogs.uiGetActivity(getActivity());
 
+        beers = new ArrayList<>();
+
         mRecyclerView  = (RecyclerView) view.findViewById(R.id.listaBrejas);
         mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
 
-        beers = new ArrayList<>();
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) mRecyclerView.getLayoutManager();
+                CervejaListaAdapter cervejaListaAdapter = (CervejaListaAdapter) mRecyclerView.getAdapter();
+
+                if(beers.size() == linearLayoutManager.findLastCompletelyVisibleItemPosition()+1){
+
+                    uiDialogs.showLoading();
+
+                    for(int i = 0; i < 2; i++){
+                        BeerResponse beer = new BeerResponse( (beers.size()+1)+" Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", beers.size()+"%", beers.size()+"0");
+                        Log.v("Insert "+beer.getName(), beers.size()+"");
+
+                        cervejaListaAdapter.insert(beers.size(), beer);
+                    }
+
+                    uiDialogs.loadingDialog.dismiss();
+                }
+            }
+        });
 
         loadBeers();
 
-        mLayoutManager = new LinearLayoutManager(getActivity());
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+        mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-        itemAnimator = new DefaultItemAnimator();
-        itemAnimator.setAddDuration(1000);
-        itemAnimator.setRemoveDuration(1000);
-
-        scrollView = (EndlessScrollView) view.findViewById(R.id.scrollView);
-        scrollView.setScrollViewListener(this);
 
         return view;
     }
@@ -90,38 +105,9 @@ public class ListaCervejasFragment extends Fragment implements EndlessScrollList
         BeerResponse beer8 = new BeerResponse("Guinness Draught X-X", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "12%", "100");
         beers.add(beer8);
 
-        mAdapter = new CervejaListaAdapter(getContext(), beers);
-        mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setItemAnimator(itemAnimator);
-    }
-
-    private void addItem(){
-        BeerResponse beer = new BeerResponse( beers.size()+" Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", beers.size()+"%", beers.size()+"0");
-        beers.add(beer);
-
-        Log.v("Insert "+beer.getName(), beers.size()-1+"");
-
-        //Update adapter.
-        mAdapter.insert(beers.size()-1, beer);
+        CervejaListaAdapter mAdapter = new CervejaListaAdapter(getContext(), beers);
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    @Override
-    public void onScrollChanged(EndlessScrollView scrollView, int x, int y, int oldx, int oldy) {
-        View view = scrollView.getChildAt(scrollView.getChildCount() - 1);
-        int distanceToEnd = (view.getBottom() - (scrollView.getHeight() + scrollView.getScrollY()));
 
-        if ( ( distanceToEnd ) == 0) {
-
-            uiDialogs.showLoading();
-            Log.v("Distance to end", distanceToEnd+"");
-
-            for (int i = 1; i < 2; i++){
-                addItem();
-            }
-
-            uiDialogs.loadingDialog.dismiss();
-
-        }
-    }
 }

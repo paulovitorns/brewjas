@@ -5,30 +5,25 @@
     android:background="@drawable/bg_listagem_brejas_3"
     tools:context="br.com.brewjas.ui.fragment.ListaCervejasFragment">
 
-    <br.com.brewjas.services.scroll.EndlessScrollView
-        android:id="@+id/scrollView"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="5dp"
+        android:paddingLeft="@dimen/card_horizontal_margin"
+        android:paddingRight="@dimen/card_horizontal_margin"
+        android:paddingBottom="@dimen/card_horizontal_margin"
         android:background="@drawable/bg_transparent_yellow">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listaBrejas"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="5dp"
-            android:paddingLeft="@dimen/card_horizontal_margin"
-            android:paddingRight="@dimen/card_horizontal_margin"
-            android:paddingBottom="@dimen/card_horizontal_margin">
+            android:scrollbars="vertical">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/listaBrejas"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
 
-            </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
 
-        </LinearLayout>
-
-    </br.com.brewjas.services.scroll.EndlessScrollView>
 
 </FrameLayout>

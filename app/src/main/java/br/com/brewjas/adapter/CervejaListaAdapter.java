@@ -28,7 +28,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapter.ViewHolder> {
 
-    private int lastPosition = -1;
     private static Context context;
     private List<BeerResponse> data;
 
@@ -49,7 +48,7 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final CervejaListaAdapter.ViewHolder holder, int position) {
         final BeerResponse beer = data.get(position);
 
         if(beer != null){
@@ -74,7 +73,7 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
                 }
             });
 
-            //animate(holder);
+            animate(holder);
         }
     }
 
@@ -88,16 +87,9 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-    public void updateList(List<BeerResponse> beers) {
-        data = beers;
-        notifyDataSetChanged();
-    }
-
     public void insert(int position, BeerResponse beer) {
 
-        Log.v("Insert "+beer.getName(), "All positions: "+(data.size()-1)+". New Position: "+position);
-
-        data.add(position, beer);
+        data.add(beer);
         notifyItemInserted(position);
     }
 
@@ -109,7 +101,7 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
     }
 
     public void animate(RecyclerView.ViewHolder viewHolder){
-        final Animation animation = AnimationUtils.loadAnimation(context, R.anim.bounce_interpolar);
+        final Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
         viewHolder.itemView.setAnimation(animation);
     }
 

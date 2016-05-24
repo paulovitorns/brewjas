@@ -1,7 +1,5 @@
 package br.com.brewjas.ui.activity;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -39,15 +37,9 @@ public class BrejaActivity extends AppCompatActivity {
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolBar);
         collapsingToolbarLayout.setTitle("Guinness Draught");
 
-        dynamicToolBarColor();
-
         toolbarTextAppearence();
     }
 
-    private void dynamicToolBarColor() {
-
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.beer_example);
-    }
 
     private void toolbarTextAppearence() {
 
