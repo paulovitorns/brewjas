@@ -36,8 +36,6 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
 
     private EditText edtNome;
     private EditText edtLogin;
-    private EditText edtSenha;
-    private EditText edtConfSenha;
     private Button btnDataNasc;
 
     @Override
@@ -50,8 +48,6 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
 
         edtNome = (EditText) findViewById(R.id.edtNome);
         edtLogin = (EditText) findViewById(R.id.edtLogin);
-        edtSenha = (EditText) findViewById(R.id.edtSenha);
-        edtConfSenha = (EditText) findViewById(R.id.edtConfSenha);
         btnDataNasc = (Button) findViewById(R.id.btnDataNasc);
 
         spinnerGenero = (Spinner) findViewById(R.id.spinnerGenero);

@@ -107,7 +107,6 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        private CardView container;
         private LinearLayout containerImage;
         private CircleImageView imgBeer;
         private ImageButton btnFav;
@@ -121,7 +120,6 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
         public ViewHolder(View itemView) {
             super(itemView);
 
-            container       = (CardView) itemView.findViewById(R.id.container);
             containerImage  = (LinearLayout) itemView.findViewById(R.id.containerImage);
             imgBeer         = (CircleImageView) itemView.findViewById(R.id.imgBeer);
             btnFav          = (ImageButton) itemView.findViewById(R.id.btnFav);

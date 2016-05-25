@@ -25,9 +25,6 @@
         <activity
             android:name=".ui.activity.RegistroActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activity.RecuperAcessoActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".ui.activity.BrejaActivity"></activity>
     </application>
 

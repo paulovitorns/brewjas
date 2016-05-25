@@ -13,7 +13,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import br.com.brewjas.R;
-import br.com.brewjas.ui.activity.RecuperAcessoActivity;
 import br.com.brewjas.ui.activity.RegistroActivity;
 
 /**
@@ -24,7 +23,6 @@ public class DialogHelpLogin extends DialogFragment {
     private RelativeLayout containerHelp;
 
     private ImageButton btnRegister;
-    private ImageButton btnRemember;
 
     private TextView txtTitleRegister;
     private TextView txtTitleRemember;
@@ -45,13 +43,10 @@ public class DialogHelpLogin extends DialogFragment {
         containerHelp = (RelativeLayout) view.findViewById(R.id.containerHelp);
 
         btnRegister = (ImageButton) view.findViewById(R.id.btnRegister);
-        btnRemember = (ImageButton) view.findViewById(R.id.btnRemember);
 
         txtTitleRegister = (TextView) view.findViewById(R.id.txtTitleRegister);
-        txtTitleRemember = (TextView) view.findViewById(R.id.txtTitleRemember);
 
         txtSubRegister = (TextView) view.findViewById(R.id.txtSubRegister);
-        txtSubRemember = (TextView) view.findViewById(R.id.txtSubRemember);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,12 +55,6 @@ public class DialogHelpLogin extends DialogFragment {
             }
         });
 
-        btnRemember.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rememberActivity();
-            }
-        });
 
         txtTitleRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,24 +63,10 @@ public class DialogHelpLogin extends DialogFragment {
             }
         });
 
-        txtTitleRemember.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rememberActivity();
-            }
-        });
-
         txtSubRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registerActivity();
-            }
-        });
-
-        txtSubRemember.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rememberActivity();
             }
         });
 
@@ -116,11 +91,6 @@ public class DialogHelpLogin extends DialogFragment {
 
     public void registerActivity(){
         getActivity().startActivity(new Intent(getContext(), RegistroActivity.class));
-    }
-
-
-    public void rememberActivity(){
-        getActivity().startActivity(new Intent(getContext(), RecuperAcessoActivity.class));
     }
 
 }
