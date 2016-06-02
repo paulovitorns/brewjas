@@ -1,10 +1,8 @@
-package br.com.brewjas.ui.fragment;
+package br.com.brewjas.ui.view.fragment;
 
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,8 +16,6 @@ import java.util.List;
 import br.com.brewjas.R;
 import br.com.brewjas.adapter.CervejaListaAdapter;
 import br.com.brewjas.api.general.response.BeerResponse;
-import br.com.brewjas.services.scroll.EndlessScrollListener;
-import br.com.brewjas.services.scroll.EndlessScrollView;
 import br.com.brewjas.util.UIDialogsFragments;
 
 /**

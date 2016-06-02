@@ -1,10 +1,10 @@
-package br.com.brewjas.ui.activity;
+package br.com.brewjas.ui.view.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import br.com.brewjas.R;
-import br.com.brewjas.ui.fragment.LoginFragment;
+import br.com.brewjas.ui.view.fragment.LoginFragment;
 
 public class LoginActivity extends AppCompatActivity {
 

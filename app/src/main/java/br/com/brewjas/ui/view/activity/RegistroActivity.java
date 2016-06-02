@@ -1,7 +1,6 @@
-package br.com.brewjas.ui.activity;
+package br.com.brewjas.ui.view.activity;
 
 
-import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

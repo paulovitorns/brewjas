@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Brewjas</string>
+    <string name="facebook_app_id">1149641915094707</string>
 
     <!-- TODO: Textos dos botões -->
     <string name="btn_login">Acessar</string>
@@ -39,6 +40,9 @@
 
     <string name="action_fav">Adcionar aos Favoritos</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- String para erros e alertas -->
+
+    <string name="err_login_is_empty">Por favor, preencha o seu e-mail!</string>
+    <string name="err_login_facebook_cancel">Oops, você concelou o login com o facebook.</string>
+
 </resources>

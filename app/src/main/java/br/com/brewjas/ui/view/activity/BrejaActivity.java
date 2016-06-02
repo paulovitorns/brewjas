@@ -1,4 +1,4 @@
-package br.com.brewjas.ui.activity;
+package br.com.brewjas.ui.view.activity;
 
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;

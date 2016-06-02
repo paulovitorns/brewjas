@@ -1,9 +1,6 @@
-package br.com.brewjas.ui.activity;
+package br.com.brewjas.ui.view.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,7 +12,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import br.com.brewjas.R;
-import br.com.brewjas.ui.fragment.ListaCervejasFragment;
+import br.com.brewjas.ui.view.fragment.ListaCervejasFragment;
 
 public class DashBoardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

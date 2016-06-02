@@ -1,4 +1,4 @@
-package br.com.brewjas.ui.fragment;
+package br.com.brewjas.ui.view.fragment;
 
 import android.app.Dialog;
 import android.os.Bundle;

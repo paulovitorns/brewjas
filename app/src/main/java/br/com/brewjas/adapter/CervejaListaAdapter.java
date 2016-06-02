@@ -2,16 +2,13 @@ package br.com.brewjas.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,7 +17,7 @@ import java.util.List;
 
 import br.com.brewjas.R;
 import br.com.brewjas.api.general.response.BeerResponse;
-import br.com.brewjas.ui.activity.BrejaActivity;
+import br.com.brewjas.ui.view.activity.BrejaActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
