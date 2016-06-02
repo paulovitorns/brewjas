@@ -40,8 +40,14 @@
 
     <string name="action_fav">Adcionar aos Favoritos</string>
 
-    <!-- String para erros e alertas -->
+    <!-- TODO: String para o drawer -->
+    <string name="nav_brejas">As brejas</string>
+    <string name="nav_fav">Minha favoritas</string>
+    <string name="nav_cervejarias">As cervejarias</string>
+    <string name="nav_estilos">Os estilos</string>
+    <string name="nav_conta">Minha conta</string>
 
+    <!-- TODO: String para erros e alertas -->
     <string name="err_login_is_empty">Por favor, preencha o seu e-mail!</string>
     <string name="err_login_facebook_cancel">Oops, você concelou o login com o facebook.</string>
 

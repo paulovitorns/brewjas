@@ -89,15 +89,17 @@ public class DashBoardActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id){
-            case R.id.nav_camera:
-                break;
-            default:
-
+            case R.id.nav_lista_brewjas:
+                
                 ListaCervejasFragment listaCervejasFragment = new ListaCervejasFragment();
 
                 android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.frame_dash, listaCervejasFragment);
                 fragmentTransaction.commit();
+
+                break;
+
+            default:
 
                 break;
         }

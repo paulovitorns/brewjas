@@ -57,6 +57,12 @@
         <item name="android:fontFamily">Arial</item>
     </style>
 
+    <style name="NavTextStyle" parent="android:style/TextAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:fontFamily">Arial</item>
+    </style>
+
     <style name="TxtBtn" parent="android:style/TextAppearance">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/colorWhite</item>

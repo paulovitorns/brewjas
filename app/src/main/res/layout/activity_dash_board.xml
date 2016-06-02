@@ -27,6 +27,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        android:background="@color/colorPrimary"
+        app:itemTextAppearance="@style/NavTextStyle"
+        app:itemTextColor="@color/colorWhite"
         app:headerLayout="@layout/nav_header_dash_board"
         app:menu="@menu/activity_dash_board_drawer" />
 

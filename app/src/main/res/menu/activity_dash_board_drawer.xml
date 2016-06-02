@@ -3,34 +3,29 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+            android:id="@+id/nav_lista_brewjas"
+            android:icon="@drawable/ico_brewjas_36dp"
+            android:title="@string/nav_brejas" />
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+        <item
+            android:id="@+id/nav_favoritas"
+            android:icon="@drawable/ic_favorite_white_36dp"
+            android:title="@string/nav_fav" />
+
+        <item
+            android:id="@+id/nav_cervejarias"
+            android:icon="@drawable/ic_store_black_36dp"
+            android:title="@string/nav_cervejarias" />
+
+        <item
+            android:id="@+id/nav_estilos"
+            android:icon="@drawable/ic_style_black_36dp"
+            android:title="@string/nav_estilos" />
+
+        <item
+            android:id="@+id/nav_conta"
+            android:icon="@drawable/ic_person_black_36dp"
+            android:title="@string/nav_conta" />
+    </group>
 
 </menu>
