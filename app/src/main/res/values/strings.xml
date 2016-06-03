@@ -50,5 +50,9 @@
     <!-- TODO: String para erros e alertas -->
     <string name="err_login_is_empty">Por favor, preencha o seu e-mail!</string>
     <string name="err_login_facebook_cancel">Oops, você concelou o login com o facebook.</string>
+    <string name="err_nome_is_empty">Por favor, preencha o seu nome.</string>
+    <string name="err_email_is_empty">Por favor, preencha o seu e-mail.</string>
+    <string name="err_datanasc_is_empty">Por favor, selecione a sua data de nascimento.</string>
+    <string name="err_genero_is_empty">Por favor, selecione o seu gênenro.</string>
 
 </resources>

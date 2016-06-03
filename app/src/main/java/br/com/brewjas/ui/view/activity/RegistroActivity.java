@@ -1,6 +1,8 @@
 package br.com.brewjas.ui.view.activity;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
@@ -23,33 +26,34 @@ import java.util.Calendar;
 
 import br.com.brewjas.R;
 import br.com.brewjas.adapter.GenderAdapter;
+import br.com.brewjas.api.general.request.Cliente;
+import br.com.brewjas.ui.view.RegistroView;
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-public class RegistroActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class RegistroActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, RegistroView {
 
     private LinearLayout contentPanel;
 
-    private Toolbar toolbar;
-    private TextView HeaderTitle;
-    private Spinner spinnerGenero;
+    @Bind(R.id.toolbar) Toolbar toolbar;
+    @Bind(R.id.HeaderTitle) TextView HeaderTitle;
+    @Bind(R.id.spinnerGenero) Spinner spinnerGenero;
     private String[] gender = new String[]{"Seu gênero", "Masculino", "Feminino"};
 
-    private EditText edtNome;
-    private EditText edtLogin;
-    private Button btnDataNasc;
+    @Bind(R.id.edtNome) EditText edtNome;
+    @Bind(R.id.edtLogin) EditText edtLogin;
+    @Bind(R.id.btnDataNasc) Button btnDataNasc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
+        ButterKnife.bind(this);
+
         setupActionBar();
         loadContent();
-
-        edtNome = (EditText) findViewById(R.id.edtNome);
-        edtLogin = (EditText) findViewById(R.id.edtLogin);
-        btnDataNasc = (Button) findViewById(R.id.btnDataNasc);
-
-        spinnerGenero = (Spinner) findViewById(R.id.spinnerGenero);
 
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.gender, android.R.layout.simple_spinner_dropdown_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -59,34 +63,11 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
         spinnerGenero.setAdapter(adapter1);
         spinnerGenero.setAdapter(new GenderAdapter(this, gender));
 
-        btnDataNasc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar now = Calendar.getInstance();
-                DatePickerDialog dpd = DatePickerDialog.newInstance(
-                        RegistroActivity.this,
-                        now.get(Calendar.YEAR),
-                        now.get(Calendar.MONTH),
-                        now.get(Calendar.DAY_OF_MONTH)
-                );
-                dpd.setThemeDark(false);
-                dpd.vibrate(true);
-                dpd.dismissOnPause(true);
-                int color = getResources().getColor(R.color.colorMarrom);
-                dpd.setAccentColor(color);
-                dpd.show(getFragmentManager(), "Datepickerdialog");
-            }
-        });
-
     }
 
-    /**
-     * Set up the {@link android.app.ActionBar}, if the API is available.
-     */
-    private void setupActionBar() {
+    @Override
+    public void setupActionBar() {
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        HeaderTitle = (TextView) findViewById(R.id.HeaderTitle);
         toolbar.setTitle("");
 
         HeaderTitle.setText(getResources().getString(R.string.txt_title_registro));
@@ -94,10 +75,8 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            // Show the Up button in the action bar.
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
     }
 
     @Override
@@ -116,19 +95,78 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
         return super.onOptionsItemSelected(item);
     }
 
-    private void loadContent(){
+    @Override
+    public void loadContent(){
 
         contentPanel = (LinearLayout) findViewById(R.id.contentPanel);
-
         Animation showLogo  = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.animacao_register);
-
         contentPanel.startAnimation(showLogo);
+    }
 
+    @OnClick(R.id.btnDataNasc)
+    public void setDataNasc(){
+        Calendar now = Calendar.getInstance();
+        DatePickerDialog dpd = DatePickerDialog.newInstance(
+                RegistroActivity.this,
+                now.get(Calendar.YEAR),
+                now.get(Calendar.MONTH),
+                now.get(Calendar.DAY_OF_MONTH)
+        );
+        dpd.setThemeDark(false);
+        dpd.vibrate(true);
+        dpd.dismissOnPause(true);
+        int color = getResources().getColor(R.color.colorMarrom);
+        dpd.setAccentColor(color);
+        dpd.show(getFragmentManager(), "Datepickerdialog");
     }
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
         String date = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
         btnDataNasc.setText(date);
+    }
+
+    @Override
+    public void errorNameUser(String error) {
+        Toast.makeText(RegistroActivity.this, error, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void errorEmailUser(String error) {
+        Toast.makeText(RegistroActivity.this, error, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void errorDataNascimento(String error) {
+        Toast.makeText(RegistroActivity.this, error, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void errorGenero(String error) {
+        Toast.makeText(RegistroActivity.this, error, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showDialog(String title, String msg) {
+
+    }
+
+    @Override
+    public void navigateToNextScreen() {
+
+    }
+
+    @Override
+    public void navigateToNextScreenWithSerializedCliente(Cliente cliente) {
+
+        Intent intent = new Intent(RegistroActivity.this, DashBoardActivity.class);
+
+        intent.putExtra("Cliente", cliente);
+        startActivity(intent);
+    }
+
+    @Override
+    public Context getActivityContect() {
+        return getApplicationContext();
     }
 }
