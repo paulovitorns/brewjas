@@ -46,7 +46,7 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
     @Bind(R.id.btnDataNasc) Button btnDataNasc;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
