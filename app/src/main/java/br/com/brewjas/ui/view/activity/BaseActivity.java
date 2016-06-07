@@ -10,7 +10,7 @@ import br.com.brewjas.R;
 /**
  * Created by PauloSales on 06/06/2016.
  */
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
