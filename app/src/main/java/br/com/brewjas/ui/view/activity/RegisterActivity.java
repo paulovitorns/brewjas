@@ -1,14 +1,10 @@
 package br.com.brewjas.ui.view.activity;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -27,12 +23,14 @@ import java.util.Calendar;
 import br.com.brewjas.R;
 import br.com.brewjas.adapter.GenderAdapter;
 import br.com.brewjas.api.general.request.Cliente;
-import br.com.brewjas.ui.view.RegistroView;
+import br.com.brewjas.ui.presenter.RegisterPresenter;
+import br.com.brewjas.ui.presenter.impl.RegisterPresenterImpl;
+import br.com.brewjas.ui.view.RegisterView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class RegistroActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, RegistroView {
+public class RegisterActivity extends BaseActivity implements DatePickerDialog.OnDateSetListener, RegisterView {
 
     private LinearLayout contentPanel;
 
@@ -45,10 +43,12 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
     @Bind(R.id.edtLogin) EditText edtLogin;
     @Bind(R.id.btnDataNasc) Button btnDataNasc;
 
+    private RegisterPresenter presenter = new RegisterPresenterImpl(this);
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
+        setContentView(R.layout.activity_register);
 
         ButterKnife.bind(this);
 
@@ -63,6 +63,19 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
         spinnerGenero.setAdapter(adapter1);
         spinnerGenero.setAdapter(new GenderAdapter(this, gender));
 
+    }
+
+    @OnClick(R.id.btnEnviar)
+    public void onSubmit(){
+
+        Cliente cliente = new Cliente();
+
+        cliente.setNome(edtNome.getText().toString());
+        cliente.setEmail(edtLogin.getText().toString());
+        cliente.setDatanascimento(btnDataNasc.getText().toString());
+        cliente.setGenero(spinnerGenero.getSelectedItemPosition());
+
+        presenter.onSubmitPressed(cliente);
     }
 
     @Override
@@ -80,22 +93,6 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            // Respond to the action bar's Up/Home button
-            case android.R.id.home:
-                finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void loadContent(){
 
         contentPanel = (LinearLayout) findViewById(R.id.contentPanel);
@@ -103,11 +100,16 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
         contentPanel.startAnimation(showLogo);
     }
 
+    @Override
+    public void errorRegister(String error) {
+        Toast.makeText(RegisterActivity.this, error, Toast.LENGTH_LONG).show();
+    }
+
     @OnClick(R.id.btnDataNasc)
     public void setDataNasc(){
         Calendar now = Calendar.getInstance();
         DatePickerDialog dpd = DatePickerDialog.newInstance(
-                RegistroActivity.this,
+                RegisterActivity.this,
                 now.get(Calendar.YEAR),
                 now.get(Calendar.MONTH),
                 now.get(Calendar.DAY_OF_MONTH)
@@ -126,25 +128,7 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
         btnDataNasc.setText(date);
     }
 
-    @Override
-    public void errorNameUser(String error) {
-        Toast.makeText(RegistroActivity.this, error, Toast.LENGTH_LONG).show();
-    }
 
-    @Override
-    public void errorEmailUser(String error) {
-        Toast.makeText(RegistroActivity.this, error, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void errorDataNascimento(String error) {
-        Toast.makeText(RegistroActivity.this, error, Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void errorGenero(String error) {
-        Toast.makeText(RegistroActivity.this, error, Toast.LENGTH_LONG).show();
-    }
 
     @Override
     public void showDialog(String title, String msg) {
@@ -159,14 +143,11 @@ public class RegistroActivity extends AppCompatActivity implements DatePickerDia
     @Override
     public void navigateToNextScreenWithSerializedCliente(Cliente cliente) {
 
-        Intent intent = new Intent(RegistroActivity.this, DashBoardActivity.class);
+        Intent intent = new Intent(RegisterActivity.this, DashBoardActivity.class);
 
         intent.putExtra("Cliente", cliente);
         startActivity(intent);
+
     }
 
-    @Override
-    public Context getActivityContect() {
-        return getApplicationContext();
-    }
 }

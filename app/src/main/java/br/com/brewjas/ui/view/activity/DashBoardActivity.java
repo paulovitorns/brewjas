@@ -14,14 +14,14 @@ import android.widget.TextView;
 import br.com.brewjas.R;
 import br.com.brewjas.ui.view.fragment.ListaCervejasFragment;
 
-public class DashBoardActivity extends AppCompatActivity
+public class DashBoardActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
     private TextView HeaderTitle;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
         toolbar = (Toolbar) findViewById(R.id.toolbar);

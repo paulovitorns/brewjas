@@ -1,23 +1,15 @@
 package br.com.brewjas.ui.view.fragment;
 
-import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import br.com.brewjas.R;
-import br.com.brewjas.ui.view.BaseView;
 import br.com.brewjas.ui.view.DialogHelpLoginView;
-import br.com.brewjas.ui.view.activity.RegistroActivity;
-import butterknife.Bind;
+import br.com.brewjas.ui.view.activity.RegisterActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -43,7 +35,7 @@ public class DialogHelpLogin extends DialogFragment implements DialogHelpLoginVi
     @OnClick({R.id.btnRegister, R.id.txtTitleRegister, R.id.txtSubRegister})
     @Override
     public void navigateToNextScreen() {
-        getActivity().startActivity(new Intent(getContext(), RegistroActivity.class));
+        getActivity().startActivity(new Intent(getContext(), RegisterActivity.class));
     }
 
     @OnClick(R.id.containerHelp)

@@ -3,12 +3,14 @@ package br.com.brewjas.common;
 import br.com.brewjas.api.general.request.Cliente;
 
 /**
- * Created by PauloSales on 02/06/2016.
+ * Created by Paulo Vitor on 06/06/2016.
  */
-public interface OnLoginListenerFinished {
+public interface OnListenerGeneral {
 
-    void onEmailErro(String erro);
+
+    void onError(String error);
 
     void onSuccess(Cliente cliente);
+
 
 }

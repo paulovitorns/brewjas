@@ -12,24 +12,24 @@ import android.widget.TextView;
 
 import br.com.brewjas.R;
 
-public class BrejaActivity extends AppCompatActivity {
+public class BrejaActivity extends BaseActivity {
 
     private CollapsingToolbarLayout collapsingToolbarLayout = null;
     private Toolbar toolbar = null;
     private TextView descBeer = null;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breja);
 
-        String desc = "<span style=\"text-align: justify;\">Sobre a <b>Guinness Draught</b>: Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>";
+        String desc = "Sobre a <b>Guinness Draught</b>: Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         descBeer = (TextView) findViewById(R.id.descBeer);
-        descBeer.setText(Html.fromHtml(desc));
+        descBeer.setText(desc);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -45,12 +45,6 @@ public class BrejaActivity extends AppCompatActivity {
 
         collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.collapsedappbar);
         collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.expandedappbar);
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
     }
 
     @Override
@@ -66,10 +60,6 @@ public class BrejaActivity extends AppCompatActivity {
             // Respond to the action bar's Up/Home button
             case R.id.action_fav:
                 item.setIcon(getResources().getDrawable(R.drawable.ic_favorite_white_36dp));
-            break;
-
-            case android.R.id.home:
-                onBackPressed();
             break;
 
             default:

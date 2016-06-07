@@ -1,25 +1,16 @@
 package br.com.brewjas.ui.presenter.impl;
 
-import android.app.Fragment;
-import android.content.Context;
-import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
-
-import com.facebook.login.LoginManager;
-
-import java.util.Arrays;
-
 import br.com.brewjas.api.general.request.Cliente;
+import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.services.brewjasapi.LoginService;
 import br.com.brewjas.services.brewjasapi.impl.LoginServiceImpl;
 import br.com.brewjas.ui.presenter.LoginPresenter;
-import br.com.brewjas.common.OnLoginListenerFinished;
 import br.com.brewjas.ui.view.LoginFragmentView;
 
 /**
  * Created by PauloSales on 02/06/2016.
  */
-public class LoginPresenterImpl implements LoginPresenter, OnLoginListenerFinished {
+public class LoginPresenterImpl implements LoginPresenter, OnListenerGeneral {
 
     private LoginFragmentView loginView;
     private LoginService loginService;
@@ -37,9 +28,9 @@ public class LoginPresenterImpl implements LoginPresenter, OnLoginListenerFinish
     }
 
     @Override
-    public void onEmailErro(String erro) {
+    public void onError(String error) {
 
-        this.loginView.setUsernameError(erro);
+        this.loginView.setUsernameError(error);
     }
 
     @Override

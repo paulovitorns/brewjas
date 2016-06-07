@@ -18,5 +18,4 @@ public interface BaseView {
 
     void navigateToNextScreenWithSerializedCliente(Cliente cliente);
 
-    Context getActivityContect();
 }
