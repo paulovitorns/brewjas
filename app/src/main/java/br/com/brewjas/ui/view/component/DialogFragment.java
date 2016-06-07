@@ -1,24 +1,26 @@
-package br.com.brewjas.ui.view.fragment;
+package br.com.brewjas.ui.view.component;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import br.com.brewjas.R;
-import br.com.brewjas.ui.view.DialogHelpLoginView;
-import br.com.brewjas.ui.view.activity.RegisterActivity;
+import br.com.brewjas.ui.view.DialogView;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
  * Created by Paulo Vitor on 12/03/2016.
  */
-public class DialogHelpLogin extends DialogFragment implements DialogHelpLoginView {
+public class DialogFragment extends android.support.v4.app.DialogFragment implements DialogView {
 
-    public DialogHelpLogin(){
+    @Bind(R.id.txtTitleDialog)  TextView txtTitleDialog;
+    @Bind(R.id.txtTextDialog)   TextView txtTextDialog;
+
+    public DialogFragment(){
 
     }
 
@@ -32,13 +34,11 @@ public class DialogHelpLogin extends DialogFragment implements DialogHelpLoginVi
         return view;
     }
 
-    @OnClick({R.id.btnRegister, R.id.txtTitleRegister, R.id.txtSubRegister})
-    @Override
-    public void navigateToNextScreen() {
-        getActivity().startActivity(new Intent(getContext(), RegisterActivity.class));
+    private void loadData(){
+
     }
 
-    @OnClick(R.id.containerHelp)
+    @OnClick(R.id.btnOk)
     @Override
     public void dismiss() {
         super.dismiss();

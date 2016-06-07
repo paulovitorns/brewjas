@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_transparent_yellow"
+    android:id="@+id/containerHelp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/container"
+        android:background="@drawable/style_rounded_box_form"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/txtTitleDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="{{Título do Dialog}}"
+                style="@style/TextHelpLogin"
+                android:textAlignment="center"
+                android:clickable="true"/>
+
+            <TextView
+                android:id="@+id/txtTextDialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="{{Texto do dialog.}}"
+                android:layout_below="@+id/txtTitleRegister"
+                android:clickable="true"
+                style="@style/TextSubHelpLogin"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:text="@string/btn_ok"
+            style="@style/TxtBtn"
+            android:id="@+id/btnOk"
+            android:background="@drawable/rounded_btn_padrao"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

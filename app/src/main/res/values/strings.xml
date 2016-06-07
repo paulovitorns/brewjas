@@ -9,7 +9,8 @@
     <string name="btn_login_fb">Entre com o Facebook</string>
     <string name="btn_registrar">Criar Conta</string>
     <string name="btn_recuperar_senha">Lembrar Senha</string>
-    <string name="btn_help">Não tem acesso ou facebook?</string>
+    <string name="btn_help">Ainda não tem acesso?</string>
+    <string name="btn_ok">Ok, entendi!</string>
 
     <!-- TODO: Textos hint -->
     <string name="hint_nome">Seu nome e sobrenome</string>
