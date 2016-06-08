@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_transparent_yellow"
     android:id="@+id/containerHelp"
-    android:padding="@dimen/activity_horizontal_margin">
+    android:padding="@dimen/activity_vertical_margin_big">
 
     <LinearLayout
         android:orientation="vertical"
@@ -19,7 +19,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="20dp">
+            android:layout_margin="@dimen/activity_horizontal_margin">
 
             <TextView
                 android:id="@+id/txtTitleDialog"
@@ -45,9 +45,6 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
             android:text="@string/btn_ok"
             style="@style/TxtBtn"
             android:id="@+id/btnOk"

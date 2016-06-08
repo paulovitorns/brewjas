@@ -12,7 +12,7 @@
         android:id="@+id/frame_dash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="56dp">
+        android:layout_marginTop="@dimen/activity_top_margin">
 
     </FrameLayout>
 

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
 import br.com.brewjas.api.general.response.BeerResponse;
 import br.com.brewjas.ui.view.activity.BrejaActivity;
@@ -51,6 +52,11 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
         if(beer != null){
 
             if(position % 2 == 0){
+
+                LinearLayout.LayoutParams adjust = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 2.9f);
+                float margin = Brewjas.getContext().getResources().getDimension(R.dimen.card_horizontal_margin_small);
+                adjust.setMarginEnd((int) margin);
+                holder.containerInfos.setLayoutParams(adjust);
                 holder.containerImage.setVisibility(View.GONE);
             }else{
                 holder.containerImage.setVisibility(View.VISIBLE);
@@ -105,6 +111,7 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private LinearLayout containerImage;
+        private LinearLayout containerInfos;
         private CircleImageView imgBeer;
         private ImageButton btnFav;
         private TextView nameBeer;
@@ -118,6 +125,7 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
             super(itemView);
 
             containerImage  = (LinearLayout) itemView.findViewById(R.id.containerImage);
+            containerInfos  = (LinearLayout) itemView.findViewById(R.id.containerInfos);
             imgBeer         = (CircleImageView) itemView.findViewById(R.id.imgBeer);
             btnFav          = (ImageButton) itemView.findViewById(R.id.btnFav);
             nameBeer        = (TextView) itemView.findViewById(R.id.nameBeer);

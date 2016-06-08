@@ -125,7 +125,7 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
                         parameters.putString("fields", "id,name,email,gender,birthday");
                         request.setParameters(parameters);
                         request.executeAsync();
-                        System.out.println(parameters);
+                        Log.d("BUNDLE_PARAMS", parameters.toString());
 
                     }
 
@@ -204,7 +204,7 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
     public void register() {
 
         Intent intent = new Intent(getActivity(), RegisterActivity.class);
-        startActivity(intent);
+        ((LoginActivity)getActivity()).navigateToNextScreen(intent);
     }
 
     @Override
@@ -218,6 +218,7 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
         intent.putExtra("Cliente", cliente);
 
         ((LoginActivity)getActivity()).navigateToNextScreen(intent);
+        getActivity().finish();
     }
 
     @Override

@@ -16,7 +16,7 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="57dp"
+            android:layout_height="@dimen/nav_header_size"
             android:theme="@style/AppTheme.AppBarOverlay"
             android:background="@color/colorPrimaryDark">
 
@@ -33,7 +33,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="8dp"
+            android:layout_height="@dimen/nav_header_shadow_size"
             android:background="@drawable/toolbar_dropshadow"
             android:layout_below="@+id/toolbar"/>
 

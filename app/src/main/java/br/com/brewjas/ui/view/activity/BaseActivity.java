@@ -28,10 +28,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public void startActivity(Intent intent) {
-        super.startActivity(intent);
-        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
 
-        finish();
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        super.startActivity(intent);
     }
 
     @Override
@@ -39,9 +38,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
-                //NavUtils.navigateUpFromSameTask(this);
-                finish();
-                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
+                onBackPressed();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -49,8 +47,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        super.onBackPressed();
     }
 
     public void showDialog(String title, String msg){

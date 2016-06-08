@@ -1,21 +1,36 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="activity_top_margin">56dp</dimen>
+
+    <dimen name="activity_horizontal_margin_small">8dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin_big">24dp</dimen>
+    <dimen name="activity_horizontal_margin_biggest">32dp</dimen>
+
+    <dimen name="activity_vertical_margin_small">8dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin_big">24dp</dimen>
+    <dimen name="activity_vertical_margin_biggest">32dp</dimen>
 
-    <dimen name="card_horizontal_margin">6dp</dimen>
-    <dimen name="card_vertical_margin">6dp</dimen>
 
-    <dimen name="login_horizontal_margin">16dp</dimen>
-    <dimen name="login_vertical_margin">8dp</dimen>
+    <dimen name="card_horizontal_margin_small">8dp</dimen>
+    <dimen name="card_horizontal_margin">16dp</dimen>
+    <dimen name="card_vertical_margin">8dp</dimen>
 
-    <dimen name="login_logo_padding">24dp</dimen>
+    <dimen name="login_logo_padding">16dp</dimen>
+    <dimen name="login_image_logo_padding">32dp</dimen>
+    <dimen name="login_padding_inputs">16dp</dimen>
 
     <dimen name="beer_horizontal_margin">6dp</dimen>
     <dimen name="beer_vertical_margin">3dp</dimen>
     <dimen name="beer_horizontal_padding">10dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_size">56dp</dimen>
+    <dimen name="nav_header_shadow_size">8dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">168dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="nav_drawer_shadow_size">4dp</dimen>
 </resources>

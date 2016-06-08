@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="@dimen/activity_top_margin"
         android:background="@drawable/bg_transparent_yellow">
 
         <LinearLayout
@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin_big"
                 android:text="@string/txt_intro_registro"
                 style="@style/TxtTitleForms"/>
 
@@ -34,7 +34,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginBottom="@dimen/activity_vertical_margin">
 
                 <EditText
                     android:id="@+id/edtNome"
@@ -51,7 +51,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginBottom="@dimen/activity_vertical_margin">
 
                 <EditText
                     android:id="@+id/edtLogin"
@@ -70,7 +70,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginBottom="@dimen/activity_vertical_margin">
 
                 <Button
                     android:id="@+id/btnDataNasc"
@@ -87,7 +87,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:background="@drawable/rounded_edt_padrao">
 
                 <Spinner
@@ -104,13 +104,11 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_height="wrap_content">
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_marginBottom="10dp"
                     android:text="@string/btn_registro"
                     style="@style/TxtBtn"
                     android:id="@+id/btnEnviar"
