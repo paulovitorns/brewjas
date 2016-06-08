@@ -36,7 +36,7 @@ public class RegisterServiceImpl implements RegisterService {
         if(!TextUtils.isEmpty(erros)){
 
             Log.d("CAMPOS_VAZIOS", "Por favor preencha os seguintes campos: "+erros);
-            listener.onError("Por favor preencha os seguintes campos: "+erros);
+            listener.onError("Erro de validação =/", "Por favor, preencha este(s) campo(s): "+erros);
             return;
         }else{
 

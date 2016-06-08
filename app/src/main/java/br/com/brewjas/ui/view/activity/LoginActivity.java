@@ -19,4 +19,9 @@ public class LoginActivity extends BaseActivity {
         fragmentTransaction.commit();
 
     }
+
+    @Override
+    public void showDialog(String title, String msg) {
+        super.showDialog(title, msg);
+    }
 }

@@ -28,9 +28,9 @@ public class LoginPresenterImpl implements LoginPresenter, OnListenerGeneral {
     }
 
     @Override
-    public void onError(String error) {
+    public void onError(String title, String description) {
 
-        this.loginView.setUsernameError(error);
+        this.loginView.setUsernameError(title, description);
     }
 
     @Override

@@ -9,7 +9,7 @@ import br.com.brewjas.api.general.request.Cliente;
  */
 public interface LoginFragmentView {
 
-    void setUsernameError(String error);
+    void setUsernameError(String title, String description);
 
     void navigateToNextScreen(Cliente cliente);
 

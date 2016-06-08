@@ -1,8 +1,5 @@
 package br.com.brewjas.ui.view;
 
-import android.content.Context;
-import android.content.Intent;
-
 import br.com.brewjas.api.general.request.Cliente;
 
 /**
@@ -11,10 +8,6 @@ import br.com.brewjas.api.general.request.Cliente;
 public interface BaseView {
 
     void setupActionBar();
-
-    void showDialog(String title, String msg);
-
-    void navigateToNextScreen();
 
     void navigateToNextScreenWithSerializedCliente(Cliente cliente);
 

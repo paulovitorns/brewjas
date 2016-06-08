@@ -20,7 +20,7 @@ public class LoginServiceImpl implements LoginService {
         if(TextUtils.isEmpty(email)){
 
             Log.d("LOGIN_EMPTY", "O e-mail esta vazio");
-            listener.onError(Brewjas.getContext().getString(R.string.err_login_is_empty));
+            listener.onError("Hmmmm!", Brewjas.getContext().getString(R.string.err_login_is_empty));
             return;
         }else{
 

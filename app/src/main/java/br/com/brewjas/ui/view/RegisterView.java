@@ -6,6 +6,6 @@ package br.com.brewjas.ui.view;
 public interface RegisterView extends BaseView {
 
     void loadContent();
-    void errorRegister(String error);
+    void errorRegister(String title, String description);
 
 }

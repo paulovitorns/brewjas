@@ -55,5 +55,6 @@
     <string name="err_email_is_empty">Por favor, preencha o seu e-mail.</string>
     <string name="err_datanasc_is_empty">Por favor, selecione a sua data de nascimento.</string>
     <string name="err_genero_is_empty">Por favor, selecione o seu gênenro.</string>
+    <string name="err_is_underage">Este aplicativo é voltado para o público adulto.</string>
 
 </resources>

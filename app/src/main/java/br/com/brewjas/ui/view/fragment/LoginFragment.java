@@ -33,6 +33,7 @@ import br.com.brewjas.ui.presenter.LoginPresenter;
 import br.com.brewjas.ui.presenter.impl.LoginPresenterImpl;
 import br.com.brewjas.ui.view.LoginFragmentView;
 import br.com.brewjas.ui.view.activity.DashBoardActivity;
+import br.com.brewjas.ui.view.activity.LoginActivity;
 import br.com.brewjas.ui.view.activity.RegisterActivity;
 import br.com.brewjas.util.UIDialogsFragments;
 import butterknife.Bind;
@@ -134,13 +135,13 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
                     @Override
                     public void onCancel() {
 
-                        setUsernameError(Brewjas.getContext().getString(R.string.err_login_facebook_cancel));
+                        setUsernameError("Oops!", Brewjas.getContext().getString(R.string.err_login_facebook_cancel));
                     }
 
                     @Override
                     public void onError(FacebookException error) {
 
-                        setUsernameError(error.getMessage());
+                        setUsernameError("Erro interno!", error.getMessage());
                     }
                 }
         );
@@ -166,8 +167,9 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
     }
 
     @Override
-    public void setUsernameError(String error) {
-        Toast.makeText(getContext(), error, Toast.LENGTH_LONG).show();
+    public void setUsernameError(String title, String description) {
+
+        ((LoginActivity)getActivity()).showDialog(title, description);
     }
 
     public void loadElementsWithAnimation() {
@@ -210,6 +212,7 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
 
     @OnClick(R.id.btnRegistrar)
     public void register() {
+
         Intent intent = new Intent(getActivity(), RegisterActivity.class);
         startActivity(intent);
     }

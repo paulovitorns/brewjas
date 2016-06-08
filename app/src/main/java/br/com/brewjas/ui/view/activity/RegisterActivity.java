@@ -101,8 +101,9 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
     }
 
     @Override
-    public void errorRegister(String error) {
-        Toast.makeText(RegisterActivity.this, error, Toast.LENGTH_LONG).show();
+    public void errorRegister(String title, String description) {
+
+        showDialog(title, description);
     }
 
     @OnClick(R.id.btnDataNasc)
@@ -126,18 +127,6 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
         String date = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
         btnDataNasc.setText(date);
-    }
-
-
-
-    @Override
-    public void showDialog(String title, String msg) {
-
-    }
-
-    @Override
-    public void navigateToNextScreen() {
-
     }
 
     @Override

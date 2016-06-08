@@ -8,7 +8,7 @@ import br.com.brewjas.api.general.request.Cliente;
 public interface OnListenerGeneral {
 
 
-    void onError(String error);
+    void onError(String title, String description);
 
     void onSuccess(Cliente cliente);
 

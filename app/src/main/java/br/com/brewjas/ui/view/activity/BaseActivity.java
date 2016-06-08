@@ -2,15 +2,20 @@ package br.com.brewjas.ui.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 
-import br.com.brewjas.R;
+import br.com.brewjas.ui.view.component.DialogAlert;
 
 /**
  * Created by PauloSales on 06/06/2016.
  */
 public abstract class BaseActivity extends AppCompatActivity {
+
+    private DialogAlert dialogAlert = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,46 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+    }
+
+    private void initDialog(String title, String msg){
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+
+            Bundle bundle = new Bundle();
+            bundle.putString("title", title);
+            bundle.putString("description", msg);
+
+            dialogAlert = new DialogAlert();
+            dialogAlert.setArguments(bundle);
+
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
+            transaction.add(android.R.id.content, dialogAlert)
+                    .addToBackStack(null).commit();
+
+    }
+
+    public void showDialog(String title, String msg){
+        Log.d("OK", title+" "+msg);
+        if(dialogAlert != null){
+            dialogAlert = null;
+            initDialog(title, msg);
+        }else{
+            initDialog(title, msg);
+        }
+
+    }
+
+    public void hideDialog(){
+        dialogAlert.dismiss();
+        dialogAlert = null;
+    }
+
+    public void navigateToNextScreen(Intent intent){
+        startActivity(intent);
     }
 
 }
