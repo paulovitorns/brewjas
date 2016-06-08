@@ -34,21 +34,25 @@ public class RegisterPresenterImpl implements RegisterPresenter, OnListenerGener
 
     @Override
     public void onError(String title, String description) {
+        this.registerView.hideLoading();
         this.registerView.errorRegister(title, description);
     }
 
     @Override
     public void onSuccess(Cliente cliente) {
+        this.registerView.hideLoading();
         registerView.navigateToNextScreenWithSerializedCliente(cliente);
     }
 
     @Override
     public void onSubmitPressed(Cliente cliente) {
+        this.registerView.showLoading();
         registerService.register(cliente, this);
     }
 
     @Override
     public void checkEmailIsRegistered(String email) {
+        this.registerView.showLoading();
         registerService.checkEmail(email, this);
     }
 
@@ -71,8 +75,6 @@ public class RegisterPresenterImpl implements RegisterPresenter, OnListenerGener
     private Date stringToDate(String aDate) {
 
         if(aDate==null) return null;
-
-
 
         SimpleDateFormat simpledateformat = new SimpleDateFormat("dd/M/yyyy");
         ParsePosition pos = new ParsePosition(0);

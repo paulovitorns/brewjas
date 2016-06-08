@@ -48,7 +48,6 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
     @Bind(R.id.contentLogin) LinearLayout contentLogin;
     @Bind(R.id.contentregister) LinearLayout contentregister;
 
-    private UIDialogsFragments uiDialogs;
     private LoginPresenter presenter = new LoginPresenterImpl(this);
     private CallbackManager mCallbackManager;
 
@@ -67,10 +66,8 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view           = inflater.inflate(R.layout.fragment_login, container, false);
-        uiDialogs           = new UIDialogsFragments();
 
         ButterKnife.bind(this, view);
-        uiDialogs.uiGetActivity(getActivity());
 
         loadElementsWithAnimation();
 
@@ -115,7 +112,7 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
                                         cliente.setDatanascimento(birth);
                                     }
 
-                                    navigateToNextScreen(cliente);
+                                    navigateToNextScreenWithSerializedCliente(cliente);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -203,17 +200,43 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
 
     }
 
-    @Override
-    public void navigateToNextScreen(Cliente cliente){
-        Intent intent = new Intent(getActivity(), DashBoardActivity.class);
-        intent.putExtra("Cliente", cliente);
-        startActivity(intent);
-    }
-
     @OnClick(R.id.btnRegistrar)
     public void register() {
 
         Intent intent = new Intent(getActivity(), RegisterActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void setupActionBar() {
+
+    }
+
+    @Override
+    public void navigateToNextScreenWithSerializedCliente(Cliente cliente) {
+        Intent intent = new Intent(getActivity(), DashBoardActivity.class);
+        intent.putExtra("Cliente", cliente);
+
+        ((LoginActivity)getActivity()).navigateToNextScreen(intent);
+    }
+
+    @Override
+    public void showDialog(String title, String description) {
+
+    }
+
+    @Override
+    public void hideDialog() {
+
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
     }
 }

@@ -1,5 +1,6 @@
 package br.com.brewjas.ui.view.activity;
 
+import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -69,4 +70,18 @@ public class BrejaActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void showLoading() {
+        super.showLoading();
+    }
+
+    @Override
+    public void hideLoading() {
+        super.hideLoading();
+    }
+
+    @Override
+    public void navigateToNextScreen(Intent intent) {
+        super.navigateToNextScreen(intent);
+    }
 }

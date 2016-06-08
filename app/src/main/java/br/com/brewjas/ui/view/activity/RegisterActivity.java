@@ -14,14 +14,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.util.Calendar;
 
 import br.com.brewjas.R;
-import br.com.brewjas.adapter.GenderAdapter;
+import br.com.brewjas.ui.adapter.GenderAdapter;
 import br.com.brewjas.api.general.request.Cliente;
 import br.com.brewjas.ui.presenter.RegisterPresenter;
 import br.com.brewjas.ui.presenter.impl.RegisterPresenterImpl;
@@ -109,6 +108,21 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
     @Override
     public void showDialog(String title, String msg) {
         super.showDialog(title, msg);
+    }
+
+    @Override
+    public void hideDialog() {
+        super.hideDialog();
+    }
+
+    @Override
+    public void showLoading() {
+        super.showLoading();
+    }
+
+    @Override
+    public void hideLoading() {
+        super.hideLoading();
     }
 
     @OnClick(R.id.btnDataNasc)

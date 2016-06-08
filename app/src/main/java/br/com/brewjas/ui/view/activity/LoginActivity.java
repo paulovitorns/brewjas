@@ -24,4 +24,20 @@ public class LoginActivity extends BaseActivity {
     public void showDialog(String title, String msg) {
         super.showDialog(title, msg);
     }
+
+    @Override
+    public void hideDialog() {
+        super.hideDialog();
+    }
+
+    @Override
+    public void showLoading() {
+        super.showLoading();
+    }
+
+    @Override
+    public void hideLoading() {
+        super.hideLoading();
+    }
+
 }

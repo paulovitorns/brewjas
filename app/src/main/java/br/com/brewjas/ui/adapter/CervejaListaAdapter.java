@@ -1,4 +1,4 @@
-package br.com.brewjas.adapter;
+package br.com.brewjas.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;

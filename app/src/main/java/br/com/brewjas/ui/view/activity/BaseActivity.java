@@ -8,14 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
+import br.com.brewjas.ui.view.BaseView;
 import br.com.brewjas.ui.view.component.DialogAlert;
+import br.com.brewjas.ui.view.component.DialogLoading;
 
 /**
  * Created by PauloSales on 06/06/2016.
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    private DialogAlert dialogAlert = null;
+    private DialogAlert dialogAlert;
+    private DialogLoading loadingDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,26 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void hideDialog(){
         dialogAlert.dismiss();
         dialogAlert = null;
+    }
+
+    public void showLoading(){
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        loadingDialog = new DialogLoading();
+
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
+        transaction.add(android.R.id.content, loadingDialog)
+                .addToBackStack(null).commit();
+
+    }
+
+    public void hideLoading(){
+
+        loadingDialog.dismiss();
+        loadingDialog = null;
     }
 
     public void navigateToNextScreen(Intent intent){

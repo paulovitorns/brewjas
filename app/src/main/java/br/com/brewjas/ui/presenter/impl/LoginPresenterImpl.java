@@ -29,19 +29,20 @@ public class LoginPresenterImpl implements LoginPresenter, OnListenerGeneral {
 
     @Override
     public void onError(String title, String description) {
-
+        this.loginView.hideLoading();
         this.loginView.setUsernameError(title, description);
     }
 
     @Override
     public void onSuccess(Cliente cliente) {
-        loginView.navigateToNextScreen(cliente);
+        this.loginView.hideLoading();
+        loginView.navigateToNextScreenWithSerializedCliente(cliente);
     }
 
 
     @Override
     public void onSubmitPressed(String email) {
-
+        this.loginView.showLoading();
         loginService.login(email, this);
     }
 

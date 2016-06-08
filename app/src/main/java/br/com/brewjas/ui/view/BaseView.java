@@ -11,4 +11,11 @@ public interface BaseView {
 
     void navigateToNextScreenWithSerializedCliente(Cliente cliente);
 
+    void showDialog(String title, String description);
+
+    void hideDialog();
+
+    void showLoading();
+
+    void hideLoading();
 }
