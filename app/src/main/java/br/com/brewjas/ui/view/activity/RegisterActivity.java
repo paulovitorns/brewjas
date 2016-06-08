@@ -106,6 +106,11 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
         showDialog(title, description);
     }
 
+    @Override
+    public void showDialog(String title, String msg) {
+        super.showDialog(title, msg);
+    }
+
     @OnClick(R.id.btnDataNasc)
     public void setDataNasc(){
         Calendar now = Calendar.getInstance();

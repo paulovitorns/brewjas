@@ -50,34 +50,22 @@ public abstract class BaseActivity extends AppCompatActivity {
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 
-    private void initDialog(String title, String msg){
-
-            FragmentManager fragmentManager = getSupportFragmentManager();
-
-            Bundle bundle = new Bundle();
-            bundle.putString("title", title);
-            bundle.putString("description", msg);
-
-            dialogAlert = new DialogAlert();
-            dialogAlert.setArguments(bundle);
-
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-
-            transaction.add(android.R.id.content, dialogAlert)
-                    .addToBackStack(null).commit();
-
-    }
-
     public void showDialog(String title, String msg){
-        Log.d("OK", title+" "+msg);
-        if(dialogAlert != null){
-            dialogAlert = null;
-            initDialog(title, msg);
-        }else{
-            initDialog(title, msg);
-        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("title", title);
+        bundle.putString("description", msg);
+
+        dialogAlert = new DialogAlert();
+        dialogAlert.setArguments(bundle);
+
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
+        transaction.add(android.R.id.content, dialogAlert)
+                .addToBackStack(null).commit();
 
     }
 
