@@ -3,80 +3,73 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorMarromEdt"
+    android:gravity="center_vertical|center_horizontal"
     android:id="@+id/container">
 
     <LinearLayout
-        android:id="@+id/content"
+        android:id="@+id/containerHeader"
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin_small">
+        android:weightSum="2">
 
         <LinearLayout
-            android:id="@+id/containerHeader"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:id="@+id/containerImage"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:weightSum="2">
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal">
 
-            <LinearLayout
-                android:id="@+id/containerImage"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgBeer"
                 android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgBeer"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/beer_example"
-                    android:scaleType="centerCrop" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/containerInfos"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin_small"
-                android:gravity="center_vertical">
-
-
-                    <TextView
-                        android:id="@+id/nameBeer"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:text="Guinness Draught"
-                        style="@style/NameBeer"
-                        android:textAlignment="center"/>
-
-                    <TextView
-                        android:id="@+id/nameBrewer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Guinness"
-                        style="@style/NameBrewer"
-                        android:textAlignment="center"/>
-
-                    <TextView
-                        android:id="@+id/typeBeer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Classic Irish-Style Dry Stout"
-                        style="@style/OtherDelaisBeer"
-                        android:textAlignment="center"/>
-
-            </LinearLayout>
+                android:layout_height="70dp"
+                android:src="@drawable/beer_example"
+                android:scaleType="centerCrop" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/containerInfos"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_small"
+            android:gravity="center_vertical">
+
+
+                <TextView
+                    android:id="@+id/nameBeer"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Guinness Draught"
+                    style="@style/NameBeer"
+                    android:maxLines="3"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/nameBrewer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Guinness"
+                    android:maxLines="2"
+                    style="@style/NameBrewer"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/typeBeer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Classic Irish-Style Dry Stout"
+                    android:maxLines="2"
+                    style="@style/OtherDelaisBeer"
+                    android:textAlignment="center"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>

@@ -154,7 +154,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="250dp"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin_small"
@@ -162,9 +162,12 @@
                 android:padding="@dimen/activity_vertical_margin"
                 android:background="@color/colorMarromEdt">
 
-                <include layout="@layout/item_breja_relacionado"></include>
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewBrejas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <include layout="@layout/item_breja_relacionado"></include>
+                </android.support.v4.view.ViewPager>
 
             </LinearLayout>
 

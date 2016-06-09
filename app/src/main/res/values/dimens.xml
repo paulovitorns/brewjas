@@ -13,10 +13,12 @@
     <dimen name="activity_vertical_margin_big">24dp</dimen>
     <dimen name="activity_vertical_margin_biggest">32dp</dimen>
 
-
     <dimen name="card_horizontal_margin_small">8dp</dimen>
     <dimen name="card_horizontal_margin">16dp</dimen>
     <dimen name="card_vertical_margin">8dp</dimen>
+
+    <dimen name="pager_rel_width">170dp</dimen>
+    <dimen name="pager_rel_min_height">170dp</dimen>
 
     <dimen name="login_logo_padding">16dp</dimen>
     <dimen name="login_image_logo_padding">32dp</dimen>
