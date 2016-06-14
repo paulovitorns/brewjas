@@ -31,7 +31,7 @@ public class BrejaRelacionadaView {
             //Faço a validação se o grid já possue 2 itens
             //para inserção e instanciar uma nova para inserir novos elementos
 
-            if(gridLayout.getChildCount() == 1){
+            if(gridLayout.getChildCount() == 2){
                 views.add(gridLayout);
                 gridLayout = (GridLayout) li.inflate(R.layout.view_breja_relacionada_grid, null);
             }

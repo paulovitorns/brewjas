@@ -58,6 +58,7 @@ public class BrejaActivity extends BaseActivity {
 
         viewPager.setAdapter(new BrejasRelacionadasAdapter(this, brejaRelacionadaView.getViewGroup()));
 
+
     }
 
 
