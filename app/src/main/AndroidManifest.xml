@@ -38,7 +38,10 @@
         <activity
             android:name=".ui.view.activity.RegisterActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.view.activity.BrejaActivity"></activity>
+        <activity android:name=".ui.view.activity.BrejaActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity android:name=".ui.view.activity.ContaActivity"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>

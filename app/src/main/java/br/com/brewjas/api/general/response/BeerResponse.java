@@ -1,9 +1,11 @@
 package br.com.brewjas.api.general.response;
 
+import java.io.Serializable;
+
 /**
  * Created by Paulo Vitor on 02/05/2016.
  */
-public class BeerResponse {
+public class BeerResponse implements Serializable {
 
     private String name;
 

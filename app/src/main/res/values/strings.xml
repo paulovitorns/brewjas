@@ -21,8 +21,10 @@
 
     <!-- TODO: Textos de textview -->
     <string name="txt_intro_registro">Por favor, fale um pouco sobre você?</string>
+    <string name="txt_intro_conta">Fala, {user}! Estes são seus dados cadastrais.</string>
     <string name="txt_intro_recuperar">Por favor, informe o seu e-mail cadastrado?</string>
     <string name="txt_title_registro">Criação de conta</string>
+    <string name="txt_title_conta">Sua conta</string>
     <string name="txt_title_recuperar">Recuperação de senha</string>
 
     <string name="txt_title_help">Ainda não tem acesso?</string>
@@ -56,5 +58,20 @@
     <string name="err_datanasc_is_empty">Por favor, selecione a sua data de nascimento.</string>
     <string name="err_genero_is_empty">Por favor, selecione o seu gênenro.</string>
     <string name="err_is_underage">Este aplicativo é voltado para o público adulto.</string>
+
+    <!-- TODO: Common texts brejas-->
+    <string name="brejas_infos">Mais informações</string>
+    <string name="brejas_descricao">Resenha</string>
+    <string name="brejas_relacionadas">Brejas relacionadas</string>
+
+    <!-- TODO: Common texts breja -->
+    <string name="breja_abv">ABV {var}</string>
+    <string name="breja_ibu">IBU {var}</string>
+    <string name="breja_srm">SRM {var}</string>
+    <string name="breja_og">OG {var}</string>
+    <string name="breja_cervejaria">Brewer: {var}</string>
+    <string name="breja_pais">País: {var}</string>
+    <string name="breja_estilo">Estilo: {var}</string>
+    <string name="breja_copo">Servido em um: {var}</string>
 
 </resources>

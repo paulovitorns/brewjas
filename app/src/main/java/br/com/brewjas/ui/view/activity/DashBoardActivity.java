@@ -1,5 +1,6 @@
 package br.com.brewjas.ui.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,7 +13,10 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import br.com.brewjas.R;
+import br.com.brewjas.ui.view.fragment.ListaCervejariasFragment;
+import br.com.brewjas.ui.view.fragment.ListaCervejasFavoritasFragment;
 import br.com.brewjas.ui.view.fragment.ListaCervejasFragment;
+import br.com.brewjas.ui.view.fragment.ListaEstilosFragment;
 
 public class DashBoardActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -97,6 +101,48 @@ public class DashBoardActivity extends BaseActivity
                 fragmentTransaction.replace(R.id.frame_dash, listaCervejasFragment);
                 fragmentTransaction.commit();
 
+                break;
+
+            case R.id.nav_favoritas:
+
+                ListaCervejasFavoritasFragment listaCervejasFavoritasFragment = new ListaCervejasFavoritasFragment();
+
+                android.support.v4.app.FragmentTransaction fragFavs = getSupportFragmentManager().beginTransaction();
+                fragFavs.replace(R.id.frame_dash, listaCervejasFavoritasFragment);
+                fragFavs.commit();
+
+                break;
+
+            case R.id.nav_cervejarias:
+
+                ListaCervejariasFragment listaCervejariasFragment = new ListaCervejariasFragment();
+
+                android.support.v4.app.FragmentTransaction fragCerve = getSupportFragmentManager().beginTransaction();
+                fragCerve.replace(R.id.frame_dash, listaCervejariasFragment);
+                fragCerve.commit();
+
+                break;
+
+            case R.id.nav_estilos:
+
+                ListaEstilosFragment listaEstilosFragment = new ListaEstilosFragment();
+
+                android.support.v4.app.FragmentTransaction fragEstilos = getSupportFragmentManager().beginTransaction();
+                fragEstilos.replace(R.id.frame_dash, listaEstilosFragment);
+                fragEstilos.commit();
+
+                break;
+
+            case R.id.nav_conta:
+
+                navigateToNextScreen(new Intent(this, ContaActivity.class));
+
+                break;
+
+            case R.id.nav_logout:
+
+                navigateToNextScreen(new Intent(this, LoginActivity.class));
+                finish();
                 break;
 
             default:

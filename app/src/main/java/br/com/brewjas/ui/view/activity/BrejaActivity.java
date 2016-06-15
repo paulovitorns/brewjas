@@ -26,9 +26,10 @@ public class BrejaActivity extends BaseActivity {
     @Bind(R.id.collapsingToolBar)   CollapsingToolbarLayout collapsingToolbarLayout = null;
     @Bind(R.id.toolbar)             Toolbar toolbar = null;
     @Bind(R.id.descBeer)            TextView descBeer = null;
-    @Bind(R.id.viewBrejas)            ViewPager viewPager;
+    @Bind(R.id.viewBrejas)          ViewPager viewPager;
 
     private List<BeerResponse> beers;
+    private BeerResponse beer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,9 @@ public class BrejaActivity extends BaseActivity {
 
         ButterKnife.bind(this);
 
-        CharSequence desc = "Sobre a <b>Guinness Draught</b>: Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+        beer = (BeerResponse) getIntent().getSerializableExtra("Breja");
+
+        CharSequence desc = "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
         setSupportActionBar(toolbar);
 
@@ -46,7 +49,7 @@ public class BrejaActivity extends BaseActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        collapsingToolbarLayout.setTitle("Guinness Draught");
+        collapsingToolbarLayout.setTitle(beer.getName());
 
         toolbarTextAppearence();
 

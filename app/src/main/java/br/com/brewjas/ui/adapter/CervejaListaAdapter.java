@@ -27,7 +27,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapter.ViewHolder> {
 
     private static Context context;
-    private List<BeerResponse> data;
+    private static List<BeerResponse> data;
 
 
     public CervejaListaAdapter(Context context, List<BeerResponse> lista){
@@ -141,11 +141,14 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
         @Override
         public void onClick(View v) {
 
-            goToCoupon();
+            BeerResponse beer = data.get(getPosition());
+
+            goToCoupon(beer);
         }
 
-        public void goToCoupon(){
+        public void goToCoupon(BeerResponse beer){
             Intent intent = new Intent(context, BrejaActivity.class);
+            intent.putExtra("Breja", beer);
             context.startActivity(intent);
         }
     }

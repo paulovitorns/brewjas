@@ -15,7 +15,9 @@
 
     <dimen name="card_horizontal_margin_small">8dp</dimen>
     <dimen name="card_horizontal_margin">16dp</dimen>
-    <dimen name="card_vertical_margin">8dp</dimen>
+    <dimen name="card_vertical_margin">4dp</dimen>
+    <dimen name="card_vertical_margin_space_small">3dp</dimen>
+    <dimen name="card_vertical_margin_space">6dp</dimen>
 
     <dimen name="pager_rel_width">170dp</dimen>
     <dimen name="pager_rel_min_height">170dp</dimen>
