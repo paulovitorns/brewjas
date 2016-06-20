@@ -49,6 +49,7 @@
     <string name="nav_cervejarias">As cervejarias</string>
     <string name="nav_estilos">Os estilos</string>
     <string name="nav_conta">Minha conta</string>
+    <string name="nav_logout">Sair</string>
 
     <!-- TODO: String para erros e alertas -->
     <string name="err_login_is_empty">Por favor, preencha o seu e-mail!</string>
