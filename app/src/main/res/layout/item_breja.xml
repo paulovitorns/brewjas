@@ -1,99 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:orientation="horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/card_vertical_margin"
     android:layout_marginBottom="@dimen/card_vertical_margin"
-    android:id="@+id/container">
+    android:layout_marginLeft="@dimen/activity_vertical_margin_small"
+    android:layout_marginRight="@dimen/activity_vertical_margin_small"
+    android:id="@+id/container"
+    android:weightSum="2">
 
     <LinearLayout
         android:id="@+id/content"
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1.1"
         android:background="@color/colorBgLight">
 
         <LinearLayout
-            android:id="@+id/containerHeader"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/card_horizontal_margin"
-            android:weightSum="3">
-
-            <LinearLayout
-                android:id="@+id/containerImage"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_weight="0.7"
-                android:layout_marginRight="@dimen/card_horizontal_margin_small"
-                android:gravity="center_vertical"
-                android:layout_gravity="center_vertical">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgBeer"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/beer_example"
-                    android:scaleType="centerCrop" />
-
-            </LinearLayout>
+            android:weightSum="2">
 
             <LinearLayout
                 android:id="@+id/containerInfos"
                 android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2.2"
+                android:layout_weight="1.9"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin_small"
                 android:gravity="center_vertical"
+                android:paddingLeft="@dimen/activity_horizontal_margin_small"
                 android:layout_marginRight="@dimen/card_horizontal_margin_small">
 
                     <TextView
-                        android:id="@+id/nameBeer"
+                        android:id="@+id/txBeer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Guinness Draught"
                         android:maxLines="3"
-                        style="@style/NameBeer"/>
+                        style="@style/TextBig.Bold.Brown"/>
 
                     <TextView
-                        android:id="@+id/nameBrewer"
+                        android:id="@+id/txBrewery"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/card_vertical_margin_space_small"
                         android:text="Guinness"
-                        style="@style/NameBrewer"/>
+                        style="@style/TextMedium.Bold.Brown"/>
 
                     <TextView
-                        android:id="@+id/nameCountry"
+                        android:id="@+id/txCountry"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/card_vertical_margin_space"
                         android:text="Irlanda"
-                        style="@style/OtherDelaisBeer"/>
+                        style="@style/TextRegular.Regular.Brown"/>
 
                     <TextView
-                        android:id="@+id/typeBeer"
+                        android:id="@+id/txStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/card_vertical_margin_space_small"
                         android:text="Classic Irish-Style Dry Stout"
                         android:maxLines="2"
-                        style="@style/OtherDelaisBeer"/>
+                        style="@style/TextRegular.Regular.Brown"/>
 
             </LinearLayout>
 
             <RelativeLayout
-                android:id="@+id/containerImgFav"
+                android:id="@+id/cnImgFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.1"
-                android:gravity="center_horizontal"
-                android:layout_gravity="center_vertical">
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin_micro"
+                android:gravity="right|center_vertical"
+                android:layout_alignParentRight="true">
 
                 <ImageButton
-                    android:id="@+id/btnFav"
+                    android:id="@+id/btFav"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
@@ -104,31 +95,64 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@id/containerInfos"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark">
 
             <TextView
-                android:id="@+id/varAbv"
+                android:id="@+id/txAbv"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/info_bar_size"
                 android:layout_weight="1"
-                android:text="ABV 5,8%"
-                style="@style/OtherInfosBeer"/>
+                android:text="@string/beer_abv"
+                style="@style/TextRegular.Bold.White.Gravity.Center"/>
 
             <TextView
-                android:id="@+id/varIbu"
+                android:id="@+id/txIbu"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/info_bar_size"
                 android:layout_weight="1"
-                android:text="IBU 50"
-                style="@style/OtherInfosBeer"/>
+                android:text="@string/beer_ibu"
+                style="@style/TextRegular.Bold.White.Gravity.Center"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/containerImage"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.9"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/imBeer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/beer_example" />
+
+        <RelativeLayout
+            android:id="@+id/cnImgFavTw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin_micro"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_alignParentRight="true">
+
+            <ImageButton
+                android:id="@+id/btFavTw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_favorite_border_white_36dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>

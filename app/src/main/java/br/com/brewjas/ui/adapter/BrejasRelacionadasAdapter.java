@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import br.com.brewjas.api.general.response.BeerResponse;
-
 /**
  * Created by PauloSales on 09/06/2016.
  */

@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 
-import br.com.brewjas.ui.view.BaseView;
 import br.com.brewjas.ui.view.component.DialogAlert;
 import br.com.brewjas.ui.view.component.DialogLoading;
 

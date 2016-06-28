@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,7 +21,8 @@ import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
 import br.com.brewjas.api.general.response.BeerResponse;
 import br.com.brewjas.ui.view.activity.BrejaActivity;
-import de.hdodenhof.circleimageview.CircleImageView;
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * Created by Paulo Vitor on 01/05/2016.
@@ -53,26 +56,35 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
 
             if(position % 2 == 0){
 
-                LinearLayout.LayoutParams adjust = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 2.9f);
-                float margin = Brewjas.getContext().getResources().getDimension(R.dimen.card_horizontal_margin_small);
-                adjust.setMarginEnd((int) margin);
-                holder.containerInfos.setLayoutParams(adjust);
-                holder.containerImage.setVisibility(View.GONE);
+                LinearLayout.LayoutParams adjust = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 2.0f);
+                holder.cn.setLayoutParams(adjust);
+                holder.cnImg.setVisibility(View.GONE);
+                holder.cnImgFav.setVisibility(View.VISIBLE);
             }else{
-                holder.containerImage.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams adjust = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1.1f);
+                holder.cn.setLayoutParams(adjust);
+                holder.cnImg.setVisibility(View.VISIBLE);
+                holder.cnImgFav.setVisibility(View.GONE);
             }
 
-            holder.nameBeer.setText(beer.getName());
-            holder.nameBrewer.setText(beer.getCervejaria());
-            holder.nameCountry.setText(beer.getPais());
-            holder.typeBeer.setText(beer.getEstilo());
-            holder.varAbv.setText("ABV "+beer.getAbv());
-            holder.varIbu.setText("IBU "+beer.getIbu());
+            holder.beer.setText(beer.getName());
+            holder.brewery.setText(beer.getCervejaria());
+            holder.country.setText(beer.getPais());
+            holder.style.setText(beer.getEstilo());
+            holder.abv.setText("ABV "+beer.getAbv());
+            holder.ibu.setText("IBU "+beer.getIbu());
 
-            holder.btnFav.setOnClickListener(new View.OnClickListener() {
+            holder.btFav.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.btnFav.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_favorite_white_36dp));
+                    holder.btFav.setImageResource(R.drawable.ic_favorite_white_36dp);
+                }
+            });
+
+            holder.btFavTw.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    holder.btFavTw.setImageResource(R.drawable.ic_favorite_white_36dp);
                 }
             });
 
@@ -110,30 +122,23 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        private LinearLayout containerImage;
-        private LinearLayout containerInfos;
-        private CircleImageView imgBeer;
-        private ImageButton btnFav;
-        private TextView nameBeer;
-        private TextView nameBrewer;
-        private TextView nameCountry;
-        private TextView typeBeer;
-        private TextView varAbv;
-        private TextView varIbu;
+        @Bind(R.id.content)         LinearLayout cn;
+        @Bind(R.id.containerImage)  RelativeLayout cnImg;
+        @Bind(R.id.imBeer)          ImageView imBeer;
+        @Bind(R.id.txBeer)          TextView beer;
+        @Bind(R.id.txBrewery)       TextView brewery;
+        @Bind(R.id.txCountry)       TextView country;
+        @Bind(R.id.txStyle)         TextView style;
+        @Bind(R.id.txAbv)           TextView abv;
+        @Bind(R.id.txIbu)           TextView ibu;
+        @Bind(R.id.cnImgFav)        RelativeLayout cnImgFav;
+        @Bind(R.id.btFav)           ImageButton btFav;
+        @Bind(R.id.btFavTw)         ImageButton btFavTw;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            containerImage  = (LinearLayout) itemView.findViewById(R.id.containerImage);
-            containerInfos  = (LinearLayout) itemView.findViewById(R.id.containerInfos);
-            imgBeer         = (CircleImageView) itemView.findViewById(R.id.imgBeer);
-            btnFav          = (ImageButton) itemView.findViewById(R.id.btnFav);
-            nameBeer        = (TextView) itemView.findViewById(R.id.nameBeer);
-            nameBrewer      = (TextView) itemView.findViewById(R.id.nameBrewer);
-            nameCountry     = (TextView) itemView.findViewById(R.id.nameCountry);
-            typeBeer        = (TextView) itemView.findViewById(R.id.typeBeer);
-            varAbv          = (TextView) itemView.findViewById(R.id.varAbv);
-            varIbu          = (TextView) itemView.findViewById(R.id.varIbu);
+            ButterKnife.bind(this, itemView);
 
             itemView.setOnClickListener(this);
         }

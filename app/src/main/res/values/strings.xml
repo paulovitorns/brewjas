@@ -60,19 +60,21 @@
     <string name="err_genero_is_empty">Por favor, selecione o seu gênenro.</string>
     <string name="err_is_underage">Este aplicativo é voltado para o público adulto.</string>
 
-    <!-- TODO: Common texts brejas-->
-    <string name="brejas_infos">Mais informações</string>
-    <string name="brejas_descricao">Resenha</string>
-    <string name="brejas_relacionadas">Brejas relacionadas</string>
+    <!-- TODO: Common beers texts -->
+    <string name="beer_infos">Mais informações</string>
+    <string name="beer_descricao">Resenha</string>
+    <string name="beer_relacionadas">Brejas relacionadas</string>
+    <string name="beer_abv">ABV {var}</string>
+    <string name="beer_ibu">IBU {var}</string>
+    <string name="beer_srm">SRM {var}</string>
+    <string name="beer_og">OG {var}</string>
+    <string name="beer_cervejaria">Cervejaria: {var}</string>
+    <string name="beer_pais">País: {var}</string>
+    <string name="beer_estilo">Estilo: {var}</string>
+    <string name="beer_copo">Servido em um: {var}</string>
 
     <!-- TODO: Common texts breja -->
-    <string name="breja_abv">ABV {var}</string>
-    <string name="breja_ibu">IBU {var}</string>
-    <string name="breja_srm">SRM {var}</string>
-    <string name="breja_og">OG {var}</string>
-    <string name="breja_cervejaria">Brewer: {var}</string>
-    <string name="breja_pais">País: {var}</string>
-    <string name="breja_estilo">Estilo: {var}</string>
-    <string name="breja_copo">Servido em um: {var}</string>
+    <string name="brewery_qty">{var} cervejas</string>
+    <string name="brewery_styles">{var} estilos</string>
 
 </resources>

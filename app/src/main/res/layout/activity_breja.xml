@@ -20,7 +20,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="270dp"
+                android:layout_height="@dimen/nav_header_height"
                 android:background="@drawable/beer_example"
                 android:scaleType="centerCrop"
                 android:fitsSystemWindows="true"
@@ -29,7 +29,7 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="@dimen/nav_header_size"
                 android:theme="@style/AppTheme.AppBarOverlay"
                 app:layout_collapseMode="pin">
 
@@ -54,41 +54,41 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="@dimen/info_bar_size"
                 android:background="@color/colorMarrom"
                 android:layout_marginBottom="@dimen/activity_vertical_margin_small"
                 android:weightSum="4">
 
                 <TextView
-                    android:id="@+id/varAbv"
+                    android:id="@+id/txAbv"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="@string/breja_abv"
+                    android:text="@string/beer_abv"
                     style="@style/OtherInfosBeer"/>
 
                 <TextView
-                    android:id="@+id/varIbu"
+                    android:id="@+id/txIbu"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="@string/breja_ibu"
+                    android:text="@string/beer_ibu"
                     style="@style/OtherInfosBeer"/>
 
                 <TextView
-                    android:id="@+id/varSrm"
+                    android:id="@+id/txSrm"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="@string/breja_srm"
+                    android:text="@string/beer_srm"
                     style="@style/OtherInfosBeer"/>
 
                 <TextView
-                    android:id="@+id/varOg"
+                    android:id="@+id/txOg"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="@string/breja_og"
+                    android:text="@string/beer_og"
                     style="@style/OtherInfosBeer"/>
 
             </LinearLayout>
@@ -99,7 +99,7 @@
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin_small"
-                android:text="@string/brejas_infos"
+                android:text="@string/beer_infos"
                 style="@style/NameBeer"/>
 
             <LinearLayout
@@ -116,33 +116,33 @@
                 android:weightSum="4">
 
                 <TextView
-                    android:id="@+id/nameBrewer"
+                    android:id="@+id/txBrewery"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/breja_cervejaria"
+                    android:text="@string/beer_cervejaria"
                     style="@style/NameBrewer"/>
 
                 <TextView
-                    android:id="@+id/nameCountry"
+                    android:id="@+id/txCountry"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/breja_pais"
+                    android:text="@string/beer_pais"
                     style="@style/OtherDelaisBeer"
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/typeBeer"
+                    android:id="@+id/txStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/breja_estilo"
+                    android:text="@string/beer_estilo"
                     style="@style/OtherDelaisBeer"
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/glassBeer"
+                    android:id="@+id/txGlass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/breja_copo"
+                    android:text="@string/beer_copo"
                     style="@style/OtherDelaisBeer"
                     android:textStyle="bold"/>
 
@@ -154,7 +154,7 @@
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin_small"
-                android:text="@string/brejas_descricao"
+                android:text="@string/beer_descricao"
                 style="@style/NameBeer"/>
 
             <LinearLayout
@@ -169,7 +169,7 @@
                 android:background="@color/colorMarromEdt">
 
                 <TextView
-                    android:id="@+id/descBeer"
+                    android:id="@+id/txDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="{Descricao}"
@@ -184,7 +184,7 @@
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin_small"
-                android:text="@string/brejas_relacionadas"
+                android:text="@string/beer_relacionadas"
                 style="@style/NameBeer"/>
 
             <LinearLayout
@@ -195,7 +195,7 @@
                 android:layout_marginTop="@dimen/activity_vertical_margin_small">
 
                 <android.support.v4.view.ViewPager
-                    android:id="@+id/viewBrejas"
+                    android:id="@+id/vpBrejas"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 

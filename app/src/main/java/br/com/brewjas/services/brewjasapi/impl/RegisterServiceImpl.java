@@ -5,8 +5,6 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 
-import br.com.brewjas.Brewjas;
-import br.com.brewjas.R;
 import br.com.brewjas.api.general.request.Cliente;
 import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.services.brewjasapi.RegisterService;

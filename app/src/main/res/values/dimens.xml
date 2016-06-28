@@ -3,11 +3,13 @@
 
     <dimen name="activity_top_margin">56dp</dimen>
 
+    <dimen name="activity_horizontal_margin_micro">4dp</dimen>
     <dimen name="activity_horizontal_margin_small">8dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_horizontal_margin_big">24dp</dimen>
     <dimen name="activity_horizontal_margin_biggest">32dp</dimen>
 
+    <dimen name="activity_vertical_margin_micro">4dp</dimen>
     <dimen name="activity_vertical_margin_small">8dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_vertical_margin_big">24dp</dimen>
@@ -29,12 +31,33 @@
     <dimen name="beer_horizontal_margin">6dp</dimen>
     <dimen name="beer_vertical_margin">3dp</dimen>
     <dimen name="beer_horizontal_padding">10dp</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <!--TODO: Set sizes of fonts-->
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_regular">14sp</dimen>
+    <dimen name="font_mediun">16sp</dimen>
+    <dimen name="font_big">20sp</dimen>
+    <dimen name="font_large">24sp</dimen>
+
+    <!--TODO: Set border's size-->
+    <dimen name="border_regular">1sp</dimen>
+    <dimen name="border_medium">2sp</dimen>
+    <dimen name="border_big">3sp</dimen>
+
+    <!--TODO: Sizes of nav header -->
     <dimen name="nav_header_size">56dp</dimen>
     <dimen name="nav_header_shadow_size">8dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
-    <dimen name="nav_header_height">168dp</dimen>
+    <dimen name="nav_header_height">270dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-
     <dimen name="nav_drawer_shadow_size">4dp</dimen>
+
+    <!-- TODO: Information bar size -->
+    <dimen name="info_bar_size">40dp</dimen>
+
+    <!-- TODO: Information bar size -->
+    <dimen name="beer_imagesize">70dp</dimen>
+
+
 </resources>

@@ -109,15 +109,243 @@
         <item name="android:fontFamily">Arial</item>
     </style>
 
-    <style name="expandedappbar" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">28sp</item>
+    <style name="expandedappbar" parent="TextLarge.Regular.White"/>
+
+    <style name="collapsedappbar" parent="TextBig.Regular.White"/>
+
+    <!--TODO: font-Alignment: center, small sizes (regular, bold and light) -->
+    <style name="TextSmall.Regular.Brown.Center" parent="TextSmall.Regular.Brown">
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TextSmall.Bold.Brown.Center" parent="TextSmall.Bold.Brown">
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TextSmall.Light.Brown.Center" parent="TextSmall.Light.Brown">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <!--TODO: font-Alignment: center, regular sizes (regular, bold and light) -->
+    <style name="TextRegular.Regular.Brown.Center" parent="TextRegular.Regular.Brown">
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TextRegular.Bold.Brown.Center" parent="TextRegular.Bold.Brown">
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TextRegular.Light.Brown.Center" parent="TextRegular.Light.Brown">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <!--TODO: font-gravity: center, regular sizes (regular, bold and light) -->
+    <style name="TextRegular.Regular.White.Gravity.Center" parent="TextRegular.Regular.White">
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+    <style name="TextRegular.Bold.White.Gravity.Center" parent="TextRegular.Bold.White">
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+    <style name="TextRegular.Light.White.Gravity.Center" parent="TextRegular.Light.White">
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+
+    <!--TODO: font-gravity: center, medium sizes (regular, bold and light) -->
+    <style name="TextMedium.Regular.White.Gravity.Center" parent="TextMedium.Regular.White">
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+    <style name="TextMedium.Bold.White.Gravity.Center" parent="TextMedium.Bold.White">
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+    <style name="TextMedium.Light.White.Gravity.Center" parent="TextMedium.Light.White">
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+
+    <!--TODO: font-Alignment: center, big sizes (regular, bold and light) -->
+    <style name="TextBig.Regular.White.Center" parent="TextBig.Regular.White">
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TextBig.Bold.White.Center" parent="TextBig.Bold.White">
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TextBig.Light.White.Center" parent="TextBig.Light.White">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <!--TODO: font-color: brown to regular size (regular, bold and light) -->
+    <style name="TextSmall.Regular.Brown" parent="TextSmall.Regular">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+    <style name="TextSmall.Bold.Brown" parent="TextSmall.Bold">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+    <style name="TextSmall.Light.Brown" parent="TextSmall.Light">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+
+    <!--TODO: font-color: brown to regular size (regular, bold and light) -->
+    <style name="TextRegular.Regular.Brown" parent="TextRegular.Regular">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+    <style name="TextRegular.Bold.Brown" parent="TextRegular.Bold">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+    <style name="TextRegular.Light.Brown" parent="TextRegular.Light">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+
+    <!--TODO: font-color: white to regular size (regular, bold and light) -->
+    <style name="TextRegular.Regular.White" parent="TextRegular.Regular">
         <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="TextRegular.Bold.White" parent="TextRegular.Bold">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="TextRegular.Light.White" parent="TextRegular.Light">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <!--TODO: font-color: white to mediun size (regular, bold and light) -->
+    <style name="TextMedium.Regular.White" parent="TextMedium.Regular">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="TextMedium.Bold.White" parent="TextMedium.Bold">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="TextMedium.Light.White" parent="TextMedium.Light">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <!--TODO: font-color: brown to mediun size (regular, bold and light) -->
+    <style name="TextMedium.Regular.Brown" parent="TextMedium.Regular">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+    <style name="TextMedium.Bold.Brown" parent="TextMedium.Bold">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+    <style name="TextMedium.Light.Brown" parent="TextMedium.Light">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+
+    <!--TODO: font-color: white to big size (regular, bold and light) -->
+    <style name="TextBig.Regular.White" parent="TextBig.Regular">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="TextBig.Bold.White" parent="TextBig.Bold">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="TextBig.Light.White" parent="TextBig.Light">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <!--TODO: font-color: brown to big size (regular, bold and light) -->
+    <style name="TextBig.Regular.Brown" parent="TextBig.Regular">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+    <style name="TextBig.Bold.Brown" parent="TextBig.Bold">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+    <style name="TextBig.Light.Brown" parent="TextBig.Light">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+
+    <!--TODO: font-color: white to large size (regular, bold and light) -->
+    <style name="TextLarge.Regular.White" parent="TextLarge.Regular">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="TextLarge.Bold.White" parent="TextLarge.Bold">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="TextLarge.Light.White" parent="TextLarge.Light">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <!--TODO: font-color: brown to large size (regular, bold and light) -->
+    <style name="TextLarge.Regular.Brown" parent="TextLarge.Regular">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+    <style name="TextLarge.Bold.Brown" parent="TextLarge.Bold">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+    <style name="TextLarge.Light.Brown" parent="TextLarge.Light">
+        <item name="android:textColor">@color/colorMarrom</item>
+    </style>
+
+    <!--TODO: font-face to small size (regular, bold and light) -->
+    <style name="TextSmall.Regular" parent="TextSmall">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="TextSmall.Bold" parent="TextSmall">
+        <item name="android:fontFamily">sans-serif-bold</item>
         <item name="android:textStyle">bold</item>
     </style>
-
-    <style name="collapsedappbar" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/colorWhite</item>
+    <style name="TextSmall.Light" parent="TextSmall">
+        <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
+    <!--TODO: font-face to regular size (regular, bold and light) -->
+    <style name="TextRegular.Regular" parent="TextRegular">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="TextRegular.Bold" parent="TextRegular">
+        <item name="android:fontFamily">sans-serif-bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextRegular.Light" parent="TextRegular">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <!--TODO: font-face to mediun size (regular, bold and light) -->
+    <style name="TextMedium.Regular" parent="TextMedium">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="TextMedium.Bold" parent="TextMedium">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextMedium.Light" parent="TextMedium">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <!--TODO: font-face to big size (regular, bold and light) -->
+    <style name="TextBig.Regular" parent="TextBig">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="TextBig.Bold" parent="TextBig">
+        <item name="android:fontFamily">sans-serif-bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextBig.Light" parent="TextBig">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <!--TODO: font-face to large size (regular, bold and light) -->
+    <style name="TextLarge.Regular" parent="TextLarge">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="TextLarge.Bold" parent="TextLarge">
+        <item name="android:fontFamily">sans-serif-bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextLarge.Light" parent="TextLarge">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <!--TODO: Font-sizes (small, regular, medium, big and large) and fontface -->
+    <style name="TextSmall">
+        <item name="android:textSize">@dimen/font_small</item>
+    </style>
+
+    <style name="TextRegular">
+        <item name="android:textSize">@dimen/font_regular</item>
+    </style>
+
+    <style name="TextMedium">
+        <item name="android:textSize">@dimen/font_mediun</item>
+    </style>
+
+    <style name="TextBig">
+        <item name="android:textSize">@dimen/font_big</item>
+    </style>
+
+    <style name="TextLarge">
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+    
 </resources>

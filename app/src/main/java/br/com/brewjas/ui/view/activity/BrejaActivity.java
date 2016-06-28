@@ -16,7 +16,6 @@ import java.util.List;
 import br.com.brewjas.R;
 import br.com.brewjas.api.general.response.BeerResponse;
 import br.com.brewjas.ui.adapter.BrejasRelacionadasAdapter;
-import br.com.brewjas.ui.adapter.PageViewAdapterExample;
 import br.com.brewjas.ui.view.component.BrejaRelacionadaView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -25,8 +24,8 @@ public class BrejaActivity extends BaseActivity {
 
     @Bind(R.id.collapsingToolBar)   CollapsingToolbarLayout collapsingToolbarLayout = null;
     @Bind(R.id.toolbar)             Toolbar toolbar = null;
-    @Bind(R.id.descBeer)            TextView descBeer = null;
-    @Bind(R.id.viewBrejas)          ViewPager viewPager;
+    @Bind(R.id.txDesc)              TextView descBeer = null;
+    @Bind(R.id.vpBrejas)            ViewPager viewPager;
 
     private List<BeerResponse> beers;
     private BeerResponse beer;

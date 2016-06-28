@@ -18,15 +18,15 @@
 
         <LinearLayout
             android:id="@+id/containerImage"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/beer_imagesize"
+            android:layout_height="@dimen/beer_imagesize"
             android:gravity="center_vertical"
             android:layout_gravity="center_horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgBeer"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:id="@+id/imBeer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/beer_example"
                 android:scaleType="centerCrop" />
 
@@ -42,31 +42,28 @@
 
 
                 <TextView
-                    android:id="@+id/nameBeer"
+                    android:id="@+id/txBeer"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="Guinness Draught"
-                    style="@style/NameBeer"
-                    android:maxLines="2"
-                    android:textAlignment="center"/>
+                    style="@style/TextRegular.Bold.Brown.Center"
+                    android:maxLines="2"/>
 
                 <TextView
-                    android:id="@+id/nameBrewer"
+                    android:id="@+id/txBrewery"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Guinness"
                     android:maxLines="2"
-                    style="@style/NameBrewer"
-                    android:textAlignment="center"/>
+                    style="@style/TextSmall.Bold.Brown.Center"/>
 
                 <TextView
-                    android:id="@+id/typeBeer"
+                    android:id="@+id/txStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Classic Irish-Style Dry Stout"
                     android:maxLines="2"
-                    style="@style/OtherDelaisBeer"
-                    android:textAlignment="center"/>
+                    style="@style/TextSmall.Regular.Brown.Center"/>
 
         </LinearLayout>
 

@@ -38,18 +38,16 @@ public class BrejaRelacionadaView {
 
             View brejaView              = li.inflate(R.layout.item_breja_relacionado, gridLayout, false);
 
-            CircleImageView imgBreja    = (CircleImageView) brejaView.findViewById(R.id.imgBeer);
-            TextView nameBeer           = (TextView) brejaView.findViewById(R.id.nameBeer);
-            TextView nameBrewer         = (TextView) brejaView.findViewById(R.id.nameBrewer);
-            TextView typeBeer           = (TextView) brejaView.findViewById(R.id.typeBeer);
+            CircleImageView imgBreja    = (CircleImageView) brejaView.findViewById(R.id.imBeer);
+            TextView nameBeer           = (TextView) brejaView.findViewById(R.id.txBeer);
+            TextView nameBrewer         = (TextView) brejaView.findViewById(R.id.txBrewery);
+            TextView typeBeer           = (TextView) brejaView.findViewById(R.id.txStyle);
 
             nameBeer.setText(beer.getName());
             nameBrewer.setText(beer.getCervejaria());
             typeBeer.setText(beer.getEstilo());
 
             gridLayout.addView(brejaView);
-
-            //views.add(gridLayout);
         }
 
     }
