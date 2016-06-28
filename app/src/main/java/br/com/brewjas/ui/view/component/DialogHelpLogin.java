@@ -13,8 +13,10 @@ import br.com.brewjas.ui.view.activity.RegisterActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by Paulo Vitor on 12/03/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class DialogHelpLogin extends DialogFragment implements DialogHelpLoginView {
 

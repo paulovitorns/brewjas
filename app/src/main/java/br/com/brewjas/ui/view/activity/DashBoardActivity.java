@@ -16,7 +16,11 @@ import br.com.brewjas.ui.view.fragment.ListaCervejariasFragment;
 import br.com.brewjas.ui.view.fragment.ListaCervejasFavoritasFragment;
 import br.com.brewjas.ui.view.fragment.ListaCervejasFragment;
 import br.com.brewjas.ui.view.fragment.ListaEstilosFragment;
-
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
+ */
 public class DashBoardActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

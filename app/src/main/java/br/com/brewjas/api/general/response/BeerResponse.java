@@ -2,8 +2,10 @@ package br.com.brewjas.api.general.response;
 
 import java.io.Serializable;
 
-/**
- * Created by Paulo Vitor on 02/05/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class BeerResponse implements Serializable {
 

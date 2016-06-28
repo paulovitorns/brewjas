@@ -10,8 +10,10 @@ import android.util.Log;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * Created by PauloSales on 02/06/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class HashGenerator extends Application {
 

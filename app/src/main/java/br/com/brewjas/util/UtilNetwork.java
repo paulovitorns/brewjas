@@ -1,7 +1,9 @@
 package br.com.brewjas.util;
 
-/**
- * Created by Paulo Vitor on 30/04/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class UtilNetwork {
 }

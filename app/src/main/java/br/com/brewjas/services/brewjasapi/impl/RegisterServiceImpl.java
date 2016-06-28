@@ -9,8 +9,10 @@ import br.com.brewjas.api.general.request.Cliente;
 import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.services.brewjasapi.RegisterService;
 
-/**
- * Created by Paulo Vitor on 06/06/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class RegisterServiceImpl implements RegisterService {
 

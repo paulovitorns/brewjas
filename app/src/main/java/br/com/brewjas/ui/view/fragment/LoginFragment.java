@@ -39,7 +39,11 @@ import br.com.brewjas.util.UIDialogsFragments;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
+ */
 public class LoginFragment extends Fragment implements LoginFragmentView {
 
     @Bind(R.id.contentLogo) LinearLayout contentLogo;

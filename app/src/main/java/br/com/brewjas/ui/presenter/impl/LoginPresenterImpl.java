@@ -7,8 +7,10 @@ import br.com.brewjas.services.brewjasapi.impl.LoginServiceImpl;
 import br.com.brewjas.ui.presenter.LoginPresenter;
 import br.com.brewjas.ui.view.LoginFragmentView;
 
-/**
- * Created by PauloSales on 02/06/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class LoginPresenterImpl implements LoginPresenter, OnListenerGeneral {
 

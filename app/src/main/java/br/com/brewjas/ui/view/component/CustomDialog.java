@@ -1,9 +1,9 @@
 package br.com.brewjas.ui.view.component;
 
 /*
- * © Copyright 2015 Rede S.A.
- * Autor : Ismael Di Vita Costa - ismael.costa@userede.com.br
- * Empresa : Rede S.A.
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 
 import android.app.Dialog;

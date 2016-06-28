@@ -14,8 +14,10 @@ import br.com.brewjas.R;
 import br.com.brewjas.api.general.response.BeerResponse;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-/**
- * Created by PauloSales on 09/06/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class BrejaRelacionadaView {
 

@@ -10,8 +10,10 @@ import android.view.Window;
 
 import br.com.brewjas.R;
 
-/**
- * Created by Paulo Vitor on 12/03/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class DialogLoading extends DialogFragment {
 

@@ -13,8 +13,10 @@ import br.com.brewjas.services.brewjasapi.impl.RegisterServiceImpl;
 import br.com.brewjas.ui.presenter.RegisterPresenter;
 import br.com.brewjas.ui.view.RegisterView;
 
-/**
- * Created by Paulo Vitor on 06/06/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class RegisterPresenterImpl implements RegisterPresenter, OnListenerGeneral {
 

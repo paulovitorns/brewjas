@@ -8,8 +8,10 @@ import android.widget.TextView;
 
 import br.com.brewjas.R;
 
-/**
- * Created by Roque on 18/10/2015.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class GenderAdapter extends BaseAdapter {
 

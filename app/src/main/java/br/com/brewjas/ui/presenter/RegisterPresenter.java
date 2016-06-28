@@ -2,8 +2,10 @@ package br.com.brewjas.ui.presenter;
 
 import br.com.brewjas.api.general.request.Cliente;
 
-/**
- * Created by Paulo Vitor on 06/06/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public interface RegisterPresenter extends BasePresenter {
 

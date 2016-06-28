@@ -23,8 +23,10 @@ import br.com.brewjas.ui.view.activity.BrejaActivity;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by Paulo Vitor on 01/05/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapter.ViewHolder> {
 

@@ -19,7 +19,11 @@ import br.com.brewjas.ui.adapter.BrejasRelacionadasAdapter;
 import br.com.brewjas.ui.view.component.BrejaRelacionadaView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
-
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
+ */
 public class BrejaActivity extends BaseActivity {
 
     @Bind(R.id.collapsingToolBar)   CollapsingToolbarLayout collapsingToolbarLayout = null;

@@ -10,8 +10,10 @@ import android.view.MenuItem;
 import br.com.brewjas.ui.view.component.DialogAlert;
 import br.com.brewjas.ui.view.component.DialogLoading;
 
-/**
- * Created by PauloSales on 06/06/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public abstract class BaseActivity extends AppCompatActivity {
 

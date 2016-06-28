@@ -10,8 +10,10 @@ import br.com.brewjas.ui.view.component.DialogAlert;
 import br.com.brewjas.ui.view.component.DialogHelpLogin;
 import br.com.brewjas.ui.view.component.DialogLoading;
 
-/**
- * Created by Paulo on 14/04/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
  */
 public class UIDialogsFragments extends Fragment {
 

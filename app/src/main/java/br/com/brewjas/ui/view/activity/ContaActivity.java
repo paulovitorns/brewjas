@@ -28,7 +28,11 @@ import br.com.brewjas.ui.view.RegisterView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Empresa : Brewjas app.
+ */
 public class ContaActivity extends BaseActivity implements DatePickerDialog.OnDateSetListener, RegisterView {
 
     private LinearLayout contentPanel;
