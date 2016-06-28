@@ -17,7 +17,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
 import br.com.brewjas.api.general.response.BeerResponse;
 import br.com.brewjas.ui.view.activity.BrejaActivity;
