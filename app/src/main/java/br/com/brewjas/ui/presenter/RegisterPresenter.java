@@ -1,6 +1,6 @@
 package br.com.brewjas.ui.presenter;
 
-import br.com.brewjas.api.general.request.Cliente;
+import br.com.brewjas.model.Cliente;
 
 /*
  * © Copyright 2016 Brewjas.

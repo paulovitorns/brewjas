@@ -5,7 +5,7 @@ import android.util.Log;
 
 import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
-import br.com.brewjas.api.general.request.Cliente;
+import br.com.brewjas.model.Cliente;
 import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.services.brewjasapi.LoginService;
 

@@ -1,6 +1,6 @@
 package br.com.brewjas.services.brewjasapi;
 
-import br.com.brewjas.api.general.request.Cliente;
+import br.com.brewjas.model.Cliente;
 import br.com.brewjas.common.OnListenerGeneral;
 
 /*

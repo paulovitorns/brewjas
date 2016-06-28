@@ -1,6 +1,6 @@
 package br.com.brewjas.ui.presenter.impl;
 
-import br.com.brewjas.api.general.request.Cliente;
+import br.com.brewjas.model.Cliente;
 import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.services.brewjasapi.LoginService;
 import br.com.brewjas.services.brewjasapi.impl.LoginServiceImpl;

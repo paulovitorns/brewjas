@@ -1,4 +1,4 @@
-package br.com.brewjas.api.general.request;
+package br.com.brewjas.model;
 
 import com.google.gson.annotations.SerializedName;
 

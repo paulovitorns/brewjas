@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brewjas.R;
-import br.com.brewjas.api.general.response.BeerResponse;
+import br.com.brewjas.model.Beer;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /*
@@ -23,12 +23,12 @@ public class BrejaRelacionadaView {
 
     private List<ViewGroup> views;
 
-    public BrejaRelacionadaView(Context context, List<BeerResponse> beers){
+    public BrejaRelacionadaView(Context context, List<Beer> beers){
         LayoutInflater li = LayoutInflater.from(context);
         GridLayout gridLayout = (GridLayout) li.inflate(R.layout.view_breja_relacionada_grid, null);
         this.views = new ArrayList<>();
 
-        for (BeerResponse beer : beers){
+        for (Beer beer : beers){
 
             //Faço a validação se o grid já possue 2 itens
             //para inserção e instanciar uma nova para inserir novos elementos

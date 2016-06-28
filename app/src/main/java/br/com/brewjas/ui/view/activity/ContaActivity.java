@@ -20,7 +20,7 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import java.util.Calendar;
 
 import br.com.brewjas.R;
-import br.com.brewjas.api.general.request.Cliente;
+import br.com.brewjas.model.Cliente;
 import br.com.brewjas.ui.adapter.GenderAdapter;
 import br.com.brewjas.ui.presenter.RegisterPresenter;
 import br.com.brewjas.ui.presenter.impl.RegisterPresenterImpl;

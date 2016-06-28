@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brewjas.R;
+import br.com.brewjas.model.Beer;
 import br.com.brewjas.ui.adapter.CervejaListaAdapter;
-import br.com.brewjas.api.general.response.BeerResponse;
 import br.com.brewjas.util.UIDialogsFragments;
 
 /*
@@ -25,7 +25,7 @@ import br.com.brewjas.util.UIDialogsFragments;
  */
 public class ListaCervejasFragment extends Fragment {
 
-    private List<BeerResponse> beers;
+    private List<Beer> beers;
     private RecyclerView mRecyclerView;
     private UIDialogsFragments uiDialogs;
 
@@ -64,7 +64,7 @@ public class ListaCervejasFragment extends Fragment {
                     uiDialogs.showLoading();
 
                     for(int i = 0; i < 2; i++){
-                        BeerResponse beer = new BeerResponse( (beers.size()+1)+" Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", beers.size()+"%", beers.size()+"0");
+                        Beer beer = new Beer( (beers.size()+1)+" Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", beers.size()+"%", beers.size()+"0");
                         Log.v("Insert "+beer.getName(), beers.size()+"");
 
                         cervejaListaAdapter.insert(beers.size(), beer);
@@ -86,21 +86,21 @@ public class ListaCervejasFragment extends Fragment {
 
     private void loadBeers(){
 
-        BeerResponse beer1 = new BeerResponse("Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "5%", "50");
+        Beer beer1 = new Beer("Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "5%", "50");
         beers.add(beer1);
-        BeerResponse beer2 = new BeerResponse("Guinness Draught light", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "6%", "60");
+        Beer beer2 = new Beer("Guinness Draught light", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "6%", "60");
         beers.add(beer2);
-        BeerResponse beer3 = new BeerResponse("Guinness Draught mediun", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "7%", "70");
+        Beer beer3 = new Beer("Guinness Draught mediun", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "7%", "70");
         beers.add(beer3);
-        BeerResponse beer4 = new BeerResponse("Guinness Draught light strong", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "8%", "80");
+        Beer beer4 = new Beer("Guinness Draught light strong", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "8%", "80");
         beers.add(beer4);
-        BeerResponse beer5 = new BeerResponse("Guinness Draught hardcore", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "9%", "90");
+        Beer beer5 = new Beer("Guinness Draught hardcore", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "9%", "90");
         beers.add(beer5);
-        BeerResponse beer6 = new BeerResponse("Guinness Draught Badass", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "10%", "90");
+        Beer beer6 = new Beer("Guinness Draught Badass", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "10%", "90");
         beers.add(beer6);
-        BeerResponse beer7 = new BeerResponse("Guinness Draught punk", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "11%", "95");
+        Beer beer7 = new Beer("Guinness Draught punk", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "11%", "95");
         beers.add(beer7);
-        BeerResponse beer8 = new BeerResponse("Guinness Draught X-X", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "12%", "100");
+        Beer beer8 = new Beer("Guinness Draught X-X", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "12%", "100");
         beers.add(beer8);
 
         CervejaListaAdapter mAdapter = new CervejaListaAdapter(getContext(), beers);

@@ -11,7 +11,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -28,14 +27,13 @@ import java.util.Arrays;
 
 import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
-import br.com.brewjas.api.general.request.Cliente;
+import br.com.brewjas.model.Cliente;
 import br.com.brewjas.ui.presenter.LoginPresenter;
 import br.com.brewjas.ui.presenter.impl.LoginPresenterImpl;
 import br.com.brewjas.ui.view.LoginFragmentView;
 import br.com.brewjas.ui.view.activity.DashBoardActivity;
 import br.com.brewjas.ui.view.activity.LoginActivity;
 import br.com.brewjas.ui.view.activity.RegisterActivity;
-import br.com.brewjas.util.UIDialogsFragments;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

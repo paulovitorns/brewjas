@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brewjas.R;
-import br.com.brewjas.api.general.response.BeerResponse;
+import br.com.brewjas.model.Beer;
 import br.com.brewjas.ui.view.activity.BrejaActivity;
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -31,10 +31,10 @@ import butterknife.ButterKnife;
 public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapter.ViewHolder> {
 
     private static Context context;
-    private static List<BeerResponse> data;
+    private static List<Beer> data;
 
 
-    public CervejaListaAdapter(Context context, List<BeerResponse> lista){
+    public CervejaListaAdapter(Context context, List<Beer> lista){
 
         if(this.data == null)
             this.data = new ArrayList<>();
@@ -51,7 +51,7 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
 
     @Override
     public void onBindViewHolder(final CervejaListaAdapter.ViewHolder holder, int position) {
-        final BeerResponse beer = data.get(position);
+        final Beer beer = data.get(position);
 
         if(beer != null){
 
@@ -103,14 +103,14 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-    public void insert(int position, BeerResponse beer) {
+    public void insert(int position, Beer beer) {
 
         data.add(beer);
         notifyItemInserted(position);
     }
 
     // Remove a RecyclerView item containing a specified Data object
-    public void remove(BeerResponse beer) {
+    public void remove(Beer beer) {
         int position = data.indexOf(beer);
         data.remove(position);
         notifyItemRemoved(position);
@@ -147,12 +147,12 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
         @Override
         public void onClick(View v) {
 
-            BeerResponse beer = data.get(getPosition());
+            Beer beer = data.get(getPosition());
 
             goToCoupon(beer);
         }
 
-        public void goToCoupon(BeerResponse beer){
+        public void goToCoupon(Beer beer){
             Intent intent = new Intent(context, BrejaActivity.class);
             intent.putExtra("Breja", beer);
             context.startActivity(intent);
