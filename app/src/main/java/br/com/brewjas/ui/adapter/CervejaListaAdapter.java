@@ -147,7 +147,7 @@ public class CervejaListaAdapter extends RecyclerView.Adapter<CervejaListaAdapte
         @Override
         public void onClick(View v) {
 
-            Beer beer = data.get(getPosition());
+            Beer beer = data.get(getAdapterPosition());
 
             goToCoupon(beer);
         }
