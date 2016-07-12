@@ -1,6 +1,6 @@
 package br.com.brewjas.ui.presenter;
 
-import br.com.brewjas.model.Cliente;
+import br.com.brewjas.model.Client;
 
 /*
  * © Copyright 2016 Brewjas.
@@ -9,7 +9,7 @@ import br.com.brewjas.model.Cliente;
  */
 public interface RegisterPresenter extends BasePresenter {
 
-    void onSubmitPressed(Cliente cliente);
+    void onSubmitPressed(Client client);
 
     void checkEmailIsRegistered(String email);
 

@@ -5,7 +5,7 @@ import android.util.Log;
 
 import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
-import br.com.brewjas.model.Cliente;
+import br.com.brewjas.model.Client;
 import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.services.brewjasapi.LoginService;
 
@@ -26,8 +26,8 @@ public class LoginServiceImpl implements LoginService {
             return;
         }else{
 
-            Cliente cliente = new Cliente("Usuário Estático", email, "11/11/1111", 0);
-            listener.onSuccess(cliente);
+            Client client = new Client("Usuário Estático", email, "11/11/1111", 0);
+            listener.onSuccess(client);
         }
 
     }

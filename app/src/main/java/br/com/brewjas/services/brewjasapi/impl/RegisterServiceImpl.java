@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 
-import br.com.brewjas.model.Cliente;
+import br.com.brewjas.model.Client;
 import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.services.brewjasapi.RegisterService;
 
@@ -17,20 +17,20 @@ import br.com.brewjas.services.brewjasapi.RegisterService;
 public class RegisterServiceImpl implements RegisterService {
 
     @Override
-    public void register(Cliente cliente, OnListenerGeneral listener) {
+    public void register(Client client, OnListenerGeneral listener) {
 
         String erros = "";
 
-        if(TextUtils.isEmpty(cliente.getNome()))
+        if(TextUtils.isEmpty(client.getNome()))
             erros+= "\nSeu nome";
 
-        if(TextUtils.isEmpty(cliente.getEmail()))
+        if(TextUtils.isEmpty(client.getEmail()))
             erros+= "\nSeu e-mail";
 
-        if(TextUtils.isEmpty(cliente.getDatanascimento()))
+        if(TextUtils.isEmpty(client.getDatanascimento()))
             erros+= "\nSua data de nascimento";
 
-        if(cliente.getGenero() == 0)
+        if(client.getGenero() == 0)
             erros+= "\nSeu gênero";
 
         if(!TextUtils.isEmpty(erros)){
@@ -40,11 +40,11 @@ public class RegisterServiceImpl implements RegisterService {
             return;
         }else{
 
-            String user = new Gson().toJson(cliente, Cliente.class);
+            String user = new Gson().toJson(client, Client.class);
 
             Log.d("USER", user);
 
-            listener.onSuccess(cliente);
+            listener.onSuccess(client);
             return;
         }
     }

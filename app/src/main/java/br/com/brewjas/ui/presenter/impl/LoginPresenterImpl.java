@@ -1,6 +1,6 @@
 package br.com.brewjas.ui.presenter.impl;
 
-import br.com.brewjas.model.Cliente;
+import br.com.brewjas.model.Client;
 import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.services.brewjasapi.LoginService;
 import br.com.brewjas.services.brewjasapi.impl.LoginServiceImpl;
@@ -36,9 +36,9 @@ public class LoginPresenterImpl implements LoginPresenter, OnListenerGeneral {
     }
 
     @Override
-    public void onSuccess(Cliente cliente) {
+    public void onSuccess(Client client) {
         this.loginView.hideLoading();
-        loginView.navigateToNextScreenWithSerializedCliente(cliente);
+        loginView.navigateToNextScreenWithSerializedCliente(client);
     }
 
 

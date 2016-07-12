@@ -27,7 +27,7 @@ import java.util.Arrays;
 
 import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
-import br.com.brewjas.model.Cliente;
+import br.com.brewjas.model.Client;
 import br.com.brewjas.ui.presenter.LoginPresenter;
 import br.com.brewjas.ui.presenter.impl.LoginPresenterImpl;
 import br.com.brewjas.ui.view.LoginFragmentView;
@@ -89,32 +89,32 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
 
                                     Log.d("DATA_FACEBOOK", object.toString());
 
-                                    Cliente cliente = new Cliente();
+                                    Client client = new Client();
 
                                     if( object.has("name") &&  !object.getString("name").equals("")){
 
-                                        cliente.setNome(object.getString("name"));
+                                        client.setNome(object.getString("name"));
                                     }
 
                                     if( object.has("email") &&  !object.getString("email").equals("")){
 
-                                        cliente.setEmail(object.getString("email"));
+                                        client.setEmail(object.getString("email"));
                                     }
 
                                     if( object.has("gender") &&  !object.getString("gender").equals("")){
 
                                         String gender = object.getString("gender");
                                         int genero = ((gender.equalsIgnoreCase("male")) ? 1 : 2);
-                                        cliente.setGenero(genero);
+                                        client.setGenero(genero);
                                     }
 
                                     if( object.has("birthday") &&  !object.getString("birthday").equals("")){
 
                                         String birth = object.getString("birthday");
-                                        cliente.setDatanascimento(birth);
+                                        client.setDatanascimento(birth);
                                     }
 
-                                    navigateToNextScreenWithSerializedCliente(cliente);
+                                    navigateToNextScreenWithSerializedCliente(client);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -215,9 +215,9 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
     }
 
     @Override
-    public void navigateToNextScreenWithSerializedCliente(Cliente cliente) {
+    public void navigateToNextScreenWithSerializedCliente(Client client) {
         Intent intent = new Intent(getActivity(), DashBoardActivity.class);
-        intent.putExtra("Cliente", cliente);
+        intent.putExtra("Client", client);
 
         ((LoginActivity)getActivity()).navigateToNextScreen(intent);
         getActivity().finish();

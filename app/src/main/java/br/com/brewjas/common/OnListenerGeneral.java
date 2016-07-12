@@ -1,6 +1,6 @@
 package br.com.brewjas.common;
 
-import br.com.brewjas.model.Cliente;
+import br.com.brewjas.model.Client;
 
 /*
  * © Copyright 2016 Brewjas.
@@ -12,7 +12,7 @@ public interface OnListenerGeneral {
 
     void onError(String title, String description);
 
-    void onSuccess(Cliente cliente);
+    void onSuccess(Client client);
 
 
 }

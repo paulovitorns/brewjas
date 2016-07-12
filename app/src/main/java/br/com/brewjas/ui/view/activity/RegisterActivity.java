@@ -1,6 +1,7 @@
 package br.com.brewjas.ui.view.activity;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
@@ -20,8 +21,8 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import java.util.Calendar;
 
 import br.com.brewjas.R;
+import br.com.brewjas.model.Client;
 import br.com.brewjas.ui.adapter.GenderAdapter;
-import br.com.brewjas.model.Cliente;
 import br.com.brewjas.ui.presenter.RegisterPresenter;
 import br.com.brewjas.ui.presenter.impl.RegisterPresenterImpl;
 import br.com.brewjas.ui.view.RegisterView;
@@ -71,14 +72,14 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
     @OnClick(R.id.btnEnviar)
     public void onSubmit(){
 
-        Cliente cliente = new Cliente();
+        Client client = new Client();
 
-        cliente.setNome(edtNome.getText().toString());
-        cliente.setEmail(edtLogin.getText().toString());
-        cliente.setDatanascimento(btnDataNasc.getText().toString());
-        cliente.setGenero(spinnerGenero.getSelectedItemPosition());
+        client.setNome(edtNome.getText().toString());
+        client.setEmail(edtLogin.getText().toString());
+        client.setDatanascimento(btnDataNasc.getText().toString());
+        client.setGenero(spinnerGenero.getSelectedItemPosition());
 
-        presenter.onSubmitPressed(cliente);
+        presenter.onSubmitPressed(client);
     }
 
     @Override
@@ -129,6 +130,11 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
         super.hideLoading();
     }
 
+    @Override
+    public Context getContext() {
+        return this;
+    }
+
     @OnClick(R.id.btnDataNasc)
     public void setDataNasc(){
         Calendar now = Calendar.getInstance();
@@ -153,11 +159,11 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
     }
 
     @Override
-    public void navigateToNextScreenWithSerializedCliente(Cliente cliente) {
+    public void navigateToNextScreenWithSerializedCliente(Client client) {
 
         Intent intent = new Intent(RegisterActivity.this, DashBoardActivity.class);
 
-        intent.putExtra("Cliente", cliente);
+        intent.putExtra("Client", client);
         startActivity(intent);
 
     }

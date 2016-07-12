@@ -1,5 +1,7 @@
 package br.com.brewjas.api.general.response;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /*
@@ -9,16 +11,22 @@ import java.io.Serializable;
  */
 public class BeerResponse implements Serializable {
 
+    @SerializedName("name")
     private String name;
 
+    @SerializedName("cervejaria")
     private String cervejaria;
 
+    @SerializedName("pais")
     private String pais;
 
+    @SerializedName("estilo")
     private String estilo;
 
+    @SerializedName("abv")
     private String abv;
 
+    @SerializedName("ibu")
     private String ibu;
 
     public BeerResponse(String name, String cervejaria, String pais, String estilo, String abv, String ibu) {

@@ -15,7 +15,8 @@ import java.util.List;
 
 import br.com.brewjas.R;
 import br.com.brewjas.model.Beer;
-import br.com.brewjas.ui.adapter.CervejaListaAdapter;
+import br.com.brewjas.ui.adapter.CervejaAdapter;
+import br.com.brewjas.ui.adapter.CervejaFavoritaAdapter;
 import br.com.brewjas.util.UIDialogsFragments;
 
 /*
@@ -23,13 +24,13 @@ import br.com.brewjas.util.UIDialogsFragments;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public class ListaCervejariasFragment extends Fragment {
+public class CervejaFavoritaFragment extends Fragment {
 
     private List<Beer> beers;
     private RecyclerView mRecyclerView;
     private UIDialogsFragments uiDialogs;
 
-    public ListaCervejariasFragment() {
+    public CervejaFavoritaFragment() {
         // Required empty public constructor
     }
 
@@ -57,7 +58,7 @@ public class ListaCervejariasFragment extends Fragment {
                 super.onScrolled(recyclerView, dx, dy);
 
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) mRecyclerView.getLayoutManager();
-                CervejaListaAdapter cervejaListaAdapter = (CervejaListaAdapter) mRecyclerView.getAdapter();
+                CervejaAdapter cervejaAdapter = (CervejaAdapter) mRecyclerView.getAdapter();
 
                 if(beers.size() == linearLayoutManager.findLastCompletelyVisibleItemPosition()+1){
 
@@ -67,7 +68,7 @@ public class ListaCervejariasFragment extends Fragment {
                         Beer beer = new Beer( (beers.size()+1)+" Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", beers.size()+"%", beers.size()+"0");
                         Log.v("Insert "+beer.getName(), beers.size()+"");
 
-                        cervejaListaAdapter.insert(beers.size(), beer);
+                        cervejaAdapter.insert(beers.size(), beer);
                     }
 
                     uiDialogs.loadingDialog.dismiss();
@@ -103,7 +104,7 @@ public class ListaCervejariasFragment extends Fragment {
         Beer beer8 = new Beer("Guinness Draught X-X", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "12%", "100");
         beers.add(beer8);
 
-        CervejaListaAdapter mAdapter = new CervejaListaAdapter(getContext(), beers);
+        CervejaFavoritaAdapter mAdapter = new CervejaFavoritaAdapter(getContext(), beers);
         mRecyclerView.setAdapter(mAdapter);
     }
 

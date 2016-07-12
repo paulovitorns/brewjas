@@ -1,6 +1,8 @@
 package br.com.brewjas.ui.view;
 
-import br.com.brewjas.model.Cliente;
+import android.content.Context;
+
+import br.com.brewjas.model.Client;
 
 /*
  * © Copyright 2016 Brewjas.
@@ -11,7 +13,7 @@ public interface BaseView {
 
     void setupActionBar();
 
-    void navigateToNextScreenWithSerializedCliente(Cliente cliente);
+    void navigateToNextScreenWithSerializedCliente(Client client);
 
     void showDialog(String title, String description);
 
@@ -20,4 +22,6 @@ public interface BaseView {
     void showLoading();
 
     void hideLoading();
+
+    Context getContext();
 }

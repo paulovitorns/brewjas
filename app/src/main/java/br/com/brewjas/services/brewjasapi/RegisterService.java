@@ -1,6 +1,6 @@
 package br.com.brewjas.services.brewjasapi;
 
-import br.com.brewjas.model.Cliente;
+import br.com.brewjas.model.Client;
 import br.com.brewjas.common.OnListenerGeneral;
 
 /*
@@ -10,7 +10,7 @@ import br.com.brewjas.common.OnListenerGeneral;
  */
 public interface RegisterService {
 
-    void register(Cliente cliente, OnListenerGeneral listener);
+    void register(Client client, OnListenerGeneral listener);
 
     void checkEmail(String email, OnListenerGeneral listener);
 }

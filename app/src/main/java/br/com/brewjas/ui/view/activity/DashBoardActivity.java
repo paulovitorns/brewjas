@@ -12,10 +12,10 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import br.com.brewjas.R;
-import br.com.brewjas.ui.view.fragment.ListaCervejariasFragment;
-import br.com.brewjas.ui.view.fragment.ListaCervejasFavoritasFragment;
-import br.com.brewjas.ui.view.fragment.ListaCervejasFragment;
-import br.com.brewjas.ui.view.fragment.ListaEstilosFragment;
+import br.com.brewjas.ui.view.fragment.CervejariaFragment;
+import br.com.brewjas.ui.view.fragment.CervejaFavoritaFragment;
+import br.com.brewjas.ui.view.fragment.CervejaFragment;
+import br.com.brewjas.ui.view.fragment.EstiloFragment;
 /*
  * © Copyright 2016 Brewjas.
  * Autor : Paulo Sales - dev@paulovns.com.br
@@ -48,9 +48,9 @@ public class DashBoardActivity extends BaseActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ListaCervejasFragment listaCervejasFragment = new ListaCervejasFragment();
+        CervejaFragment cervejaFragment = new CervejaFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame_dash, listaCervejasFragment);
+        fragmentTransaction.replace(R.id.frame_dash, cervejaFragment);
         fragmentTransaction.commit();
 
 
@@ -98,40 +98,40 @@ public class DashBoardActivity extends BaseActivity
         switch (id){
             case R.id.nav_lista_brewjas:
                 
-                ListaCervejasFragment listaCervejasFragment = new ListaCervejasFragment();
+                CervejaFragment cervejaFragment = new CervejaFragment();
 
                 android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frame_dash, listaCervejasFragment);
+                fragmentTransaction.replace(R.id.frame_dash, cervejaFragment);
                 fragmentTransaction.commit();
 
                 break;
 
             case R.id.nav_favoritas:
 
-                ListaCervejasFavoritasFragment listaCervejasFavoritasFragment = new ListaCervejasFavoritasFragment();
+                CervejaFavoritaFragment cervejaFavoritaFragment = new CervejaFavoritaFragment();
 
                 android.support.v4.app.FragmentTransaction fragFavs = getSupportFragmentManager().beginTransaction();
-                fragFavs.replace(R.id.frame_dash, listaCervejasFavoritasFragment);
+                fragFavs.replace(R.id.frame_dash, cervejaFavoritaFragment);
                 fragFavs.commit();
 
                 break;
 
             case R.id.nav_cervejarias:
 
-                ListaCervejariasFragment listaCervejariasFragment = new ListaCervejariasFragment();
+                CervejariaFragment cervejariaFragment = new CervejariaFragment();
 
                 android.support.v4.app.FragmentTransaction fragCerve = getSupportFragmentManager().beginTransaction();
-                fragCerve.replace(R.id.frame_dash, listaCervejariasFragment);
+                fragCerve.replace(R.id.frame_dash, cervejariaFragment);
                 fragCerve.commit();
 
                 break;
 
             case R.id.nav_estilos:
 
-                ListaEstilosFragment listaEstilosFragment = new ListaEstilosFragment();
+                EstiloFragment estiloFragment = new EstiloFragment();
 
                 android.support.v4.app.FragmentTransaction fragEstilos = getSupportFragmentManager().beginTransaction();
-                fragEstilos.replace(R.id.frame_dash, listaEstilosFragment);
+                fragEstilos.replace(R.id.frame_dash, estiloFragment);
                 fragEstilos.commit();
 
                 break;

@@ -6,4 +6,5 @@ package br.com.brewjas.api.general.request;
  * Empresa : Brewjas app.
  */
 public class ClienteRequest {
+    public String email;
 }

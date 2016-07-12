@@ -51,6 +51,9 @@
     <string name="nav_conta">Minha conta</string>
     <string name="nav_logout">Sair</string>
 
+    <!-- TODO: Strings de título para erros e alertas -->
+    <string name="err_title_underage">Você é menor de idade</string>
+
     <!-- TODO: String para erros e alertas -->
     <string name="err_login_is_empty">Por favor, preencha o seu e-mail!</string>
     <string name="err_login_facebook_cancel">Oops, você concelou o login com o facebook.</string>

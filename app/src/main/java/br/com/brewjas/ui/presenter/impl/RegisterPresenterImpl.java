@@ -4,9 +4,8 @@ import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
-import br.com.brewjas.model.Cliente;
+import br.com.brewjas.model.Client;
 import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.services.brewjasapi.RegisterService;
 import br.com.brewjas.services.brewjasapi.impl.RegisterServiceImpl;
@@ -40,15 +39,15 @@ public class RegisterPresenterImpl implements RegisterPresenter, OnListenerGener
     }
 
     @Override
-    public void onSuccess(Cliente cliente) {
+    public void onSuccess(Client client) {
         this.registerView.hideLoading();
-        registerView.navigateToNextScreenWithSerializedCliente(cliente);
+        registerView.navigateToNextScreenWithSerializedCliente(client);
     }
 
     @Override
-    public void onSubmitPressed(Cliente cliente) {
+    public void onSubmitPressed(Client client) {
         this.registerView.showLoading();
-        registerService.register(cliente, this);
+        registerService.register(client, this);
     }
 
     @Override
@@ -62,7 +61,7 @@ public class RegisterPresenterImpl implements RegisterPresenter, OnListenerGener
         if(verifyBirthDate(dataNascimento)){
 
         }else{
-            this.registerView.errorRegister("Você é menor de idade", Brewjas.getContext().getResources().getString(R.string.err_is_underage));
+            this.registerView.errorRegister(registerView.getContext().getString(R.string.err_title_underage), registerView.getContext().getString(R.string.err_is_underage));
         }
     }
 

@@ -15,7 +15,7 @@ import java.util.List;
 
 import br.com.brewjas.R;
 import br.com.brewjas.model.Beer;
-import br.com.brewjas.ui.adapter.CervejaListaAdapter;
+import br.com.brewjas.ui.adapter.CervejaAdapter;
 import br.com.brewjas.util.UIDialogsFragments;
 
 /*
@@ -23,13 +23,13 @@ import br.com.brewjas.util.UIDialogsFragments;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public class ListaCervejasFragment extends Fragment {
+public class EstiloFragment extends Fragment {
 
     private List<Beer> beers;
     private RecyclerView mRecyclerView;
     private UIDialogsFragments uiDialogs;
 
-    public ListaCervejasFragment() {
+    public EstiloFragment() {
         // Required empty public constructor
     }
 
@@ -57,7 +57,7 @@ public class ListaCervejasFragment extends Fragment {
                 super.onScrolled(recyclerView, dx, dy);
 
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) mRecyclerView.getLayoutManager();
-                CervejaListaAdapter cervejaListaAdapter = (CervejaListaAdapter) mRecyclerView.getAdapter();
+                CervejaAdapter cervejaAdapter = (CervejaAdapter) mRecyclerView.getAdapter();
 
                 if(beers.size() == linearLayoutManager.findLastCompletelyVisibleItemPosition()+1){
 
@@ -67,7 +67,7 @@ public class ListaCervejasFragment extends Fragment {
                         Beer beer = new Beer( (beers.size()+1)+" Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", beers.size()+"%", beers.size()+"0");
                         Log.v("Insert "+beer.getName(), beers.size()+"");
 
-                        cervejaListaAdapter.insert(beers.size(), beer);
+                        cervejaAdapter.insert(beers.size(), beer);
                     }
 
                     uiDialogs.loadingDialog.dismiss();
@@ -103,7 +103,7 @@ public class ListaCervejasFragment extends Fragment {
         Beer beer8 = new Beer("Guinness Draught X-X", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "12%", "100");
         beers.add(beer8);
 
-        CervejaListaAdapter mAdapter = new CervejaListaAdapter(getContext(), beers);
+        CervejaAdapter mAdapter = new CervejaAdapter(getContext(), beers);
         mRecyclerView.setAdapter(mAdapter);
     }
 

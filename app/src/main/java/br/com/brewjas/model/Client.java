@@ -1,7 +1,5 @@
 package br.com.brewjas.model;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 
 /*
@@ -9,34 +7,29 @@ import java.io.Serializable;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public class Cliente implements Serializable {
+public class Client implements Serializable {
 
-    @SerializedName("id")
     private long id;
 
-    @SerializedName("nome")
     private String nome;
 
-    @SerializedName("email")
     private String email;
 
-    @SerializedName("datanascimento")
     private String datanascimento;
 
-    @SerializedName("genero")
     private int genero;
 
-    public Cliente() {
+    public Client() {
     }
 
-    public Cliente(String nome, String email, String datanascimento, int genero) {
+    public Client(String nome, String email, String datanascimento, int genero) {
         this.nome = nome;
         this.email = email;
         this.datanascimento = datanascimento;
         this.genero = genero;
     }
 
-    public Cliente(long id, String nome, String email, String datanascimento, int genero) {
+    public Client(long id, String nome, String email, String datanascimento, int genero) {
         this.id = id;
         this.nome = nome;
         this.email = email;
