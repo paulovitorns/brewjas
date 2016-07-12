@@ -88,6 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
+                    android:tint="@color/colorFavorite"
                     android:src="@drawable/ic_favorite_border_white_36dp"/>
 
             </RelativeLayout>
@@ -149,6 +150,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:tint="@color/colorFavorite"
                 android:src="@drawable/ic_favorite_border_white_36dp"/>
 
         </RelativeLayout>

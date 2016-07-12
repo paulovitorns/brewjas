@@ -6,10 +6,9 @@ import java.io.Serializable;
 
 /*
  * © Copyright 2016 Brewjas.
- * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-@SuppressWarnings("serial")
 public class Cliente implements Serializable {
 
     @SerializedName("id")

@@ -21,7 +21,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 /*
  * © Copyright 2016 Brewjas.
- * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
 public class BrejaActivity extends BaseActivity {
@@ -107,13 +107,12 @@ public class BrejaActivity extends BaseActivity {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case R.id.action_fav:
-                item.setIcon(getResources().getDrawable(R.drawable.ic_favorite_white_36dp));
+                item.setIcon(getResources().getDrawable(R.drawable.ic_favorite_white_48dp));
             break;
 
             default:
-
                 super.onOptionsItemSelected(item);
-                break;
+            break;
 
         }
         return true;

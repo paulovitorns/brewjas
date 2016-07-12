@@ -12,7 +12,7 @@ import br.com.brewjas.R;
 
 /*
  * © Copyright 2016 Brewjas.
- * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
 public class DialogLoading extends DialogFragment {

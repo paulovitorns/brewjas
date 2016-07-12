@@ -6,7 +6,7 @@ import br.com.brewjas.R;
 import br.com.brewjas.ui.view.fragment.LoginFragment;
 /*
  * © Copyright 2016 Brewjas.
- * Autor : Paulo Sales - paulovitorns@gmail.com
+ * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
 public class LoginActivity extends BaseActivity {

@@ -21,4 +21,6 @@
     <color name="colorMarromEdt">#F2D8AA</color>
     <color name="colorMarromEdtPressed">#E4AF56</color>
 
+    <color name="colorFavorite">#940A0A</color>
+
 </resources>

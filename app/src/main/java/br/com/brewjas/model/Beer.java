@@ -2,8 +2,10 @@ package br.com.brewjas.model;
 
 import java.io.Serializable;
 
-/**
- * Created by PauloSales on 28/06/2016.
+/*
+ * © Copyright 2016 Brewjas.
+ * Autor : Paulo Sales - dev@paulovns.com.br
+ * Empresa : Brewjas app.
  */
 public class Beer implements Serializable {
 
