@@ -82,14 +82,14 @@ public class CervejaFavoritaAdapter extends RecyclerView.Adapter<CervejaFavorita
             holder.btFav.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    remove(beer);
+                    remove(beer, holder);
                 }
             });
 
             holder.btFavTw.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    remove(beer);
+                    remove(beer, holder);
                 }
             });
 
@@ -114,10 +114,16 @@ public class CervejaFavoritaAdapter extends RecyclerView.Adapter<CervejaFavorita
     }
 
     // Remove a RecyclerView item containing a specified Data object
-    public void remove(Beer beer) {
+    public void remove(Beer beer, RecyclerView.ViewHolder viewHolder) {
+        animateRemove(viewHolder);
         int position = data.indexOf(beer);
         data.remove(position);
         notifyItemRemoved(position);
+    }
+
+    public void animateRemove(RecyclerView.ViewHolder viewHolder){
+        final Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.fade_out);
+        viewHolder.itemView.setAnimation(animation);
     }
 
     public void animate(RecyclerView.ViewHolder viewHolder){

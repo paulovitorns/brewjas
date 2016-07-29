@@ -58,7 +58,7 @@ public class CervejaFavoritaFragment extends Fragment {
                 super.onScrolled(recyclerView, dx, dy);
 
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) mRecyclerView.getLayoutManager();
-                CervejaAdapter cervejaAdapter = (CervejaAdapter) mRecyclerView.getAdapter();
+                CervejaFavoritaAdapter cervejaAdapter   = (CervejaFavoritaAdapter) mRecyclerView.getAdapter();
 
                 if(beers.size() == linearLayoutManager.findLastCompletelyVisibleItemPosition()+1){
 
