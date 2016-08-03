@@ -21,7 +21,7 @@
 
     <!-- TODO: Textos de textview -->
     <string name="txt_intro_registro">Por favor, fale um pouco sobre você?</string>
-    <string name="txt_intro_conta">Fala, {user}! Estes são seus dados cadastrais.</string>
+    <string name="txt_intro_conta">Fala, {{user}}! Estes são seus dados cadastrais.</string>
     <string name="txt_intro_recuperar">Por favor, informe o seu e-mail cadastrado?</string>
     <string name="txt_title_registro">Criação de conta</string>
     <string name="txt_title_conta">Sua conta</string>
