@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Guinness Draught"
-            style="@style/NameBeer"/>
+            style="@style/TextBig.Bold.Brown"/>
 
         <TextView
             android:id="@+id/txShortDesc"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin_small"
             android:text="This light- to medium-bodied deep copper to brown ale is characterized by a slight to strong lactic sourness, and with Reds sometimes a balanced degree of acetic acid..."
-            style="@style/OtherDelaisBeer"/>
+            style="@style/TextRegular.Regular.Brown"/>
 
     </LinearLayout>
 

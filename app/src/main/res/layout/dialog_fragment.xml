@@ -26,8 +26,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="{{Título do Dialog}}"
-                style="@style/TextHelpLogin"
-                android:textAlignment="center"
+                style="@style/TextBig.Bold.Brown"
+                android:gravity="center_horizontal"
                 android:clickable="true"/>
 
             <TextView
@@ -38,7 +38,7 @@
                 android:text="{{Texto do dialog.}}"
                 android:layout_below="@+id/txtTitleRegister"
                 android:clickable="true"
-                style="@style/TextSubHelpLogin"/>
+                style="@style/TextMedium.Regular.Brown"/>
 
         </LinearLayout>
 
@@ -46,7 +46,8 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:text="@string/btn_ok"
-            style="@style/TxtBtn"
+            style="@style/TextBig.Bold.White"
+            android:textAllCaps="false"
             android:id="@+id/btnOk"
             android:background="@drawable/rounded_btn_padrao"/>
 

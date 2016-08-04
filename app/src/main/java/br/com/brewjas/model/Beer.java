@@ -9,6 +9,8 @@ import java.io.Serializable;
  */
 public class Beer implements Serializable {
 
+    public static final String KEY = "BeerKey";
+
     private String name;
 
     private String cervejaria;

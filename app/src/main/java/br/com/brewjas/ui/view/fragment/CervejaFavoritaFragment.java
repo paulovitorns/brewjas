@@ -15,8 +15,7 @@ import java.util.List;
 
 import br.com.brewjas.R;
 import br.com.brewjas.model.Beer;
-import br.com.brewjas.ui.adapter.CervejaAdapter;
-import br.com.brewjas.ui.adapter.CervejaFavoritaAdapter;
+import br.com.brewjas.ui.adapter.FavoriteBeerAdapter;
 import br.com.brewjas.util.UIDialogsFragments;
 
 /*
@@ -58,7 +57,7 @@ public class CervejaFavoritaFragment extends Fragment {
                 super.onScrolled(recyclerView, dx, dy);
 
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) mRecyclerView.getLayoutManager();
-                CervejaFavoritaAdapter cervejaAdapter   = (CervejaFavoritaAdapter) mRecyclerView.getAdapter();
+                FavoriteBeerAdapter cervejaAdapter   = (FavoriteBeerAdapter) mRecyclerView.getAdapter();
 
                 if(beers.size() == linearLayoutManager.findLastCompletelyVisibleItemPosition()+1){
 
@@ -104,7 +103,7 @@ public class CervejaFavoritaFragment extends Fragment {
         Beer beer8 = new Beer("Guinness Draught X-X", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "12%", "100");
         beers.add(beer8);
 
-        CervejaFavoritaAdapter mAdapter = new CervejaFavoritaAdapter(getContext(), beers);
+        FavoriteBeerAdapter mAdapter = new FavoriteBeerAdapter(getContext(), beers);
         mRecyclerView.setAdapter(mAdapter);
     }
 

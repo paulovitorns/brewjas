@@ -9,6 +9,8 @@ import java.io.Serializable;
  */
 public class Client implements Serializable {
 
+    public static final String KEY = "ClientKey";
+
     private long id;
 
     private String nome;

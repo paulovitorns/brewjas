@@ -229,6 +229,7 @@
     </style>
     <style name="TextBig.Bold.White" parent="TextBig.Bold">
         <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
     </style>
     <style name="TextBig.Light.White" parent="TextBig.Light">
         <item name="android:textColor">@color/colorWhite</item>
@@ -237,9 +238,11 @@
     <!--TODO: font-color: brown to big size (regular, bold and light) -->
     <style name="TextBig.Regular.Brown" parent="TextBig.Regular">
         <item name="android:textColor">@color/colorMarrom</item>
+        <item name="android:textColorHint">@color/colorMarrom</item>
     </style>
     <style name="TextBig.Bold.Brown" parent="TextBig.Bold">
         <item name="android:textColor">@color/colorMarrom</item>
+        <item name="android:textColorHint">@color/colorMarrom</item>
     </style>
     <style name="TextBig.Light.Brown" parent="TextBig.Light">
         <item name="android:textColor">@color/colorMarrom</item>

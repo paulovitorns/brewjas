@@ -13,12 +13,12 @@ import java.util.List;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public class BrejasRelacionadasAdapter extends PagerAdapter {
+public class BeerRelatedAdapter extends PagerAdapter {
 
         private Context context;
         private List<ViewGroup> views;
 
-        public BrejasRelacionadasAdapter(Context context, List<ViewGroup> viewGroups){
+        public BeerRelatedAdapter(Context context, List<ViewGroup> viewGroups){
             this.context = context;
             this.views = viewGroups;
         }

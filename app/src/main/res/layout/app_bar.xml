@@ -1,40 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v7.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/containerToolbar"
-    android:orientation="vertical"
+    android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="@dimen/nav_header_size"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    android:background="@color/colorPrimaryDark">
 
-    <RelativeLayout
-        android:id="@+id/containerHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/HeaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        style="@style/TextBig.Regular.White" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/nav_header_size"
-            android:theme="@style/AppTheme.AppBarOverlay"
-            android:background="@color/colorPrimaryDark">
-
-            <TextView
-                android:id="@+id/HeaderTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                style="@style/TxtBtn"
-                android:textSize="22sp"
-                />
-
-        </android.support.v7.widget.Toolbar>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/nav_header_shadow_size"
-            android:background="@drawable/toolbar_dropshadow"
-            android:layout_below="@+id/toolbar"/>
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</android.support.v7.widget.Toolbar>

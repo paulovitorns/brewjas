@@ -15,7 +15,7 @@ import java.util.List;
 
 import br.com.brewjas.R;
 import br.com.brewjas.model.Beer;
-import br.com.brewjas.ui.adapter.BrejasRelacionadasAdapter;
+import br.com.brewjas.ui.adapter.BeerRelatedAdapter;
 import br.com.brewjas.ui.view.component.BrejaRelacionadaView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -41,7 +41,7 @@ public class BrejaActivity extends BaseActivity {
 
         ButterKnife.bind(this);
 
-        beer = (Beer) getIntent().getSerializableExtra("Breja");
+        beer = (Beer) getIntent().getSerializableExtra(Beer.KEY);
 
         CharSequence desc = "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
@@ -62,7 +62,7 @@ public class BrejaActivity extends BaseActivity {
 
         BrejaRelacionadaView brejaRelacionadaView = new BrejaRelacionadaView(this, beers);
 
-        viewPager.setAdapter(new BrejasRelacionadasAdapter(this, brejaRelacionadaView.getViewGroup()));
+        viewPager.setAdapter(new BeerRelatedAdapter(this, brejaRelacionadaView.getViewGroup()));
 
 
     }

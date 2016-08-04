@@ -28,13 +28,13 @@ import butterknife.ButterKnife;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public class CervejaAdapter extends RecyclerView.Adapter<CervejaAdapter.ViewHolder> {
+public class FavoriteBeerAdapter extends RecyclerView.Adapter<FavoriteBeerAdapter.ViewHolder> {
 
     private static Context context;
     private static List<Beer> data;
 
 
-    public CervejaAdapter(Context context, List<Beer> lista){
+    public FavoriteBeerAdapter(Context context, List<Beer> lista){
 
         if(this.data == null)
             this.data = new ArrayList<>();
@@ -44,16 +44,19 @@ public class CervejaAdapter extends RecyclerView.Adapter<CervejaAdapter.ViewHold
     }
 
     @Override
-    public CervejaAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FavoriteBeerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = LayoutInflater.from(context).inflate(R.layout.item_breja, parent, false);
         return new ViewHolder(itemLayoutView);
     }
 
     @Override
-    public void onBindViewHolder(final CervejaAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(final FavoriteBeerAdapter.ViewHolder holder, int position) {
         final Beer beer = data.get(position);
 
         if(beer != null){
+
+            holder.btFav.setImageResource(R.drawable.ic_favorite_white_36dp);
+            holder.btFavTw.setImageResource(R.drawable.ic_favorite_white_36dp);
 
             if(position % 2 == 0){
 
@@ -62,6 +65,7 @@ public class CervejaAdapter extends RecyclerView.Adapter<CervejaAdapter.ViewHold
                 holder.cnImg.setVisibility(View.GONE);
                 holder.cnImgFav.setVisibility(View.VISIBLE);
             }else{
+
                 LinearLayout.LayoutParams adjust = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1.1f);
                 holder.cn.setLayoutParams(adjust);
                 holder.cnImg.setVisibility(View.VISIBLE);
@@ -78,14 +82,14 @@ public class CervejaAdapter extends RecyclerView.Adapter<CervejaAdapter.ViewHold
             holder.btFav.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.btFav.setImageResource(R.drawable.ic_favorite_white_36dp);
+                    remove(beer, holder);
                 }
             });
 
             holder.btFavTw.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    holder.btFavTw.setImageResource(R.drawable.ic_favorite_white_36dp);
+                    remove(beer, holder);
                 }
             });
 
@@ -110,10 +114,16 @@ public class CervejaAdapter extends RecyclerView.Adapter<CervejaAdapter.ViewHold
     }
 
     // Remove a RecyclerView item containing a specified Data object
-    public void remove(Beer beer) {
+    public void remove(Beer beer, RecyclerView.ViewHolder viewHolder) {
+        animateRemove(viewHolder);
         int position = data.indexOf(beer);
         data.remove(position);
         notifyItemRemoved(position);
+    }
+
+    public void animateRemove(RecyclerView.ViewHolder viewHolder){
+        final Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.fade_out);
+        viewHolder.itemView.setAnimation(animation);
     }
 
     public void animate(RecyclerView.ViewHolder viewHolder){

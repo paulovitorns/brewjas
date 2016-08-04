@@ -11,6 +11,8 @@ import br.com.brewjas.model.common.Image;
  */
 public class Brewery implements Serializable {
 
+    public static final String KEY = "BreweryKey";
+
     private String  id;
     private String  description;
     private String  name;
