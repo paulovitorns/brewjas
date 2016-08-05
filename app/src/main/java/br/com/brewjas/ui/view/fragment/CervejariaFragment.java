@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import java.util.List;
 import br.com.brewjas.R;
 import br.com.brewjas.model.Brewery;
 import br.com.brewjas.model.common.Image;
+import br.com.brewjas.ui.adapter.BreweryAdapter;
 import br.com.brewjas.util.UIDialogsFragments;
 
 /*
@@ -45,7 +47,7 @@ public class CervejariaFragment extends Fragment {
 
         mRecyclerView  = (RecyclerView) view.findViewById(R.id.listaBrejas);
         mRecyclerView.setHasFixedSize(true);
-        /*
+
         mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -57,24 +59,23 @@ public class CervejariaFragment extends Fragment {
                 super.onScrolled(recyclerView, dx, dy);
 
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) mRecyclerView.getLayoutManager();
-                BeerAdapter cervejaAdapter = (BeerAdapter) mRecyclerView.getAdapter();
+                BreweryAdapter cervejariaAdapter        = (BreweryAdapter) mRecyclerView.getAdapter();
 
                 if(breweries.size() == linearLayoutManager.findLastCompletelyVisibleItemPosition()+1){
 
                     uiDialogs.showLoading();
 
                     for(int i = 0; i < 2; i++){
-                        Beer beer = new Beer( (breweries.size()+1)+" Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", beers.size()+"%", beers.size()+"0");
-                        Log.v("Insert "+beer.getName(), breweries.size()+"");
+                        Brewery brewery = new Brewery("KR4X6i", "The fact that D.C. has become a world-class beer town", "DC Brau Brewing "+(breweries.size()+1), new Image(null, null, null), "2009", "http://www.dcbrau.com");
+                        Log.v("Insert "+brewery.getName(), breweries.size()+"");
 
-                        cervejaAdapter.insert(breweries.size(), beer);
+                        cervejariaAdapter.insert(breweries.size(), brewery);
                     }
 
                     uiDialogs.loadingDialog.dismiss();
                 }
             }
         });
-        */
 
         loadBeers();
 
@@ -105,8 +106,9 @@ public class CervejariaFragment extends Fragment {
         Brewery brewery5 = new Brewery("KR4X6i", "The fact that D.C. has become a world-class beer town", "DC Brau Brewing 6", new Image(null, null, null), "2014", "http://www.dcbrau.com");
         breweries.add(brewery5);
 
-        //BeerAdapter mAdapter = new BeerAdapter(getContext(), beers);
-        //mRecyclerView.setAdapter(mAdapter);
+        BreweryAdapter mAdapter = new BreweryAdapter(getContext(), breweries);
+        mRecyclerView.setAdapter(mAdapter);
+
     }
 
 

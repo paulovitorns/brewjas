@@ -33,7 +33,6 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
     private Context context;
     private List<Beer> data;
 
-
     public BeerAdapter(Context context, List<Beer> lista){
 
         if(this.data == null)
@@ -90,7 +89,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
             });
 
             animate(holder);
-            holder.setParans(this.context, beer);
+            holder.setParams(this.context, beer);
         }
     }
 
@@ -108,13 +107,6 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
 
         data.add(beer);
         notifyItemInserted(position);
-    }
-
-    // Remove a RecyclerView item containing a specified Data object
-    public void remove(Beer beer) {
-        int position = data.indexOf(beer);
-        data.remove(position);
-        notifyItemRemoved(position);
     }
 
     public void animate(RecyclerView.ViewHolder viewHolder){
@@ -148,7 +140,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
             itemView.setOnClickListener(this);
         }
 
-        public void setParans(Context context, Beer beer){
+        public void setParams(Context context, Beer beer){
             this.context    = context;
             this.beerObj    = beer;
         }
