@@ -66,7 +66,7 @@ public class FavoriteBeerAdapter extends RecyclerView.Adapter<FavoriteBeerAdapte
                 holder.cnImgFav.setVisibility(View.VISIBLE);
             }else{
 
-                LinearLayout.LayoutParams adjust = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1.1f);
+                LinearLayout.LayoutParams adjust = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1.2f);
                 holder.cn.setLayoutParams(adjust);
                 holder.cnImg.setVisibility(View.VISIBLE);
                 holder.cnImgFav.setVisibility(View.GONE);
@@ -133,18 +133,18 @@ public class FavoriteBeerAdapter extends RecyclerView.Adapter<FavoriteBeerAdapte
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        @Bind(R.id.content)         LinearLayout cn;
-        @Bind(R.id.containerImage)  RelativeLayout cnImg;
-        @Bind(R.id.imBeer)          ImageView imBeer;
-        @Bind(R.id.txBeer)          TextView beer;
-        @Bind(R.id.txBrewery)       TextView brewery;
-        @Bind(R.id.txCountry)       TextView country;
-        @Bind(R.id.txStyle)         TextView style;
-        @Bind(R.id.txAbv)           TextView abv;
-        @Bind(R.id.txIbu)           TextView ibu;
-        @Bind(R.id.cnImgFav)        RelativeLayout cnImgFav;
-        @Bind(R.id.btFav)           ImageButton btFav;
-        @Bind(R.id.btFavTw)         ImageButton btFavTw;
+        @Bind(R.id.content)         LinearLayout    cn;
+        @Bind(R.id.containerImage)  RelativeLayout  cnImg;
+        @Bind(R.id.imBeer)          ImageView       imBeer;
+        @Bind(R.id.txBeer)          TextView        beer;
+        @Bind(R.id.txBrewery)       TextView        brewery;
+        @Bind(R.id.txCountry)       TextView        country;
+        @Bind(R.id.txStyle)         TextView        style;
+        @Bind(R.id.txAbv)           TextView        abv;
+        @Bind(R.id.txIbu)           TextView        ibu;
+        @Bind(R.id.cnImgFav)        RelativeLayout  cnImgFav;
+        @Bind(R.id.btFav)           ImageButton     btFav;
+        @Bind(R.id.btFavTw)         ImageButton     btFavTw;
 
         public ViewHolder(View itemView) {
             super(itemView);

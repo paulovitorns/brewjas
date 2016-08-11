@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brewjas.R;
-import br.com.brewjas.model.Beer;
-import br.com.brewjas.ui.adapter.BeerAdapter;
+import br.com.brewjas.model.Style;
+import br.com.brewjas.ui.adapter.StyleAdapter;
 import br.com.brewjas.util.UIDialogsFragments;
 
 /*
@@ -25,7 +25,7 @@ import br.com.brewjas.util.UIDialogsFragments;
  */
 public class EstiloFragment extends Fragment {
 
-    private List<Beer> beers;
+    private List<Style> styles;
     private RecyclerView mRecyclerView;
     private UIDialogsFragments uiDialogs;
 
@@ -42,7 +42,7 @@ public class EstiloFragment extends Fragment {
         uiDialogs = new UIDialogsFragments();
         uiDialogs.uiGetActivity(getActivity());
 
-        beers = new ArrayList<>();
+        styles = new ArrayList<>();
 
         mRecyclerView  = (RecyclerView) view.findViewById(R.id.listaBrejas);
         mRecyclerView.setHasFixedSize(true);
@@ -57,17 +57,17 @@ public class EstiloFragment extends Fragment {
                 super.onScrolled(recyclerView, dx, dy);
 
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) mRecyclerView.getLayoutManager();
-                BeerAdapter beerAdapter = (BeerAdapter) mRecyclerView.getAdapter();
+                StyleAdapter beerAdapter = (StyleAdapter) mRecyclerView.getAdapter();
 
-                if(beers.size() == linearLayoutManager.findLastCompletelyVisibleItemPosition()+1){
+                if(styles.size() == linearLayoutManager.findLastCompletelyVisibleItemPosition()+1){
 
                     uiDialogs.showLoading();
 
                     for(int i = 0; i < 2; i++){
-                        Beer beer = new Beer( (beers.size()+1)+" Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", beers.size()+"%", beers.size()+"0");
-                        Log.v("Insert "+beer.getName(), beers.size()+"");
+                        Style beer = new Style( (styles.size()+1)+"Guinness Draught", "This light- to medium-bodied deep copper to brown ale is characterized by a slight to strong lactic sourness, and with Reds sometimes a balanced degree of acetic acid");
+                        Log.v("Insert "+beer.getName(), styles.size()+"");
 
-                        beerAdapter.insert(beers.size(), beer);
+                        beerAdapter.insert(styles.size(), beer);
                     }
 
                     uiDialogs.loadingDialog.dismiss();
@@ -86,24 +86,31 @@ public class EstiloFragment extends Fragment {
 
     private void loadBeers(){
 
-        Beer beer1 = new Beer("Guinness Draught", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "5%", "50");
-        beers.add(beer1);
-        Beer beer2 = new Beer("Guinness Draught light", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "6%", "60");
-        beers.add(beer2);
-        Beer beer3 = new Beer("Guinness Draught mediun", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "7%", "70");
-        beers.add(beer3);
-        Beer beer4 = new Beer("Guinness Draught light strong", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "8%", "80");
-        beers.add(beer4);
-        Beer beer5 = new Beer("Guinness Draught hardcore", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "9%", "90");
-        beers.add(beer5);
-        Beer beer6 = new Beer("Guinness Draught Badass", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "10%", "90");
-        beers.add(beer6);
-        Beer beer7 = new Beer("Guinness Draught punk", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "11%", "95");
-        beers.add(beer7);
-        Beer beer8 = new Beer("Guinness Draught X-X", "Guinness", "Irlanda", "Classic Irish-Style Dry Stout", "12%", "100");
-        beers.add(beer8);
+        Style beer1 = new Style("Guinness Draught", "This light- to medium-bodied deep copper to brown ale is characterized by a slight to strong lactic sourness, and with Reds sometimes a balanced degree of acetic acid");
+        styles.add(beer1);
 
-        BeerAdapter mAdapter = new BeerAdapter(getContext(), beers);
+        Style beer2 = new Style("2 Guinness Draught", "This light- to medium-bodied deep copper to brown ale is characterized by a slight to strong lactic sourness, and with Reds sometimes a balanced degree of acetic acid");
+        styles.add(beer2);
+
+        Style beer3 = new Style("3 Guinness Draught", "This light- to medium-bodied deep copper to brown ale is characterized by a slight to strong lactic sourness, and with Reds sometimes a balanced degree of acetic acid");
+        styles.add(beer3);
+
+        Style beer4 = new Style("4 Guinness Draught", "This light- to medium-bodied deep copper to brown ale is characterized by a slight to strong lactic sourness, and with Reds sometimes a balanced degree of acetic acid");
+        styles.add(beer4);
+
+        Style beer5 = new Style("5 Guinness Draught", "This light- to medium-bodied deep copper to brown ale is characterized by a slight to strong lactic sourness, and with Reds sometimes a balanced degree of acetic acid");
+        styles.add(beer5);
+
+        Style beer6 = new Style("6 Guinness Draught", "This light- to medium-bodied deep copper to brown ale is characterized by a slight to strong lactic sourness, and with Reds sometimes a balanced degree of acetic acid");
+        styles.add(beer6);
+
+        Style beer7 = new Style("7 Guinness Draught", "This light- to medium-bodied deep copper to brown ale is characterized by a slight to strong lactic sourness, and with Reds sometimes a balanced degree of acetic acid");
+        styles.add(beer7);
+
+        Style beer8 = new Style("8 Guinness Draught", "This light- to medium-bodied deep copper to brown ale is characterized by a slight to strong lactic sourness, and with Reds sometimes a balanced degree of acetic acid");
+        styles.add(beer8);
+
+        StyleAdapter mAdapter = new StyleAdapter(getContext(), styles);
         mRecyclerView.setAdapter(mAdapter);
     }
 

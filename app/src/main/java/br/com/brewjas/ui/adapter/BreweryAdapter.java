@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brewjas.R;
-import br.com.brewjas.model.Beer;
 import br.com.brewjas.model.Brewery;
 import butterknife.Bind;
 import butterknife.ButterKnife;
