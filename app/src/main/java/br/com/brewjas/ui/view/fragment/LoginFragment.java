@@ -1,5 +1,7 @@
 package br.com.brewjas.ui.view.fragment;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -167,7 +169,7 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
 
     @Override
     public void setUsernameError(String title, String description) {
-
+        ((LoginActivity)getActivity()).hideLoading();
         ((LoginActivity)getActivity()).showDialog(title, description);
     }
 
@@ -206,40 +208,18 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
     public void register() {
 
         Intent intent = new Intent(getActivity(), RegisterActivity.class);
-        ((LoginActivity)getActivity()).navigateToNextScreen(intent);
-    }
-
-    @Override
-    public void setupActionBar() {
-
+        getActivity().startActivity(intent);
     }
 
     @Override
     public void navigateToNextScreenWithSerializedCliente(Client client) {
+
+        ((LoginActivity)getActivity()).hideLoading();
+
         Intent intent = new Intent(getActivity(), DashBoardActivity.class);
         intent.putExtra("Client", client);
 
-        ((LoginActivity)getActivity()).navigateToNextScreen(intent);
+        getActivity().startActivity(intent);
         getActivity().finish();
-    }
-
-    @Override
-    public void showDialog(String title, String description) {
-
-    }
-
-    @Override
-    public void hideDialog() {
-
-    }
-
-    @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
     }
 }

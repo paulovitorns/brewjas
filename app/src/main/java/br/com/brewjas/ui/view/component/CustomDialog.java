@@ -8,39 +8,45 @@ package br.com.brewjas.ui.view.component;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.com.brewjas.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-//how to use
-//new CustomDialog(apiError, this).show();
-
 public class CustomDialog implements View.OnClickListener{
 
-    private Dialog dialog;
-    private Context context;
+    @Bind(R.id.txtTitleDialog)  TextView    txtTitleDialog;
+    @Bind(R.id.txtTextDialog)   TextView    txtTextDialog;
+    @Bind(R.id.btnOk)           Button      btnOk;
 
-    public CustomDialog(Context context){
-        this.context = context;
+    private Dialog  dialog;
+    private Context context;
+    private String  title;
+    private String  msg;
+
+    public CustomDialog(Context context, String title, String msg){
+        this.context    = context;
+        this.title      = title;
+        this.msg        = msg;
     }
 
     public void show(){
         dialog = new Dialog(context);
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //dialog.setContentView(R.layout.dialog_error);
+        dialog.setContentView(R.layout.dialog_fragment);
         dialog.setCancelable(false);
 
         ButterKnife.bind(this, dialog);
 
-        //btDialog.setOnClickListener(this);
+        txtTitleDialog.setText(title);
+        txtTextDialog.setText(msg);
+
+        btnOk.setOnClickListener(this);
         dialog.show();
     }
 

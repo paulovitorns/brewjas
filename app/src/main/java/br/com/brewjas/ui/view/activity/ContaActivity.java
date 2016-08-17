@@ -116,11 +116,6 @@ public class ContaActivity extends BaseActivity implements DatePickerDialog.OnDa
     }
 
     @Override
-    public void hideDialog() {
-        super.hideDialog();
-    }
-
-    @Override
     public void showLoading() {
         super.showLoading();
     }
@@ -156,16 +151,6 @@ public class ContaActivity extends BaseActivity implements DatePickerDialog.OnDa
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
         String date = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
         btnDataNasc.setText(date);
-    }
-
-    @Override
-    public void navigateToNextScreenWithSerializedCliente(Client client) {
-
-        Intent intent = new Intent(ContaActivity.this, DashBoardActivity.class);
-
-        intent.putExtra("Client", client);
-        startActivity(intent);
-
     }
 
 }

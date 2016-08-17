@@ -3,6 +3,7 @@ package br.com.brewjas.ui.view.activity;
 import android.os.Bundle;
 
 import br.com.brewjas.R;
+import br.com.brewjas.model.Client;
 import br.com.brewjas.ui.view.fragment.LoginFragment;
 /*
  * © Copyright 2016 Brewjas.
@@ -27,11 +28,6 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void showDialog(String title, String msg) {
         super.showDialog(title, msg);
-    }
-
-    @Override
-    public void hideDialog() {
-        super.hideDialog();
     }
 
     @Override

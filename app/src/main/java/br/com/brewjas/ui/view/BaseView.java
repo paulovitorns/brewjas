@@ -13,11 +13,9 @@ public interface BaseView {
 
     void setupActionBar();
 
-    void navigateToNextScreenWithSerializedCliente(Client client);
-
     void showDialog(String title, String description);
 
-    void hideDialog();
+    void navigateToNextScreenWithSerializedCliente(Client client);
 
     void showLoading();
 

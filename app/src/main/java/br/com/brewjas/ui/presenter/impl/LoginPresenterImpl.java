@@ -25,26 +25,22 @@ public class LoginPresenterImpl implements LoginPresenter, OnListenerGeneral {
     //Inicio os serviços responsaveis pelo login do usuário
     @Override
     public void init() {
-
         loginService = new LoginServiceImpl();
     }
 
     @Override
     public void onError(String title, String description) {
-        this.loginView.hideLoading();
         this.loginView.setUsernameError(title, description);
     }
 
     @Override
     public void onSuccess(Client client) {
-        this.loginView.hideLoading();
         loginView.navigateToNextScreenWithSerializedCliente(client);
     }
 
 
     @Override
     public void onSubmitPressed(String email) {
-        this.loginView.showLoading();
         loginService.login(email, this);
     }
 

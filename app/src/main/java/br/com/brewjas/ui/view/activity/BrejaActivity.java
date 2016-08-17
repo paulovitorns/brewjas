@@ -15,6 +15,7 @@ import java.util.List;
 
 import br.com.brewjas.R;
 import br.com.brewjas.model.Beer;
+import br.com.brewjas.model.Client;
 import br.com.brewjas.ui.adapter.BeerRelatedAdapter;
 import br.com.brewjas.ui.view.component.BrejaRelacionadaView;
 import butterknife.Bind;
@@ -66,7 +67,6 @@ public class BrejaActivity extends BaseActivity {
 
 
     }
-
 
     private void loadBeers(){
 
@@ -129,7 +129,7 @@ public class BrejaActivity extends BaseActivity {
     }
 
     @Override
-    public void navigateToNextScreen(Intent intent) {
-        super.navigateToNextScreen(intent);
+    public void startActivity(Intent intent) {
+        super.startActivity(intent);
     }
 }

@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import br.com.brewjas.R;
+import br.com.brewjas.model.Client;
 import br.com.brewjas.ui.view.fragment.CervejariaFragment;
 import br.com.brewjas.ui.view.fragment.CervejaFavoritaFragment;
 import br.com.brewjas.ui.view.fragment.CervejaFragment;
@@ -138,13 +139,13 @@ public class DashBoardActivity extends BaseActivity
 
             case R.id.nav_conta:
 
-                navigateToNextScreen(new Intent(this, ContaActivity.class));
+                startActivity(new Intent(this, ContaActivity.class));
 
                 break;
 
             case R.id.nav_logout:
 
-                navigateToNextScreen(new Intent(this, LoginActivity.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 finish();
                 break;
 
@@ -157,4 +158,5 @@ public class DashBoardActivity extends BaseActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
