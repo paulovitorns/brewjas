@@ -9,7 +9,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -20,34 +19,41 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.util.Calendar;
 
+import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
 import br.com.brewjas.model.Client;
 import br.com.brewjas.ui.adapter.GenderAdapter;
 import br.com.brewjas.ui.presenter.RegisterPresenter;
 import br.com.brewjas.ui.presenter.impl.RegisterPresenterImpl;
 import br.com.brewjas.ui.view.RegisterView;
+import br.com.brewjas.ui.view.component.CustomDialog;
+import br.com.brewjas.ui.view.component.ProgressDialog;
+import br.com.brewjas.util.SharedPreferencesUtil;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 /*
  * © Copyright 2016 Brewjas.
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
+
 public class RegisterActivity extends BaseActivity implements DatePickerDialog.OnDateSetListener, RegisterView {
 
     private LinearLayout contentPanel;
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.HeaderTitle) TextView HeaderTitle;
-    @Bind(R.id.spinnerGenero) Spinner spinnerGenero;
-    private String[] gender = new String[]{"Seu gênero", "Masculino", "Feminino"};
+    @Bind(R.id.toolbar)         Toolbar     toolbar;
+    @Bind(R.id.HeaderTitle)     TextView    HeaderTitle;
+    @Bind(R.id.spinnerGenero)   Spinner     spinnerGenero;
+    @Bind(R.id.edtNome)         EditText    edtNome;
+    @Bind(R.id.edtLogin)        EditText    edtLogin;
+    @Bind(R.id.btnDataNasc)     Button      btnDataNasc;
 
-    @Bind(R.id.edtNome) EditText edtNome;
-    @Bind(R.id.edtLogin) EditText edtLogin;
-    @Bind(R.id.btnDataNasc) Button btnDataNasc;
+    private String[]            gender      = Brewjas.getContext().getResources().getStringArray(R.array.gender);;
+    private RegisterPresenter   presenter   = new RegisterPresenterImpl(this);
 
-    private RegisterPresenter presenter = new RegisterPresenterImpl(this);
+    private ProgressDialog      mProgressDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,12 +65,8 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
         setupActionBar();
         loadContent();
 
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.gender, android.R.layout.simple_spinner_dropdown_item);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
         LinearLayout.LayoutParams lp1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         spinnerGenero.setLayoutParams(lp1);
-        spinnerGenero.setAdapter(adapter1);
         spinnerGenero.setAdapter(new GenderAdapter(this, gender));
 
     }
@@ -87,7 +89,7 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
 
         toolbar.setTitle("");
 
-        HeaderTitle.setText(getResources().getString(R.string.txt_title_registro));
+        HeaderTitle.setText(getResources().getString(R.string.title_new_acc));
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
@@ -112,17 +114,36 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
 
     @Override
     public void showDialog(String title, String msg) {
-        super.showDialog(title, msg);
+
+        try{
+            new CustomDialog(getContext(), title, msg).show();
+        } catch (Exception e){}
+    }
+
+    @Override
+    public void navigateToNextScreenWithSerializedCliente(Client client) {
+
+        SharedPreferencesUtil.saveSession(client);
+        Intent intent = new Intent(getContext(), DashBoardActivity.class);
+
+        startActivity(intent);
+        finish();
     }
 
     @Override
     public void showLoading() {
-        super.showLoading();
+        if (mProgressDialog != null && mProgressDialog.isShowing())
+            hideLoading();
+        mProgressDialog = new ProgressDialog(getContext());
+        mProgressDialog.show();
     }
 
     @Override
     public void hideLoading() {
-        super.hideLoading();
+        if (mProgressDialog != null) {
+            mProgressDialog.dismiss();
+            mProgressDialog = null;
+        }
     }
 
     @Override

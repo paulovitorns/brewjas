@@ -26,7 +26,7 @@ public class LoginServiceImpl implements LoginService {
             return;
         }else{
 
-            Client client = new Client("Usuário Estático", email, "11/11/1111", 0);
+            Client client = new Client("Usuário Estático", email, "11/11/1111", 1);
             listener.onSuccess(client);
         }
 

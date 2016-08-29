@@ -5,6 +5,8 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 
+import br.com.brewjas.Brewjas;
+import br.com.brewjas.R;
 import br.com.brewjas.model.Client;
 import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.services.brewjasapi.RegisterService;
@@ -22,21 +24,23 @@ public class RegisterServiceImpl implements RegisterService {
         String erros = "";
 
         if(TextUtils.isEmpty(client.getNome()))
-            erros+= "\nSeu nome";
+            erros+= "\nseu nome";
 
         if(TextUtils.isEmpty(client.getEmail()))
-            erros+= "\nSeu e-mail";
+            erros+= "\nseu e-mail";
 
         if(TextUtils.isEmpty(client.getDatanascimento()))
-            erros+= "\nSua data de nascimento";
+            erros+= "\nsua data de nascimento";
 
         if(client.getGenero() == 0)
-            erros+= "\nSeu gênero";
+            erros+= "\nseu gênero";
 
         if(!TextUtils.isEmpty(erros)){
 
-            Log.d("CAMPOS_VAZIOS", "Por favor preencha os seguintes campos: "+erros);
-            listener.onError("Erro de validação =/", "Por favor, preencha este(s) campo(s): "+erros);
+            String erroTitle = Brewjas.getContext().getString(R.string.err_register_general);
+
+            Log.d("CAMPOS_VAZIOS", erroTitle+" "+erros);
+            listener.onError(Brewjas.getContext().getString(R.string.err_register_general_title), erroTitle+" "+erros);
             return;
         }else{
 

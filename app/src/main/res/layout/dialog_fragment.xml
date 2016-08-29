@@ -1,56 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_transparent_yellow"
-    android:id="@+id/containerHelp"
-    android:padding="@dimen/activity_vertical_margin_big">
+    android:layout_height="wrap_content"
+    android:id="@+id/container"
+    android:background="@drawable/style_rounded_box_form">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/container"
-        android:background="@drawable/style_rounded_box_form"
-        android:layout_centerInParent="true">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/activity_horizontal_margin">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <TextView
+            android:id="@+id/txtTitleDialog"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/activity_horizontal_margin">
+            android:layout_height="wrap_content"
+            android:text="{{Título do Dialog}}"
+            style="@style/TextBig.Bold.Brown"
+            android:gravity="center_horizontal"
+            android:clickable="true"/>
 
-            <TextView
-                android:id="@+id/txtTitleDialog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="{{Título do Dialog}}"
-                style="@style/TextBig.Bold.Brown"
-                android:gravity="center_horizontal"
-                android:clickable="true"/>
-
-            <TextView
-                android:id="@+id/txtTextDialog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:text="{{Texto do dialog.}}"
-                android:layout_below="@+id/txtTitleRegister"
-                android:clickable="true"
-                style="@style/TextMedium.Regular.Brown"/>
-
-        </LinearLayout>
-
-        <Button
+        <TextView
+            android:id="@+id/txtTextDialog"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:text="@string/btn_ok"
-            style="@style/TextBig.Bold.White"
-            android:textAllCaps="false"
-            android:id="@+id/btnOk"
-            android:background="@drawable/rounded_btn_padrao"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="{{Texto do dialog.}}"
+            android:layout_below="@+id/txtTitleRegister"
+            android:clickable="true"
+            style="@style/TextMedium.Regular.Brown"/>
 
     </LinearLayout>
 
-</RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="@string/btn_ok"
+        style="@style/TextBig.Bold.White"
+        android:textAllCaps="false"
+        android:id="@+id/btnOk"
+        android:background="@drawable/rounded_btn_padrao"/>
+
+</LinearLayout>

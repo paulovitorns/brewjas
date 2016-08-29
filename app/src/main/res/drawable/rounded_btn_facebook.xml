@@ -16,7 +16,7 @@
     <item android:state_enabled="false">
         <shape android:shape="rectangle" >
             <corners android:radius="40dp" />
-            <solid android:color="@color/colorBlueFbPressed" />
+            <solid android:color="@color/colorBlueFb" />
         </shape>
     </item>
 </selector>

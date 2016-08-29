@@ -1,5 +1,6 @@
 package br.com.brewjas.ui.view.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.ViewPager;
@@ -17,7 +18,10 @@ import br.com.brewjas.R;
 import br.com.brewjas.model.Beer;
 import br.com.brewjas.model.Client;
 import br.com.brewjas.ui.adapter.BeerRelatedAdapter;
+import br.com.brewjas.ui.view.BaseView;
 import br.com.brewjas.ui.view.component.BrejaRelacionadaView;
+import br.com.brewjas.ui.view.component.CustomDialog;
+import br.com.brewjas.ui.view.component.ProgressDialog;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 /*
@@ -25,7 +29,7 @@ import butterknife.ButterKnife;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public class BrejaActivity extends BaseActivity {
+public class BrejaActivity extends BaseActivity implements BaseView {
 
     @Bind(R.id.collapsingToolBar)   CollapsingToolbarLayout collapsingToolbarLayout = null;
     @Bind(R.id.toolbar)             Toolbar toolbar = null;
@@ -34,6 +38,8 @@ public class BrejaActivity extends BaseActivity {
 
     private List<Beer> beers;
     private Beer beer;
+
+    private ProgressDialog mProgressDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -119,13 +125,42 @@ public class BrejaActivity extends BaseActivity {
     }
 
     @Override
+    public void setupActionBar() {
+
+    }
+
+    @Override
+    public void showDialog(String title, String description) {
+
+        try{
+            new CustomDialog(getContext(), title, description).show();
+        } catch (Exception e){}
+    }
+
+    @Override
+    public void navigateToNextScreenWithSerializedCliente(Client client) {
+
+    }
+
+    @Override
     public void showLoading() {
-        super.showLoading();
+        if (mProgressDialog != null && mProgressDialog.isShowing())
+            hideLoading();
+        mProgressDialog = new ProgressDialog(getContext());
+        mProgressDialog.show();
     }
 
     @Override
     public void hideLoading() {
-        super.hideLoading();
+        if (mProgressDialog != null) {
+            mProgressDialog.dismiss();
+            mProgressDialog = null;
+        }
+    }
+
+    @Override
+    public Context getContext() {
+        return this;
     }
 
     @Override

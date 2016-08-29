@@ -7,7 +7,7 @@ import br.com.brewjas.model.Client;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public interface LoginFragmentView {
+public interface LoginFragmentView extends BaseView {
 
     void navigateToNextScreenWithSerializedCliente(Client client);
 

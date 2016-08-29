@@ -164,7 +164,7 @@ public class FavoriteBeerAdapter extends RecyclerView.Adapter<FavoriteBeerAdapte
 
         public void goToCoupon(Beer beer){
             Intent intent = new Intent(context, BrejaActivity.class);
-            intent.putExtra("Breja", beer);
+            intent.putExtra(beer.KEY, beer);
             context.startActivity(intent);
         }
     }

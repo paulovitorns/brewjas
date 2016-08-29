@@ -3,81 +3,94 @@
     <string name="facebook_app_id">1149641915094707</string>
 
     <!-- TODO: Textos dos botões -->
-    <string name="btn_login">Acessar</string>
-    <string name="btn_registro">Criar Conta</string>
-    <string name="btn_recuperar">Recuperar Acesso</string>
-    <string name="btn_login_fb">Entre com o Facebook</string>
-    <string name="btn_registrar">Criar Conta</string>
-    <string name="btn_recuperar_senha">Lembrar Senha</string>
-    <string name="btn_help">Ainda não tem acesso?</string>
-    <string name="btn_ok">Ok, entendi!</string>
+    <string name="btn_login">acessar</string>
+    <string name="btn_registro">criar conta</string>
+    <string name="btn_atualizar">atualizar conta</string>
+    <string name="btn_recuperar">recuperar acesso</string>
+    <string name="btn_login_fb">entre com o facebook</string>
+    <string name="btn_registrar">criar conta</string>
+    <string name="btn_recuperar_senha">lembrar senha</string>
+    <string name="btn_help">ainda não tem acesso?</string>
+    <string name="btn_ok">ok, entendi!</string>
 
     <!-- TODO: Textos hint -->
-    <string name="hint_nome">Seu nome e sobrenome</string>
-    <string name="hint_email">Seu e-mail</string>
-    <string name="hint_password">Sua senha</string>
-    <string name="hint_conf_password">Repita a senha</string>
-    <string name="hint_data_nasc">Sua data de nascimento</string>
+    <string name="hint_nome">seu nome e sobrenome</string>
+    <string name="hint_email">seu e-mail</string>
+    <string name="hint_password">sua senha</string>
+    <string name="hint_conf_password">repita a senha</string>
+    <string name="hint_data_nasc">sua data de nascimento</string>
+    <string name="hint_search">busque por nome, cervejaria, estilo, etc</string>
+    <string name="hint_search_brewery">busque por nome, país, etc</string>
+    <string name="hint_search_style">busque por estilo, ingredientes, etc</string>
 
     <!-- TODO: Textos de textview -->
-    <string name="txt_intro_registro">Por favor, fale um pouco sobre você?</string>
-    <string name="txt_intro_conta">Fala, {{user}}! Estes são seus dados cadastrais.</string>
-    <string name="txt_intro_recuperar">Por favor, informe o seu e-mail cadastrado?</string>
-    <string name="txt_title_registro">Criação de conta</string>
-    <string name="txt_title_conta">Sua conta</string>
-    <string name="txt_title_recuperar">Recuperação de senha</string>
+    <string name="txt_intro_registro">por favor, fale um pouco sobre você?</string>
+    <string name="txt_intro_conta">fala, {var}! estes são seus dados cadastrais.</string>
+    <string name="txt_intro_recuperar">por favor, informe o seu e-mail cadastrado?</string>
+    <string name="txt_title_recuperar">recuperação de senha</string>
 
-    <string name="txt_title_help">Ainda não tem acesso?</string>
+    <string name="txt_title_help">ainda não tem acesso?</string>
 
-    <string name="txt_register_title">Ainda não tem cadastro?</string>
-    <string name="txt_register_sub">Toque aqui para criar</string>
+    <string name="txt_register_title">ainda não tem cadastro?</string>
+    <string name="txt_register_sub">toque aqui para criar</string>
 
-    <string name="txt_recuperar_title">Esqueceu sua senha?</string>
-    <string name="txt_recuperar_sub">Toque aqui para recuperar</string>
-    <string name="title_activity_dash_board">DashBoardActivity</string>
+    <string name="txt_recuperar_title">esqueceu sua senha?</string>
+    <string name="txt_recuperar_sub">toque aqui para recuperar</string>
+    <string name="title_activity_dash_board">dashBoardActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <!-- TODO: Action's label -->
     <string name="action_settings">Settings</string>
-
-    <string name="action_fav">Adcionar aos Favoritos</string>
+    <string name="action_fav">adcionar aos Favoritos</string>
+    <string name="action_search">filtros</string>
 
     <!-- TODO: String para o drawer -->
-    <string name="nav_brejas">As brejas</string>
-    <string name="nav_fav">Minha favoritas</string>
-    <string name="nav_cervejarias">As cervejarias</string>
-    <string name="nav_estilos">Os estilos</string>
-    <string name="nav_conta">Minha conta</string>
-    <string name="nav_logout">Sair</string>
+    <string name="nav_brejas">as brejas</string>
+    <string name="nav_fav">minha favoritas</string>
+    <string name="nav_cervejarias">as cervejarias</string>
+    <string name="nav_estilos">os estilos</string>
+    <string name="nav_conta">minha conta</string>
+    <string name="nav_logout">sair</string>
 
     <!-- TODO: Strings de título para erros e alertas -->
-    <string name="err_title_underage">Você é menor de idade</string>
+    <string name="err_title_underage">você é menor de idade</string>
 
     <!-- TODO: String para erros e alertas -->
-    <string name="err_login_is_empty">Por favor, preencha o seu e-mail!</string>
-    <string name="err_login_facebook_cancel">Oops, você concelou o login com o facebook.</string>
-    <string name="err_nome_is_empty">Por favor, preencha o seu nome.</string>
-    <string name="err_email_is_empty">Por favor, preencha o seu e-mail.</string>
-    <string name="err_datanasc_is_empty">Por favor, selecione a sua data de nascimento.</string>
-    <string name="err_genero_is_empty">Por favor, selecione o seu gênenro.</string>
-    <string name="err_is_underage">Este aplicativo é voltado para o público adulto.</string>
+    <string name="err_login_is_empty">por favor, preencha o seu e-mail!</string>
+    <string name="err_login_facebook_cancel">oops, você concelou o login com o facebook.</string>
+    <string name="err_nome_is_empty">por favor, preencha o seu nome.</string>
+    <string name="err_email_is_empty">por favor, preencha o seu e-mail.</string>
+    <string name="err_datanasc_is_empty">por favor, selecione a sua data de nascimento.</string>
+    <string name="err_genero_is_empty">por favor, selecione o seu gênenro.</string>
+    <string name="err_is_underage">este aplicativo é voltado para o público adulto.</string>
+    <string name="err_register_general_title">erro de validação =/</string>
+    <string name="err_register_general">por favor, preencha os seguinte(s) campo(s):</string>
 
     <!-- TODO: Common beers texts -->
-    <string name="beer_infos">Mais informações</string>
-    <string name="beer_descricao">Resenha</string>
-    <string name="beer_relacionadas">Brejas relacionadas</string>
+    <string name="beer_infos">mais informações</string>
+    <string name="beer_descricao">resenha</string>
+    <string name="beer_relacionadas">brejas relacionadas</string>
     <string name="beer_abv">ABV {var}</string>
     <string name="beer_ibu">IBU {var}</string>
     <string name="beer_srm">SRM {var}</string>
     <string name="beer_og">OG {var}</string>
-    <string name="beer_cervejaria">Cervejaria: {var}</string>
-    <string name="beer_pais">País: {var}</string>
-    <string name="beer_estilo">Estilo: {var}</string>
-    <string name="beer_copo">Servido em um: {var}</string>
+    <string name="beer_cervejaria">cervejaria: {var}</string>
+    <string name="beer_pais">país: {var}</string>
+    <string name="beer_estilo">estilo: {var}</string>
+    <string name="beer_copo">servido em um: {var}</string>
 
     <!-- TODO: Common texts breja -->
     <string name="brewery_qty">{var} cervejas</string>
     <string name="brewery_styles">{var} estilos</string>
+
+    <!-- TODO: Page's title -->
+    <string name="title_beer">cervejas</string>
+    <string name="title_new_acc">criação de conta</string>
+    <string name="title_fav">favoritas</string>
+    <string name="title_brew">cervejarias</string>
+    <string name="title_sty">estilos</string>
+    <string name="title_acc">sua conta</string>
 
 </resources>

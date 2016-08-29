@@ -1,6 +1,7 @@
 package br.com.brewjas.ui.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -46,11 +47,12 @@ public class GenderAdapter extends BaseAdapter {
         // TODO Auto-generated method stub
 
         TextView tv = new TextView(ctx);
-        tv.setTextSize(18);
+        tv.setTextSize(20);
         tv.setText(lista[position]);
         int color = ctx.getResources().getColor(R.color.colorMarrom);
+        tv.setTypeface(Typeface.DEFAULT);
         tv.setTextColor(color);
-        tv.setPadding(20,20,20,20);
+        tv.setPadding(32,20,32,20);
 
         return tv;
     }

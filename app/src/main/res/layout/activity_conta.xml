@@ -24,6 +24,7 @@
             android:layout_alignParentBottom="true">
 
             <TextView
+                android:id="@+id/txtIntro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/activity_vertical_margin_big"
@@ -42,6 +43,7 @@
                     android:layout_height="@dimen/common_input_height"
                     style="@style/TextBig.Regular.Brown"
                     android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_vertical_margin"
                     android:inputType="textPersonName"
                     android:hint="@string/hint_nome"
                     android:background="@drawable/rounded_edt_padrao"/>
@@ -61,6 +63,7 @@
                     android:layout_weight="1"
                     style="@style/TextBig.Regular.Brown"
                     android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_vertical_margin"
                     android:inputType="textEmailAddress"
                     android:hint="@string/hint_email"
                     android:background="@drawable/rounded_edt_padrao"/>
@@ -80,6 +83,7 @@
                     android:layout_height="@dimen/common_input_height"
                     style="@style/TextBig.Regular.Brown"
                     android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_vertical_margin"
                     android:hint="@string/hint_data_nasc"
                     android:background="@drawable/rounded_edt_padrao"
                     android:textAlignment="textStart"/>
@@ -97,8 +101,9 @@
                     android:id="@+id/spinnerGenero"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/common_input_height"
-                    android:popupBackground="@drawable/rounded_edt_padrao"
-                    android:popupElevation="5dp">
+                    android:popupBackground="@drawable/rounded_spinner_padrao"
+                    android:popupElevation="5dp"
+                    style="@style/TextBig.Regular.Brown">
 
                 </Spinner>
 
@@ -112,7 +117,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/common_btn_height"
-                    android:text="@string/btn_registro"
+                    android:text="@string/btn_atualizar"
                     style="@style/TextBig.Bold.White"
                     android:textAllCaps="false"
                     android:id="@+id/btnEnviar"

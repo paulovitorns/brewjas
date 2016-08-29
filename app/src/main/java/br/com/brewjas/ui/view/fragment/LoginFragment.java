@@ -1,6 +1,5 @@
 package br.com.brewjas.ui.view.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,26 +33,32 @@ import br.com.brewjas.ui.presenter.LoginPresenter;
 import br.com.brewjas.ui.presenter.impl.LoginPresenterImpl;
 import br.com.brewjas.ui.view.LoginFragmentView;
 import br.com.brewjas.ui.view.activity.DashBoardActivity;
-import br.com.brewjas.ui.view.activity.LoginActivity;
 import br.com.brewjas.ui.view.activity.RegisterActivity;
+import br.com.brewjas.ui.view.component.CustomDialog;
+import br.com.brewjas.ui.view.component.ProgressDialog;
+import br.com.brewjas.util.SharedPreferencesUtil;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 /*
  * © Copyright 2016 Brewjas.
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
+
 public class LoginFragment extends Fragment implements LoginFragmentView {
 
-    @Bind(R.id.contentLogo) LinearLayout contentLogo;
-    @Bind(R.id.edtLogin) EditText edtLogin;
-    @Bind(R.id.contentEdt) LinearLayout contentEdt;
-    @Bind(R.id.contentLogin) LinearLayout contentLogin;
-    @Bind(R.id.contentregister) LinearLayout contentregister;
+    @Bind(R.id.contentLogo)     LinearLayout    contentLogo;
+    @Bind(R.id.edtLogin)        EditText        edtLogin;
+    @Bind(R.id.contentEdt)      LinearLayout    contentEdt;
+    @Bind(R.id.contentLogin)    LinearLayout    contentLogin;
+    @Bind(R.id.contentregister) LinearLayout    contentregister;
 
-    private LoginPresenter presenter = new LoginPresenterImpl(this);
+    private LoginPresenter  presenter = new LoginPresenterImpl(this);
     private CallbackManager mCallbackManager;
+
+    private ProgressDialog mProgressDialog;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -169,8 +174,7 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
 
     @Override
     public void setUsernameError(String title, String description) {
-        ((LoginActivity)getActivity()).hideLoading();
-        ((LoginActivity)getActivity()).showDialog(title, description);
+        showDialog(title, description);
     }
 
     public void loadElementsWithAnimation() {
@@ -212,14 +216,46 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
     }
 
     @Override
+    public void setupActionBar() {
+
+    }
+
+    @Override
+    public void showDialog(String title, String description) {
+
+        try{
+            new CustomDialog(getContext(), title, description).show();
+        } catch (Exception e){}
+    }
+
+    @Override
     public void navigateToNextScreenWithSerializedCliente(Client client) {
 
-        ((LoginActivity)getActivity()).hideLoading();
+        SharedPreferencesUtil.saveSession(client);
 
         Intent intent = new Intent(getActivity(), DashBoardActivity.class);
-        intent.putExtra("Client", client);
-
         getActivity().startActivity(intent);
         getActivity().finish();
+    }
+
+    @Override
+    public void showLoading() {
+        if (mProgressDialog != null && mProgressDialog.isShowing())
+            hideLoading();
+        mProgressDialog = new ProgressDialog(getContext());
+        mProgressDialog.show();
+    }
+
+    @Override
+    public void hideLoading() {
+        if (mProgressDialog != null) {
+            mProgressDialog.dismiss();
+            mProgressDialog = null;
+        }
+    }
+
+    @Override
+    public Context getContext() {
+        return getActivity();
     }
 }

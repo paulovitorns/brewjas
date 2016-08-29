@@ -8,6 +8,7 @@ package br.com.brewjas.ui.view.component;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -35,11 +36,13 @@ public class CustomDialog implements View.OnClickListener{
     }
 
     public void show(){
+
         dialog = new Dialog(context);
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.setContentView(R.layout.dialog_fragment);
-        dialog.setCancelable(false);
+        dialog.setCancelable(true);
 
         ButterKnife.bind(this, dialog);
 

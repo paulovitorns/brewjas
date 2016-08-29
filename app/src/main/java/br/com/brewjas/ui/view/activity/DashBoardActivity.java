@@ -17,26 +17,33 @@ import br.com.brewjas.ui.view.fragment.CervejariaFragment;
 import br.com.brewjas.ui.view.fragment.CervejaFavoritaFragment;
 import br.com.brewjas.ui.view.fragment.CervejaFragment;
 import br.com.brewjas.ui.view.fragment.EstiloFragment;
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /*
  * © Copyright 2016 Brewjas.
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
+
 public class DashBoardActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private Toolbar toolbar;
-    private TextView HeaderTitle;
+    @Bind(R.id.toolbar)         Toolbar     toolbar;
+    @Bind(R.id.HeaderTitle)     TextView    HeaderTitle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        HeaderTitle = (TextView) findViewById(R.id.HeaderTitle);
+
+
+        ButterKnife.bind(this);
+
         toolbar.setTitle("");
 
-        HeaderTitle.setText(getResources().getString(R.string.app_name));
+        HeaderTitle.setText(getResources().getString(R.string.title_beer));
 
         setSupportActionBar(toolbar);
 
@@ -54,24 +61,25 @@ public class DashBoardActivity extends BaseActivity
         fragmentTransaction.replace(R.id.frame_dash, cervejaFragment);
         fragmentTransaction.commit();
 
-
     }
 
     @Override
     public void onBackPressed() {
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
 
-        //getMenuInflater().inflate(R.menu.dash_board, menu);
+        getMenuInflater().inflate(R.menu.dash_board, menu);
         return true;
     }
 
@@ -83,7 +91,8 @@ public class DashBoardActivity extends BaseActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_search) {
+
             return true;
         }
 
@@ -105,6 +114,8 @@ public class DashBoardActivity extends BaseActivity
                 fragmentTransaction.replace(R.id.frame_dash, cervejaFragment);
                 fragmentTransaction.commit();
 
+                HeaderTitle.setText(getResources().getString(R.string.title_beer));
+
                 break;
 
             case R.id.nav_favoritas:
@@ -114,6 +125,8 @@ public class DashBoardActivity extends BaseActivity
                 android.support.v4.app.FragmentTransaction fragFavs = getSupportFragmentManager().beginTransaction();
                 fragFavs.replace(R.id.frame_dash, cervejaFavoritaFragment);
                 fragFavs.commit();
+
+                HeaderTitle.setText(getResources().getString(R.string.title_fav));
 
                 break;
 
@@ -125,6 +138,8 @@ public class DashBoardActivity extends BaseActivity
                 fragCerve.replace(R.id.frame_dash, cervejariaFragment);
                 fragCerve.commit();
 
+                HeaderTitle.setText(getResources().getString(R.string.title_brew));
+
                 break;
 
             case R.id.nav_estilos:
@@ -134,6 +149,8 @@ public class DashBoardActivity extends BaseActivity
                 android.support.v4.app.FragmentTransaction fragEstilos = getSupportFragmentManager().beginTransaction();
                 fragEstilos.replace(R.id.frame_dash, estiloFragment);
                 fragEstilos.commit();
+
+                HeaderTitle.setText(getResources().getString(R.string.title_sty));
 
                 break;
 

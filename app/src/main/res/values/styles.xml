@@ -236,6 +236,10 @@
     </style>
 
     <!--TODO: font-color: brown to big size (regular, bold and light) -->
+    <style name="TextBigRegularBrown" parent="TextBig.Regular">
+        <item name="android:textColor">@color/colorMarrom</item>
+        <item name="android:textColorHint">@color/colorMarrom</item>
+    </style>
     <style name="TextBig.Regular.Brown" parent="TextBig.Regular">
         <item name="android:textColor">@color/colorMarrom</item>
         <item name="android:textColorHint">@color/colorMarrom</item>
