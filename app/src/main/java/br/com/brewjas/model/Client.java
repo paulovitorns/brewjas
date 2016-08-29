@@ -1,6 +1,9 @@
 package br.com.brewjas.model;
 
 import java.io.Serializable;
+import java.util.Date;
+
+import br.com.brewjas.business.api.vo.response.ClientResponse;
 
 /*
  * © Copyright 2016 Brewjas.
@@ -12,47 +15,50 @@ public class Client implements Serializable {
     public static final String KEY = "ClientKey";
 
     private long id;
-
+    private String regId;
+    private String facebookId;
     private String nome;
-
     private String email;
-
-    private String datanascimento;
-
+    private Date dataNascimento;
     private int genero;
+    private Date dataCriacao;
 
     public Client() {
     }
 
-    public Client(String nome, String email, String datanascimento, int genero) {
-        this.nome = nome;
-        this.email = email;
-        this.datanascimento = datanascimento;
+    public Client(ClientResponse clientResponse) {
+        this.id             = clientResponse.id;
+        this.regId          = clientResponse.regId;
+        this.facebookId     = clientResponse.facebookId;
+        this.nome           = clientResponse.nome;
+        this.email          = clientResponse.email;
+        this.dataNascimento = clientResponse.dataNascimento;
+        this.genero         = clientResponse.genero;
+        this.dataCriacao    = clientResponse.dataCriacao;
+    }
+
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public int getGenero() {
+        return genero;
+    }
+
+    public void setGenero(int genero) {
         this.genero = genero;
     }
 
-    public Client(long id, String nome, String email, String datanascimento, int genero) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.datanascimento = datanascimento;
-        this.genero = genero;
+    public Date getDataNascimento() {
+        return dataNascimento;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public String getEmail() {
@@ -63,19 +69,35 @@ public class Client implements Serializable {
         this.email = email;
     }
 
-    public String getDatanascimento() {
-        return datanascimento;
+    public String getNome() {
+        return nome;
     }
 
-    public void setDatanascimento(String datanascimento) {
-        this.datanascimento = datanascimento;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public int getGenero() {
-        return genero;
+    public String getFacebookId() {
+        return facebookId;
     }
 
-    public void setGenero(int genero) {
-        this.genero = genero;
+    public void setFacebookId(String facebookId) {
+        this.facebookId = facebookId;
+    }
+
+    public String getRegId() {
+        return regId;
+    }
+
+    public void setRegId(String regId) {
+        this.regId = regId;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

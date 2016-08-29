@@ -90,7 +90,7 @@ public class ContaActivity extends BaseActivity implements DatePickerDialog.OnDa
 
         client.setNome(edtNome.getText().toString());
         client.setEmail(edtLogin.getText().toString());
-        client.setDatanascimento(btnDataNasc.getText().toString());
+        client.setDataNascimento(StringUtils.parseStringToDate(btnDataNasc.getText().toString()));
         client.setGenero(spinnerGenero.getSelectedItemPosition());
 
         presenter.onSubmitPressed(client);
@@ -119,7 +119,7 @@ public class ContaActivity extends BaseActivity implements DatePickerDialog.OnDa
 
         edtNome.setText(client.getNome());
         edtLogin.setText(client.getEmail());
-        btnDataNasc.setText(client.getDatanascimento());
+        btnDataNasc.setText(StringUtils.parseDateToString(client.getDataNascimento()));
     }
 
     @Override

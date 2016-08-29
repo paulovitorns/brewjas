@@ -37,6 +37,7 @@ import br.com.brewjas.ui.view.activity.RegisterActivity;
 import br.com.brewjas.ui.view.component.CustomDialog;
 import br.com.brewjas.ui.view.component.ProgressDialog;
 import br.com.brewjas.util.SharedPreferencesUtil;
+import br.com.brewjas.util.StringUtils;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -118,7 +119,7 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
                                     if( object.has("birthday") &&  !object.getString("birthday").equals("")){
 
                                         String birth = object.getString("birthday");
-                                        client.setDatanascimento(birth);
+                                        client.setDataNascimento(StringUtils.parseStringToDate(birth));
                                     }
 
                                     navigateToNextScreenWithSerializedCliente(client);

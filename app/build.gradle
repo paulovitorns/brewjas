@@ -1,11 +1,15 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
 apply plugin: 'com.android.application'
 
 def versionMajor = 1
-def versionMinor = 1
-def versionPatch = 1
-def versionBuild = 0
+def versionMinor = 0
+def versionPatch = 0
+def versionBuild = 0000
 
 def buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
+def versionSuffix = "-" + getDateTimeVersion();
 
 android {
     compileSdkVersion 23
@@ -21,24 +25,47 @@ android {
     }
 
     buildTypes {
+        debug{
+            applicationIdSuffix ".dev"
+            versionNameSuffix   "${versionSuffix}"
+        }
+        homolog{
+            applicationIdSuffix ".hmg"
+            versionNameSuffix   "${versionSuffix}"
+            signingConfig signingConfigs.debug
+            debuggable true
+        }
+        production {
+            applicationIdSuffix ".prd"
+            versionNameSuffix "${versionSuffix}"
+            signingConfig signingConfigs.debug
+            debuggable true
+        }
         release {
+            debuggable false
             minifyEnabled false
             proguardFiles 'proguard-rules.pro'
         }
     }
 
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
     productFlavors {
-        Desenvolvimento {
-            buildConfigField "String", "REST_SERVICE_URL", "\"http://www.tutorpro.com.br/SmartPromos\""
-            applicationId "br.com.brewjas"
-            versionName '1.0-DEV'
-            manifestPlaceholders = [applicationLabel: "brewjas-DEV"]
+        Dev {
+            buildConfigField "String", "REST_SERVICE_URL", "\"http://192.168.56.1/brewjas-rest/\""
         }
-        Producao {
-            buildConfigField "String", "REST_SERVICE_URL", "\"http://www.tutorpro.com.br/SmartPromos\""
-            applicationId "br.com.brewjas"
-            versionName '1.0'
-            manifestPlaceholders = [applicationLabel: "brewjas"]
+        Prod {
+            buildConfigField "String", "REST_SERVICE_URL", ""
         }
     }
 
@@ -57,11 +84,19 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.4.0'
     compile 'com.android.support:gridlayout-v7:23.4.0'
     compile 'com.facebook.android:facebook-android-sdk:4.7.0'
-    compile 'com.google.code.gson:gson:2.4'
-    compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.squareup.okhttp:okhttp:2.4.0'
+
+    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    compile 'com.squareup.okhttp:okhttp:2.6.0'
+    compile 'com.squareup.okhttp:logging-interceptor:2.6.0'
+
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'de.hdodenhof:circleimageview:1.3.0'
     compile 'com.jakewharton:butterknife:7.0.1'
 
+}
+
+def getDateTimeVersion() {
+    DateFormat df = new SimpleDateFormat("yyMMdd.HHmm");
+    return df.format(new Date());
 }

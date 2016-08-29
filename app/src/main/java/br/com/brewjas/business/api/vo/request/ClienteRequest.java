@@ -1,4 +1,4 @@
-package br.com.brewjas.api.general.request;
+package br.com.brewjas.business.api.vo.request;
 
 /*
  * © Copyright 2016 Brewjas.

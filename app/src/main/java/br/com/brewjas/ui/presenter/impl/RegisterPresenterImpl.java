@@ -7,8 +7,8 @@ import java.util.Date;
 import br.com.brewjas.R;
 import br.com.brewjas.model.Client;
 import br.com.brewjas.common.OnListenerGeneral;
-import br.com.brewjas.services.brewjasapi.RegisterService;
-import br.com.brewjas.services.brewjasapi.impl.RegisterServiceImpl;
+import br.com.brewjas.business.service.RegisterService;
+import br.com.brewjas.business.service.impl.RegisterServiceImpl;
 import br.com.brewjas.ui.presenter.RegisterPresenter;
 import br.com.brewjas.ui.view.RegisterView;
 

@@ -1,4 +1,4 @@
-package br.com.brewjas.services.hashgenerator;
+package br.com.brewjas.util;
 
 import android.app.Application;
 import android.content.pm.PackageInfo;

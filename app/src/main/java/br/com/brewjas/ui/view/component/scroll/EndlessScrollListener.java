@@ -1,4 +1,4 @@
-package br.com.brewjas.services.scroll;
+package br.com.brewjas.ui.view.component.scroll;
 
 /*
  * © Copyright 2016 Brewjas.

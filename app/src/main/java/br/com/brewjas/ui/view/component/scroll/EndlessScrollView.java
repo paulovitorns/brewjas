@@ -1,4 +1,4 @@
-package br.com.brewjas.services.scroll;
+package br.com.brewjas.ui.view.component.scroll;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -29,6 +29,7 @@ import br.com.brewjas.ui.view.RegisterView;
 import br.com.brewjas.ui.view.component.CustomDialog;
 import br.com.brewjas.ui.view.component.ProgressDialog;
 import br.com.brewjas.util.SharedPreferencesUtil;
+import br.com.brewjas.util.StringUtils;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -78,7 +79,7 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
 
         client.setNome(edtNome.getText().toString());
         client.setEmail(edtLogin.getText().toString());
-        client.setDatanascimento(btnDataNasc.getText().toString());
+        client.setDataNascimento(StringUtils.parseStringToDate(btnDataNasc.getText().toString()));
         client.setGenero(spinnerGenero.getSelectedItemPosition());
 
         presenter.onSubmitPressed(client);

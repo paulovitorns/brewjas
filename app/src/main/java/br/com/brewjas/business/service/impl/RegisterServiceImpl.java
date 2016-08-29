@@ -1,4 +1,4 @@
-package br.com.brewjas.services.brewjasapi.impl;
+package br.com.brewjas.business.service.impl;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -9,7 +9,8 @@ import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
 import br.com.brewjas.model.Client;
 import br.com.brewjas.common.OnListenerGeneral;
-import br.com.brewjas.services.brewjasapi.RegisterService;
+import br.com.brewjas.business.service.RegisterService;
+import br.com.brewjas.util.StringUtils;
 
 /*
  * © Copyright 2016 Brewjas.
@@ -29,7 +30,7 @@ public class RegisterServiceImpl implements RegisterService {
         if(TextUtils.isEmpty(client.getEmail()))
             erros+= "\nseu e-mail";
 
-        if(TextUtils.isEmpty(client.getDatanascimento()))
+        if(TextUtils.isEmpty(StringUtils.parseDateToString(client.getDataNascimento())))
             erros+= "\nsua data de nascimento";
 
         if(client.getGenero() == 0)
@@ -41,7 +42,7 @@ public class RegisterServiceImpl implements RegisterService {
 
             Log.d("CAMPOS_VAZIOS", erroTitle+" "+erros);
             listener.onError(Brewjas.getContext().getString(R.string.err_register_general_title), erroTitle+" "+erros);
-            return;
+
         }else{
 
             String user = new Gson().toJson(client, Client.class);
@@ -49,7 +50,6 @@ public class RegisterServiceImpl implements RegisterService {
             Log.d("USER", user);
 
             listener.onSuccess(client);
-            return;
         }
     }
 
