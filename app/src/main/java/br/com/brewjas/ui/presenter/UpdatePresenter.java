@@ -7,7 +7,7 @@ import br.com.brewjas.model.Client;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public interface RegisterPresenter extends BasePresenter {
+public interface UpdatePresenter extends BasePresenter {
 
     void onSubmitPressed(Client client);
 

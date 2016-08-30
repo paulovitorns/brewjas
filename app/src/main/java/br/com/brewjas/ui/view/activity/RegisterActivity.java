@@ -79,7 +79,10 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
 
         client.setNome(edtNome.getText().toString());
         client.setEmail(edtLogin.getText().toString());
-        client.setDataNascimento(StringUtils.parseStringToDate(btnDataNasc.getText().toString()));
+
+        if(!btnDataNasc.getText().toString().equalsIgnoreCase(""))
+            client.setDataNascimento(StringUtils.parseStringToDate(btnDataNasc.getText().toString()));
+
         client.setGenero(spinnerGenero.getSelectedItemPosition());
 
         presenter.onSubmitPressed(client);

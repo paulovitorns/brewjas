@@ -57,9 +57,7 @@ public class LoginServiceImpl implements LoginService {
 
                 @Override
                 public void onFailure(Throwable t) {
-                    Log.d("ERROR LOGIN CLIENT", t.getMessage());
-                    Log.d("ERROR LOGIN CLIENT", t.getCause().toString());
-                    Log.d("ERROR LOGIN CLIENT", t.getStackTrace().toString());
+                    Log.d("ERROR CLIENT", t.getMessage());
                     listener.onError(Brewjas.getContext().getString(R.string.err_login_title_register), Brewjas.getContext().getString(R.string.err_server_500));
                 }
             });

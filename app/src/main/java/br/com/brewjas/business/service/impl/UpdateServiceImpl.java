@@ -9,11 +9,11 @@ import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
 import br.com.brewjas.business.api.Api;
 import br.com.brewjas.business.api.vo.response.ClientFullResponseVO;
+import br.com.brewjas.business.service.RegisterService;
+import br.com.brewjas.business.service.UpdateService;
+import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.model.ApiStatus;
 import br.com.brewjas.model.Client;
-import br.com.brewjas.common.OnListenerGeneral;
-import br.com.brewjas.business.service.RegisterService;
-import br.com.brewjas.util.StringUtils;
 import retrofit.Call;
 import retrofit.Callback;
 import retrofit.Response;
@@ -24,10 +24,10 @@ import retrofit.Retrofit;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public class RegisterServiceImpl implements RegisterService {
+public class UpdateServiceImpl implements UpdateService {
 
     @Override
-    public void register(Client client, final OnListenerGeneral listener) {
+    public void update(Client client, final OnListenerGeneral listener) {
 
         String erros = "";
 
@@ -54,7 +54,7 @@ public class RegisterServiceImpl implements RegisterService {
 
             String clientJson = new Gson().toJson(client, Client.class);
 
-            Call<ClientFullResponseVO> call = Api.getAdapter().register(clientJson);
+            Call<ClientFullResponseVO> call = Api.getAdapter().update(clientJson);
 
             call.enqueue(new Callback<ClientFullResponseVO>() {
                 @Override
@@ -84,42 +84,6 @@ public class RegisterServiceImpl implements RegisterService {
             });
 
         }
-    }
-
-    @Override
-    public void registerByFb(Client client, final OnListenerGeneral listener) {
-
-        String clientJson = new Gson().toJson(client, Client.class);
-
-        Call<ClientFullResponseVO> call = Api.getAdapter().register(clientJson);
-
-        call.enqueue(new Callback<ClientFullResponseVO>() {
-            @Override
-            public void onResponse(Response<ClientFullResponseVO> response, Retrofit retrofit) {
-
-                ApiStatus apiStatus = new ApiStatus(response.body().response);
-
-                if(apiStatus.code == 200){
-                    listener.onSuccess(new Client(response.body().clientResponse));
-                }
-
-                if(apiStatus.code == 401){
-                    listener.onError(Brewjas.getContext().getString(R.string.err_login_title_register), Brewjas.getContext().getString(R.string.err_register_email_exists));
-                }
-
-                if(apiStatus.code == 500){
-                    listener.onError(Brewjas.getContext().getString(R.string.err_login_title_register), Brewjas.getContext().getString(R.string.err_register_fails));
-                }
-
-            }
-
-            @Override
-            public void onFailure(Throwable t) {
-                Log.d("ERROR CLIENT", t.getMessage());
-                listener.onError(Brewjas.getContext().getString(R.string.err_login_title_register), Brewjas.getContext().getString(R.string.err_server_500));
-            }
-        });
-
     }
 
     @Override

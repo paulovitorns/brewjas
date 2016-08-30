@@ -25,7 +25,9 @@ import br.com.brewjas.R;
 import br.com.brewjas.model.Client;
 import br.com.brewjas.ui.adapter.GenderAdapter;
 import br.com.brewjas.ui.presenter.RegisterPresenter;
+import br.com.brewjas.ui.presenter.UpdatePresenter;
 import br.com.brewjas.ui.presenter.impl.RegisterPresenterImpl;
+import br.com.brewjas.ui.presenter.impl.UpdatePresenterImpl;
 import br.com.brewjas.ui.view.RegisterView;
 import br.com.brewjas.ui.view.component.CustomDialog;
 import br.com.brewjas.ui.view.component.ProgressDialog;
@@ -55,7 +57,7 @@ public class ContaActivity extends BaseActivity implements DatePickerDialog.OnDa
 
 
     private String[]            gender      = Brewjas.getContext().getResources().getStringArray(R.array.gender);
-    private RegisterPresenter   presenter   = new RegisterPresenterImpl(this);
+    private UpdatePresenter     presenter   = new UpdatePresenterImpl(this);
 
     private ProgressDialog      mProgressDialog;
 
@@ -85,8 +87,6 @@ public class ContaActivity extends BaseActivity implements DatePickerDialog.OnDa
 
     @OnClick(R.id.btnEnviar)
     public void onSubmit(){
-
-        Client client = new Client();
 
         client.setNome(edtNome.getText().toString());
         client.setEmail(edtLogin.getText().toString());
@@ -138,6 +138,8 @@ public class ContaActivity extends BaseActivity implements DatePickerDialog.OnDa
 
     @Override
     public void navigateToNextScreenWithSerializedCliente(Client client) {
+
+        SharedPreferencesUtil.saveSession(client);
         Intent intent = new Intent(getContext(), DashBoardActivity.class);
         intent.putExtra("Client", client);
 

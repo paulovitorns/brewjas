@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import br.com.brewjas.R;
 import br.com.brewjas.model.Client;
@@ -31,6 +32,8 @@ public class DashBoardActivity extends BaseActivity
 
     @Bind(R.id.toolbar)         Toolbar     toolbar;
     @Bind(R.id.HeaderTitle)     TextView    HeaderTitle;
+
+    private int pressed = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,9 +71,15 @@ public class DashBoardActivity extends BaseActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
+            pressed = 1;
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            if(pressed == 2) {
+                super.onBackPressed();
+            }else {
+                pressed++;
+                Toast.makeText(DashBoardActivity.this, "Toque mais uma vez para sair", Toast.LENGTH_SHORT).show();
+            }
         }
 
     }
@@ -105,6 +114,7 @@ public class DashBoardActivity extends BaseActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        pressed = 1;
         switch (id){
             case R.id.nav_lista_brewjas:
                 
@@ -157,7 +167,6 @@ public class DashBoardActivity extends BaseActivity
             case R.id.nav_conta:
 
                 startActivity(new Intent(this, ContaActivity.class));
-
                 break;
 
             case R.id.nav_logout:

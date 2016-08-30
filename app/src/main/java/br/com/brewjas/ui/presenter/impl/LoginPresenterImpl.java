@@ -1,5 +1,7 @@
 package br.com.brewjas.ui.presenter.impl;
 
+import br.com.brewjas.business.service.RegisterService;
+import br.com.brewjas.business.service.impl.RegisterServiceImpl;
 import br.com.brewjas.model.Client;
 import br.com.brewjas.common.OnListenerGeneral;
 import br.com.brewjas.business.service.LoginService;
@@ -14,8 +16,9 @@ import br.com.brewjas.ui.view.LoginFragmentView;
  */
 public class LoginPresenterImpl implements LoginPresenter, OnListenerGeneral {
 
-    private LoginFragmentView loginView;
-    private LoginService loginService;
+    private LoginFragmentView   loginView;
+    private LoginService        loginService;
+    private RegisterService     registerService;
 
     public LoginPresenterImpl(LoginFragmentView loginView){
         this.loginView = loginView;
@@ -25,7 +28,8 @@ public class LoginPresenterImpl implements LoginPresenter, OnListenerGeneral {
     //Inicio os serviços responsaveis pelo login do usuário
     @Override
     public void init() {
-        loginService = new LoginServiceImpl();
+        loginService    = new LoginServiceImpl();
+        registerService = new RegisterServiceImpl();
     }
 
     @Override
@@ -45,6 +49,11 @@ public class LoginPresenterImpl implements LoginPresenter, OnListenerGeneral {
     public void onSubmitPressed(String email) {
         loginView.showLoading();
         loginService.login(email, this);
+    }
+
+    @Override
+    public void registerByLogin(Client client) {
+        registerService.registerByFb(client, this);
     }
 
 }

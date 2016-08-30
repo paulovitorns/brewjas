@@ -5,11 +5,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import br.com.brewjas.R;
-import br.com.brewjas.model.Client;
+import br.com.brewjas.business.service.UpdateService;
+import br.com.brewjas.business.service.impl.UpdateServiceImpl;
 import br.com.brewjas.common.OnListenerGeneral;
-import br.com.brewjas.business.service.RegisterService;
-import br.com.brewjas.business.service.impl.RegisterServiceImpl;
-import br.com.brewjas.ui.presenter.RegisterPresenter;
+import br.com.brewjas.model.Client;
+import br.com.brewjas.ui.presenter.UpdatePresenter;
 import br.com.brewjas.ui.view.RegisterView;
 
 /*
@@ -17,19 +17,19 @@ import br.com.brewjas.ui.view.RegisterView;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public class RegisterPresenterImpl implements RegisterPresenter, OnListenerGeneral {
+public class UpdatePresenterImpl implements UpdatePresenter, OnListenerGeneral {
 
-    private RegisterView registerView;
-    private RegisterService registerService;
+    private RegisterView    registerView;
+    private UpdateService   updateService;
 
-    public RegisterPresenterImpl( RegisterView registerView){
+    public UpdatePresenterImpl(RegisterView registerView){
         this.registerView = registerView;
         init();
     }
 
     @Override
     public void init() {
-        registerService = new RegisterServiceImpl();
+        updateService = new UpdateServiceImpl();
     }
 
     @Override
@@ -47,7 +47,7 @@ public class RegisterPresenterImpl implements RegisterPresenter, OnListenerGener
     @Override
     public void onSubmitPressed(Client client) {
         this.registerView.showLoading();
-        registerService.register(client, this);
+        updateService.update(client, this);
     }
 
     @Override

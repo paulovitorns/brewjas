@@ -62,7 +62,7 @@ android {
 
     productFlavors {
         Dev {
-            buildConfigField "String", "REST_SERVICE_URL", "\"http://192.168.56.1/brewjas-rest/\""
+            buildConfigField "String", "REST_SERVICE_URL", "\"http://www.vitalles.com/brewjas-rest-dev/\""
         }
         Prod {
             buildConfigField "String", "REST_SERVICE_URL", ""

@@ -60,18 +60,20 @@
     <!-- TODO: String para erros e alertas -->
     <string name="err_login_title_register">Hmmmm!</string>
     <string name="err_login_is_empty">por favor, preencha o seu e-mail!</string>
-    <string name="err_login_facebook_cancel">oops, você concelou o login com o facebook.</string>
-    <string name="err_nome_is_empty">por favor, preencha o seu nome.</string>
-    <string name="err_email_is_empty">por favor, preencha o seu e-mail.</string>
-    <string name="err_datanasc_is_empty">por favor, selecione a sua data de nascimento.</string>
-    <string name="err_genero_is_empty">por favor, selecione o seu gênenro.</string>
-    <string name="err_is_underage">este aplicativo é voltado para o público adulto.</string>
+    <string name="err_login_facebook_cancel">oops, você concelou o login com o facebook</string>
+    <string name="err_nome_is_empty">por favor, preencha o seu nome</string>
+    <string name="err_email_is_empty">por favor, preencha o seu e-mail</string>
+    <string name="err_datanasc_is_empty">por favor, selecione a sua data de nascimento</string>
+    <string name="err_genero_is_empty">por favor, selecione o seu gênenro</string>
+    <string name="err_is_underage">este aplicativo é voltado para o público adulto</string>
     <string name="err_register_general_title">erro de validação =/</string>
     <string name="err_register_general">por favor, preencha os seguinte(s) campo(s):</string>
 
-    <string name="err_login_user">não encontramos o seu usuário.</string>
-    <string name="err_register_email_exists">já temos um conta com este e-mail.</string>
-    <string name="err_server_500">tivemos um erro do servidor, por favor, tente novamente mais tarde.</string>
+    <string name="err_login_user">não encontramos seu usuário</string>
+
+    <string name="err_register_fails">não foi possível criar a sua conta, por favor, tente novamente mais tarde</string>
+    <string name="err_register_email_exists">já temos um conta com este e-mail</string>
+    <string name="err_server_500">tivemos um erro do servidor, por favor, tente novamente mais tarde</string>
 
     <!-- TODO: Common beers texts -->
     <string name="beer_infos">mais informações</string>

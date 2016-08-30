@@ -20,6 +20,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -99,6 +100,8 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
 
                                     Client client = new Client();
 
+                                    client.setFacebookId(object.getString("id"));
+
                                     if( object.has("name") &&  !object.getString("name").equals("")){
 
                                         client.setNome(object.getString("name"));
@@ -121,6 +124,10 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
                                         String birth = object.getString("birthday");
                                         client.setDataNascimento(StringUtils.parseStringToDate(birth));
                                     }
+
+                                    Log.d("CLIENT_FB", new Gson().toJson(client, Client.class));
+
+                                    presenter.registerByLogin(client);
 
                                     navigateToNextScreenWithSerializedCliente(client);
 
