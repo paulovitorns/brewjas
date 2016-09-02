@@ -51,7 +51,7 @@ public class RegisterActivity extends BaseActivity implements DatePickerDialog.O
     @Bind(R.id.edtLogin)        EditText    edtLogin;
     @Bind(R.id.btnDataNasc)     Button      btnDataNasc;
 
-    private String[]            gender      = Brewjas.getContext().getResources().getStringArray(R.array.gender);;
+    private String[]            gender      = Brewjas.getContext().getResources().getStringArray(R.array.gender);
     private RegisterPresenter   presenter   = new RegisterPresenterImpl(this);
 
     private ProgressDialog      mProgressDialog;

@@ -33,6 +33,20 @@ public class StringUtils {
         return finalDate;
     }
 
+    public static Date parseStringFbToDate(String date){
+
+        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+        Date finalDate = new Date();
+
+        try {
+            finalDate = format.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return finalDate;
+    }
+
     public static String parseDateToString(Date date){
 
         DateFormat format = new SimpleDateFormat("dd/MM/yyyy");

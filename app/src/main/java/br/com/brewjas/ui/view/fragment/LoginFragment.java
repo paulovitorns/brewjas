@@ -122,14 +122,12 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
                                     if( object.has("birthday") &&  !object.getString("birthday").equals("")){
 
                                         String birth = object.getString("birthday");
-                                        client.setDataNascimento(StringUtils.parseStringToDate(birth));
+                                        client.setDataNascimento(StringUtils.parseStringFbToDate(birth));
                                     }
 
                                     Log.d("CLIENT_FB", new Gson().toJson(client, Client.class));
 
                                     presenter.registerByLogin(client);
-
-                                    navigateToNextScreenWithSerializedCliente(client);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -177,7 +175,7 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
     @OnClick({R.id.btnFacebook, R.id.btnLoginFb})
     public void loginWithfacebook(){
 
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("email","public_profile"));
+        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("email","public_profile", "user_birthday"));
     }
 
     @Override
