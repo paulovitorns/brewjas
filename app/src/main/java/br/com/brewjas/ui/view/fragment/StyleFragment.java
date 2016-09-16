@@ -2,7 +2,6 @@ package br.com.brewjas.ui.view.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -23,13 +22,13 @@ import br.com.brewjas.util.UIDialogsFragments;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public class EstiloFragment extends Fragment {
+public class StyleFragment extends BaseFragment {
 
     private List<Style> styles;
     private RecyclerView mRecyclerView;
     private UIDialogsFragments uiDialogs;
 
-    public EstiloFragment() {
+    public StyleFragment() {
         // Required empty public constructor
     }
 

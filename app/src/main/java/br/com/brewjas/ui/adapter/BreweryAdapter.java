@@ -2,6 +2,7 @@ package br.com.brewjas.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +12,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brewjas.R;
 import br.com.brewjas.model.Brewery;
+import br.com.brewjas.model.common.BreweryItem;
+import br.com.brewjas.util.StringUtils;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -26,10 +33,10 @@ import butterknife.ButterKnife;
  */
 public class BreweryAdapter extends RecyclerView.Adapter<BreweryAdapter.ViewHolder> {
 
-    private Context         context;
-    private List<Brewery>   data;
+    private Context             context;
+    private List<BreweryItem>   data;
 
-    public BreweryAdapter(Context context, List<Brewery> data) {
+    public BreweryAdapter(Context context, List<BreweryItem> data) {
 
         if(this.data == null)
             this.data = new ArrayList<>();
@@ -45,32 +52,42 @@ public class BreweryAdapter extends RecyclerView.Adapter<BreweryAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        Brewery brewery = data.get(position);
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        final BreweryItem brewery = data.get(position);
 
         if(brewery != null){
 
-            if(position % 2 == 0){
+            Picasso.with(context)
+                    .load(brewery.getImage())
+                    .networkPolicy(NetworkPolicy.OFFLINE)
+                    .into(holder.imgBeer, new Callback() {
+                        @Override
+                        public void onSuccess() {
 
-                LinearLayout.LayoutParams adjust = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 2.0f);
-                holder.containerInfos.setLayoutParams(adjust);
-                holder.containerImage.setVisibility(View.GONE);
-            }else{
-                LinearLayout.LayoutParams adjust = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1.4f);
-                holder.containerInfos.setLayoutParams(adjust);
-                holder.containerImage.setVisibility(View.VISIBLE);
-            }
+                        }
+
+                        @Override
+                        public void onError() {
+                            Picasso.with(context)
+                                    .load(brewery.getImage())
+                                    .into(holder.imgBeer, new Callback() {
+                                        @Override
+                                        public void onSuccess() {
+
+                                        }
+
+                                        @Override
+                                        public void onError() {
+                                            Log.v("PICASSO_ERROR", "Couldn't not fetch image");
+                                        }
+                                    });
+                        }
+                    });
 
             holder.brewery.setText(brewery.getName());
-            holder.country.setText("Irlanda");
+            holder.country.setText(brewery.getCountry());
 
-            String lblCountBeers = holder.countBeer.getText().toString();
-            lblCountBeers.replace("{var}", 10+"");
-            holder.countBeer.setText(lblCountBeers);
-
-            String lblCountStyles = holder.countStyles.getText().toString();
-            lblCountStyles.replace("{var}", 10+"");
-            holder.countStyles.setText(lblCountStyles);
+            holder.countBeer.setText(brewery.getBeerCount()+" cerveja(s)");
 
             animate(holder);
             holder.setParams(this.context, brewery);
@@ -84,7 +101,7 @@ public class BreweryAdapter extends RecyclerView.Adapter<BreweryAdapter.ViewHold
         return data.size();
     }
 
-    public void insert(int position, Brewery brewery) {
+    public void insert(int position, BreweryItem brewery) {
 
         data.add(brewery);
         notifyItemInserted(position);
@@ -103,10 +120,9 @@ public class BreweryAdapter extends RecyclerView.Adapter<BreweryAdapter.ViewHold
         @Bind(R.id.txBrewery)       TextView        brewery;
         @Bind(R.id.txCountry)       TextView        country;
         @Bind(R.id.txCountBeer)     TextView        countBeer;
-        @Bind(R.id.txCountStyles)   TextView        countStyles;
 
-        private Context context;
-        private Brewery breweryObj;
+        private Context     context;
+        private BreweryItem breweryObj;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -116,7 +132,7 @@ public class BreweryAdapter extends RecyclerView.Adapter<BreweryAdapter.ViewHold
             itemView.setOnClickListener(this);
         }
 
-        public void setParams(Context context, Brewery brewery){
+        public void setParams(Context context, BreweryItem brewery){
             this.context    = context;
             this.breweryObj = brewery;
         }

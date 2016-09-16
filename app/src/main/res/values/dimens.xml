@@ -9,6 +9,7 @@
     <dimen name="activity_horizontal_margin_big">24dp</dimen>
     <dimen name="activity_horizontal_margin_biggest">32dp</dimen>
 
+    <dimen name="activity_vertical_margin_minimum">2dp</dimen>
     <dimen name="activity_vertical_margin_micro">4dp</dimen>
     <dimen name="activity_vertical_margin_small">8dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -43,8 +44,8 @@
     <dimen name="font_small">12sp</dimen>
     <dimen name="font_regular">14sp</dimen>
     <dimen name="font_mediun">16sp</dimen>
-    <dimen name="font_big">20sp</dimen>
-    <dimen name="font_large">24sp</dimen>
+    <dimen name="font_big">18sp</dimen>
+    <dimen name="font_large">20sp</dimen>
 
     <!--TODO: Set border's size-->
     <dimen name="border_regular">1sp</dimen>

@@ -2,7 +2,6 @@ package br.com.brewjas.ui.view.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -23,13 +22,13 @@ import br.com.brewjas.util.UIDialogsFragments;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public class CervejaFavoritaFragment extends Fragment {
+public class FavoriteBeerFragment extends BaseFragment {
 
     private List<Beer> beers;
     private RecyclerView mRecyclerView;
     private UIDialogsFragments uiDialogs;
 
-    public CervejaFavoritaFragment() {
+    public FavoriteBeerFragment() {
         // Required empty public constructor
     }
 

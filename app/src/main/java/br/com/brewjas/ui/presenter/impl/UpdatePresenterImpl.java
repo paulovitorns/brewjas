@@ -8,9 +8,11 @@ import br.com.brewjas.R;
 import br.com.brewjas.business.service.UpdateService;
 import br.com.brewjas.business.service.impl.UpdateServiceImpl;
 import br.com.brewjas.common.OnListenerGeneral;
+import br.com.brewjas.model.ApiError;
 import br.com.brewjas.model.Client;
 import br.com.brewjas.ui.presenter.UpdatePresenter;
 import br.com.brewjas.ui.view.RegisterView;
+import br.com.brewjas.util.UtilNetwork;
 
 /*
  * © Copyright 2016 Brewjas.
@@ -46,8 +48,13 @@ public class UpdatePresenterImpl implements UpdatePresenter, OnListenerGeneral {
 
     @Override
     public void onSubmitPressed(Client client) {
-        this.registerView.showLoading();
-        updateService.update(client, this);
+        if(!UtilNetwork.isNetworkAvailable()){
+            this.onInternetError(new ApiError(0));
+        }else{
+
+            this.registerView.showLoading();
+            updateService.update(client, this);
+        }
     }
 
     @Override
@@ -76,5 +83,15 @@ public class UpdatePresenterImpl implements UpdatePresenter, OnListenerGeneral {
 
         return stringDate;
 
+    }
+
+    @Override
+    public void onApiError(ApiError error) {
+
+    }
+
+    @Override
+    public void onInternetError(ApiError error) {
+        this.registerView.noConectionWithNetWork();
     }
 }

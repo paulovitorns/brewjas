@@ -1,7 +1,6 @@
 package br.com.brewjas.ui.view;
 
 import android.content.Context;
-import android.view.View;
 
 import br.com.brewjas.model.Client;
 
@@ -10,13 +9,7 @@ import br.com.brewjas.model.Client;
  * Autor : Paulo Sales - dev@paulovns.com.br
  * Empresa : Brewjas app.
  */
-public interface BaseView {
-
-    void setupActionBar();
-
-    void showDialog(String title, String description);
-
-    void navigateToNextScreenWithSerializedCliente(Client client);
+public interface BaseFragmentView {
 
     void showLoading();
 
@@ -24,4 +17,5 @@ public interface BaseView {
 
     Context getContext();
 
+    void showNetworkInfo();
 }

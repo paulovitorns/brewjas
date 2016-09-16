@@ -8,6 +8,7 @@ import com.google.gson.annotations.SerializedName;
  * Empresa : Brewjas app.
  */
 public class ApiStatusResponse {
-    @SerializedName("code")     public int      code;
-    @SerializedName("status")   public String   status;
+    @SerializedName("code")         public int      code;
+    @SerializedName("status")       public String   status;
+    @SerializedName("registros")    public int      registros;
 }

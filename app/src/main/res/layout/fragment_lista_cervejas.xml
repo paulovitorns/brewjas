@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_lista_brejas"
-    tools:context=".ui.view.fragment.CervejaFragment">
+    tools:context=".ui.view.fragment.BeerFragment">
 
     <LinearLayout
         android:orientation="vertical"

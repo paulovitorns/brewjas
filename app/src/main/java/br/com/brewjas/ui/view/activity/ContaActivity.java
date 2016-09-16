@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -126,6 +127,13 @@ public class ContaActivity extends BaseActivity implements DatePickerDialog.OnDa
     public void errorRegister(String title, String description) {
 
         showDialog(title, description);
+    }
+
+    @Override
+    public void noConectionWithNetWork() {
+        try{
+            this.showNetworkInfo();
+        } catch (Exception e){}
     }
 
     @Override

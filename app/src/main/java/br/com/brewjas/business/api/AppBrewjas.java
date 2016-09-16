@@ -1,5 +1,6 @@
 package br.com.brewjas.business.api;
 
+import br.com.brewjas.business.api.vo.response.BreweryResponse;
 import br.com.brewjas.business.api.vo.response.ClientFullResponseVO;
 import retrofit.Call;
 import retrofit.http.GET;
@@ -20,5 +21,10 @@ public interface AppBrewjas {
 
     @GET("api/client/update/{data}")
     Call<ClientFullResponseVO> update(@Path("data") String data);
+
+    @GET("api/restBeer/searchBrewery/{term}/{offset}/{limit}")
+    Call<BreweryResponse> getBreweries(@Path("term")    String  term,
+                                       @Path("offset")  int     offset,
+                                       @Path("limit")   int     limit);
 
 }

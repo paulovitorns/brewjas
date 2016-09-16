@@ -3,7 +3,6 @@ package br.com.brewjas.ui.view.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,16 +28,18 @@ import java.util.Arrays;
 
 import br.com.brewjas.Brewjas;
 import br.com.brewjas.R;
+import br.com.brewjas.model.ApiError;
 import br.com.brewjas.model.Client;
 import br.com.brewjas.ui.presenter.LoginPresenter;
 import br.com.brewjas.ui.presenter.impl.LoginPresenterImpl;
 import br.com.brewjas.ui.view.LoginFragmentView;
+import br.com.brewjas.ui.view.activity.BaseActivity;
 import br.com.brewjas.ui.view.activity.DashBoardActivity;
 import br.com.brewjas.ui.view.activity.RegisterActivity;
 import br.com.brewjas.ui.view.component.CustomDialog;
-import br.com.brewjas.ui.view.component.ProgressDialog;
 import br.com.brewjas.util.SharedPreferencesUtil;
 import br.com.brewjas.util.StringUtils;
+import br.com.brewjas.util.UtilNetwork;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -49,7 +50,7 @@ import butterknife.OnClick;
  * Empresa : Brewjas app.
  */
 
-public class LoginFragment extends Fragment implements LoginFragmentView {
+public class LoginFragment extends BaseFragment implements LoginFragmentView {
 
     @Bind(R.id.contentLogo)     LinearLayout    contentLogo;
     @Bind(R.id.edtLogin)        EditText        edtLogin;
@@ -57,10 +58,8 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
     @Bind(R.id.contentLogin)    LinearLayout    contentLogin;
     @Bind(R.id.contentregister) LinearLayout    contentregister;
 
-    private LoginPresenter  presenter = new LoginPresenterImpl(this);
+    private LoginPresenter  presenter;
     private CallbackManager mCallbackManager;
-
-    private ProgressDialog mProgressDialog;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -79,6 +78,8 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
         View view           = inflater.inflate(R.layout.fragment_login, container, false);
 
         ButterKnife.bind(this, view);
+
+        presenter = new LoginPresenterImpl(view, this);
 
         loadElementsWithAnimation();
 
@@ -174,8 +175,11 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
 
     @OnClick({R.id.btnFacebook, R.id.btnLoginFb})
     public void loginWithfacebook(){
-
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("email","public_profile", "user_birthday"));
+        if(UtilNetwork.isNetworkAvailable()){
+            LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("email","public_profile", "user_birthday"));
+        }else{
+            UtilNetwork.showNetworkInfo(this.getView(), this.getContext(), new ApiError(0));
+        }
     }
 
     @Override
@@ -217,8 +221,13 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
     @OnClick(R.id.btnRegistrar)
     public void register() {
 
-        Intent intent = new Intent(getActivity(), RegisterActivity.class);
-        getActivity().startActivity(intent);
+        if(UtilNetwork.isNetworkAvailable()){
+            Intent intent = new Intent(getActivity(), RegisterActivity.class);
+            getActivity().startActivity(intent);
+        }else{
+            UtilNetwork.showNetworkInfo(this.getView(), this.getContext(), new ApiError(0));
+        }
+
     }
 
     @Override
@@ -246,17 +255,19 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
 
     @Override
     public void showLoading() {
-        if (mProgressDialog != null && mProgressDialog.isShowing())
-            hideLoading();
-        mProgressDialog = new ProgressDialog(getContext());
-        mProgressDialog.show();
+        try{
+            ((BaseActivity) this.getActivity()).showLoading();
+        }catch (Exception e) {
+
+        }
     }
 
     @Override
     public void hideLoading() {
-        if (mProgressDialog != null) {
-            mProgressDialog.dismiss();
-            mProgressDialog = null;
+        try{
+            ((BaseActivity) this.getActivity()).hideLoading();
+        }catch (Exception e) {
+
         }
     }
 
@@ -264,4 +275,5 @@ public class LoginFragment extends Fragment implements LoginFragmentView {
     public Context getContext() {
         return getActivity();
     }
+
 }

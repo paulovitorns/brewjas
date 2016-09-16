@@ -13,11 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.brewjas.R;
-import br.com.brewjas.model.Client;
-import br.com.brewjas.ui.view.fragment.CervejariaFragment;
-import br.com.brewjas.ui.view.fragment.CervejaFavoritaFragment;
-import br.com.brewjas.ui.view.fragment.CervejaFragment;
-import br.com.brewjas.ui.view.fragment.EstiloFragment;
+import br.com.brewjas.ui.view.fragment.BreweryFragment;
+import br.com.brewjas.ui.view.fragment.FavoriteBeerFragment;
+import br.com.brewjas.ui.view.fragment.BeerFragment;
+import br.com.brewjas.ui.view.fragment.StyleFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -59,9 +58,9 @@ public class DashBoardActivity extends BaseActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        CervejaFragment cervejaFragment = new CervejaFragment();
+        BeerFragment beerFragment = new BeerFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame_dash, cervejaFragment);
+        fragmentTransaction.replace(R.id.frame_dash, beerFragment);
         fragmentTransaction.commit();
 
     }
@@ -118,10 +117,10 @@ public class DashBoardActivity extends BaseActivity
         switch (id){
             case R.id.nav_lista_brewjas:
                 
-                CervejaFragment cervejaFragment = new CervejaFragment();
+                BeerFragment beerFragment = new BeerFragment();
 
                 android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frame_dash, cervejaFragment);
+                fragmentTransaction.replace(R.id.frame_dash, beerFragment);
                 fragmentTransaction.commit();
 
                 HeaderTitle.setText(getResources().getString(R.string.title_beer));
@@ -130,10 +129,10 @@ public class DashBoardActivity extends BaseActivity
 
             case R.id.nav_favoritas:
 
-                CervejaFavoritaFragment cervejaFavoritaFragment = new CervejaFavoritaFragment();
+                FavoriteBeerFragment favoriteBeerFragment = new FavoriteBeerFragment();
 
                 android.support.v4.app.FragmentTransaction fragFavs = getSupportFragmentManager().beginTransaction();
-                fragFavs.replace(R.id.frame_dash, cervejaFavoritaFragment);
+                fragFavs.replace(R.id.frame_dash, favoriteBeerFragment);
                 fragFavs.commit();
 
                 HeaderTitle.setText(getResources().getString(R.string.title_fav));
@@ -142,10 +141,10 @@ public class DashBoardActivity extends BaseActivity
 
             case R.id.nav_cervejarias:
 
-                CervejariaFragment cervejariaFragment = new CervejariaFragment();
+                BreweryFragment breweryFragment = new BreweryFragment();
 
                 android.support.v4.app.FragmentTransaction fragCerve = getSupportFragmentManager().beginTransaction();
-                fragCerve.replace(R.id.frame_dash, cervejariaFragment);
+                fragCerve.replace(R.id.frame_dash, breweryFragment);
                 fragCerve.commit();
 
                 HeaderTitle.setText(getResources().getString(R.string.title_brew));
@@ -154,10 +153,10 @@ public class DashBoardActivity extends BaseActivity
 
             case R.id.nav_estilos:
 
-                EstiloFragment estiloFragment = new EstiloFragment();
+                StyleFragment styleFragment = new StyleFragment();
 
                 android.support.v4.app.FragmentTransaction fragEstilos = getSupportFragmentManager().beginTransaction();
-                fragEstilos.replace(R.id.frame_dash, estiloFragment);
+                fragEstilos.replace(R.id.frame_dash, styleFragment);
                 fragEstilos.commit();
 
                 HeaderTitle.setText(getResources().getString(R.string.title_sty));

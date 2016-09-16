@@ -9,5 +9,6 @@ public interface RegisterView extends BaseView {
 
     void loadContent();
     void errorRegister(String title, String description);
+    void noConectionWithNetWork();
 
 }

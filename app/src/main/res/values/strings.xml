@@ -100,4 +100,12 @@
     <string name="title_sty">estilos</string>
     <string name="title_acc">sua conta</string>
 
+    <!-- TODO: API error message -->
+    <string name="error_bad_resquest">desculpe, não encontramos registros para a sua busca.</string>
+    <string name="error_unauthorized">você não esta autorizado a realizar esta resquisição.</string>
+    <string name="error_access_limit">não conseguimos localizar mais itens para esta busca, tente novamente mais tarde.</string>
+    <string name="error_not_found">não conseguimos localizar a sua requisição.</string>
+    <string name="error_server_error">ocorreu um erro interno do servidor.</string>
+    <string name="error_internet_conection">você não esta conectado a internet.</string>
+
 </resources>
