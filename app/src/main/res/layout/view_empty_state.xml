@@ -3,14 +3,39 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_lista_brejas">
 
-    <LinearLayout
+    <RelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_horizontal_margin_big"
+        android:background="@drawable/bg_transparent_yellow">
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/txtMsgEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextLarge.Bold.Brown"
+            android:textAlignment="center"
+            android:text="@string/error_bad_resquest"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_btn_height"
+            android:layout_marginLeft="@dimen/activity_vertical_margin_big"
+            android:layout_marginRight="@dimen/activity_vertical_margin_big"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/btn_search"
+            style="@style/TextBig.Bold.White"
+            android:textAllCaps="false"
+            android:id="@+id/btnSearch"
+            android:background="@drawable/rounded_btn_padrao"
+            android:layout_below="@id/txtMsgEmpty"/>
+
+    </RelativeLayout>
 
 
 </FrameLayout>

@@ -12,6 +12,7 @@
     <string name="btn_recuperar_senha">lembrar senha</string>
     <string name="btn_help">ainda não tem acesso?</string>
     <string name="btn_ok">ok, entendi!</string>
+    <string name="btn_search">pesquisar</string>
 
     <!-- TODO: Textos hint -->
     <string name="hint_nome">seu nome e sobrenome</string>
@@ -22,6 +23,7 @@
     <string name="hint_search">busque por nome, cervejaria, estilo, etc</string>
     <string name="hint_search_brewery">busque por nome, país, etc</string>
     <string name="hint_search_style">busque por estilo, ingredientes, etc</string>
+
 
     <!-- TODO: Textos de textview -->
     <string name="txt_intro_registro">por favor, fale um pouco sobre você?</string>
